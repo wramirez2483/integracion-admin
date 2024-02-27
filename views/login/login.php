@@ -15,18 +15,30 @@
         <h2 class="form__title">Iniciar Sesión</h2>
         <p class="form__paragraph">Administración de integración</p>   
         <div class="form__container">
+
             <div class="form__group">
                 <input type="email" id="email" class="form__input" placeholder="">
                 <label for="email" class="form__label">Correo electrónico:</label>
                 <span class="form__line"></span>
             </div>
-            <div class="form__group">
+
+            <div class="form__group input-password">
+
                 <input type="password" id="password" class="form__input" placeholder="">
                 <label for="password" class="form__label">Contraseña:</label>
                 <span class="form__line"></span>
+                <div class="input-pwd">
+
+                    <div class="eye">
+                        <img class="icon_handle" id="icon-toggle" src="./img/RiEyeLine.svg" onclick="handleEye()" alt="Toggle Password Visibility">
+                    </div>
+                </div>
+
             </div>
+
             <input type="submit" class="form__submit" value="Entrar">
         </div>
     </form>
+    <script src="./js/script.js"></script>
 </body>
 </html>
