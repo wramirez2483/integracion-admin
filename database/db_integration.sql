@@ -29,10 +29,10 @@ SET time_zone = "+00:00";
 
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
-  `id` uuid NOT NULL,
+  `id` varchar(15) NOT NULL,
   `name` varchar(15) NOT NULL,
   `email` varchar(64) NOT NULL,
-  `rol` enum('admin','reader') NOT NULL,
+  `role` enum('admin','reader') NOT NULL,
   `password` varchar(60) NOT NULL,
   `date_created` timestamp NOT NULL DEFAULT current_timestamp(),
   `date_updated` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
