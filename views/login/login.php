@@ -16,12 +16,12 @@
         <p class="form__paragraph">Administración de integración</p>   
         <div class="form__container">
             <div class="form__group">
-                <input type="email" id="email" class="form__input" placeholder="">
+                <input type="email" id="email" class="form__input" placeholder="" required>
                 <label for="email" class="form__label">Correo electrónico:</label>
                 <span class="form__line"></span>
             </div>
             <div class="form__group">
-                <input type="password" id="password" class="form__input" placeholder="">
+                <input type="password" id="password" class="form__input" placeholder="" required>
                 <label for="password" class="form__label">Contraseña:</label>
                 <span class="form__line"></span>
             </div>
