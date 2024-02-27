@@ -1,5 +1,5 @@
 <?php
-//include('../../app/config.php')
+    require_once '../../app/config.php';
 ?> 
 
 <!DOCTYPE html>
@@ -11,16 +11,26 @@
     <title>Login Integración</title>
 </head>
 <body>
-    <form action="" class="form" method="POST">
+    
+    <form action="../../app/controllers/login/singin.php" class="form" method="POST">
+        <?php
+            if (isset($_SESSION['error_message'])) {
+                echo '<div class="message">' .  $_SESSION['error_message'] . '</div>';
+                unset($_SESSION['error_message']);
+            }
+        ?> 
         <h2 class="form__title">Iniciar Sesión</h2>
         <p class="form__paragraph">Administración de integración</p>   
         <div class="form__container">
-
+            
+            <!-- Correo  -->
             <div class="form__group">
                 <input type="email" id="email" name="email" class="form__input" placeholder="" required>
                 <label for="email" class="form__label">Correo electrónico:</label>
                 <span class="form__line"></span>
             </div>
+
+            <!-- Contraseña  -->
             <div class="form__group input-password">
                 <input type="password" id="password" name="password" class="form__input" placeholder="" required>
                 

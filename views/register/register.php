@@ -1,5 +1,5 @@
 <?php
-//include('../../app/config.php')
+require_once('../../app/config.php')
 ?> 
 
 <!DOCTYPE html>
@@ -28,8 +28,8 @@
             <div class="form__group">
                 <label for="rol" class="form__label"></label>
                 <select id="rol" name="rol" class="form__input">
-                    <option value="administrador">Administrador</option>
-                    <option value="lector">Lector</option>
+                    <option value="admin">Administrador</option>
+                    <option value="reader">Lector</option>
                 </select>
                 <span class="form__line"></span>
             </div>

@@ -1,21 +1,21 @@
 <?php
+session_start();
+define('APP_NAME', 'APP Integracion');
+define('SERVIDOR', 'localhost');
+define('USUARIO', 'root');
+define('PASSWORD', '');
+define('PUERTO', '3307');
+define('BD', 'db_integration');
 
-define('APP_NAME','APP Integración');
-define('SERVIDOR','localhost');
-define('USUARIO','root');
-define('PASSWORD','');
-define('BD','db_integration');
-
-$servidor = "mysql:dbname=".BD.";host=".SERVIDOR;
-
-try{
-    $pdo = new PDO($servidor,USUARIO,PASSWORD,array(PDO::MYSQL_ATTR_INIT_COMMAND=>"SET NAMES utf8"));
-    //echo "conexión exitosa con la base de datos";
-}catch (PDOException $e){
-   // print_r($e);
-    echo "error no se pudo conectar a la base de datos";
+// Intenta conectarte a la base de datos
+try {
+    $servidor = "mysql:host=".SERVIDOR.";port=".PUERTO.";dbname=".BD;
+    $pdo = new PDO($servidor, USUARIO, PASSWORD);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    //echo "Conexión exitosa con la base de datos";
+} catch(PDOException $e) {
+    //echo "Error: No se pudo conectar a la base de datos: " . $e->getMessage();
 }
-
 
 $URL = "http://localhost/www.app-integration.com";
 
