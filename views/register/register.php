@@ -33,18 +33,35 @@
                 </select>
                 <span class="form__line"></span>
             </div>
-            <div class="form__group">
+            <div class="form__group input-password">
                 <input type="password" id="password" name="password" class="form__input" placeholder="" required>
+                
                 <label for="password" class="form__label">Contraseña:</label>
                 <span class="form__line"></span>
+                <div class="input-pwd">
+
+                    <div class="eye">
+                        <img class="icon_handle" id="icon-toggle" src="../../img/RiEyeLine.svg" onclick="handleEye()" alt="Toggle Password Visibility">
+                    </div>
+                </div>
+
             </div>
-            <div class="form__group">
-                <input type="password" id="verificar_password" name="verificar_password" class="form__input" placeholder="" required>
+            <div class="form__group input-password">
+                <input type="password" id="verify-password" name="verificar_password" class="form__input" placeholder="" required>
+                
                 <label for="password" class="form__label">Confirmar contraseña:</label>
                 <span class="form__line"></span>
+                <div class="input-pwd">
+
+                    <div class="eye">
+                        <img class="icon_handle" id="icon-toggle2" src="../../img/RiEyeLine.svg" onclick="handleEyeTwo()" alt="Toggle Password Visibility">
+                    </div>
+                </div>
+
             </div>
             <input type="submit" class="form__submit" value="Registrarse">
         </div>
     </form>
+    <script src="../../helpers/scripts.js"></script>
 </body>
 </html>

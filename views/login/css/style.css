@@ -108,13 +108,7 @@ body{
 .form__input:not(:placeholder-shown) ~ .form__line{
     transform: scale(1);
 }
-.eye{
-    position: relative;
-    float: left;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
 img.icon_handle{
     height: 20px;
     width: 20px;
