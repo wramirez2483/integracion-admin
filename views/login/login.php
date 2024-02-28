@@ -14,10 +14,15 @@
     
     <form action="../../app/controllers/login/singin.php" class="form" method="POST">
         <?php
-            if (isset($_SESSION['error_message'])) {
-                echo '<div class="message">' .  $_SESSION['error_message'] . '</div>';
+            if (isset($_SESSION['error_message'])  ) {
+                echo '<div class="message">' .  $_SESSION['error_message']   . '</div>';
                 unset($_SESSION['error_message']);
             }
+            if (isset($_SESSION['error-authorized'])  ) {
+                echo '<div class="message">' .  $_SESSION['error-authorized']   . '</div>';
+                unset($_SESSION['error-authorized']);
+            }
+
         ?> 
         <h2 class="form__title">Iniciar Sesión</h2>
         <p class="form__paragraph">Administración de integración</p>   

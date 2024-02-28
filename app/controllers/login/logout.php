@@ -1,10 +1,9 @@
 <?php
 
-require_once ('../../config.php');
 
-if(isset($_SESSION['sesion_email'])){
-    session_start();
-    session_destroy();
-    header('Location:  ../../../views/login/login.php');
-}
-?>
+session_start();
+session_destroy();
+unset($_SESSION['logueado']);
+header('Location: ../../../views/login/login.php');
+exit();
+

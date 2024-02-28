@@ -12,8 +12,8 @@
 </head>
 <body>
     <h1>Hola usuario</h1>
-    <form action="../www.app-integration.com/app/controllers/login/logout.php" method="POST">
-    <button type="submit">Cerrar sesión</button>
-    </form>
+    <a href="app/controllers/login/logout.php"> Logout </a>
+    <!-- <button type="submit">Cerrar sesión</button> -->
+
 </body>
 </html>

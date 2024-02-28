@@ -21,8 +21,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Iniciar sesión
         $_SESSION['sesion_email'] = $email;
         $_SESSION['logueado'] = true;
+        
         // Redirigir al usuario a la página de inicio
-        header('Location:'.$URL.'/index.php');
+        header('Location: /app-integracion');
+
         exit();
     } else {
         // Las credenciales son incorrectas, redirigir de vuelta al formulario de inicio de sesión
