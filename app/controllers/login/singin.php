@@ -23,18 +23,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['logueado'] = true;
         
         // Redirigir al usuario a la página de inicio
-        header('Location: /app-integracion');
-
+        header('Location: ../../../views/inicio.php');
         exit();
+
     } else {
         // Las credenciales son incorrectas, redirigir de vuelta al formulario de inicio de sesión
-        header('Location: ../../../views/login/login.php');
+        header('Location: /app-integracion');
         $_SESSION['error_message'] = 'Correo electrónico o contraseña incorrectos';
         exit();
     }
 } else {
     // Si no se reciben datos por POST, redirigir al usuario de vuelta al formulario de inicio de sesión
-    header('Location: ../../../views/login/login.php');
+    header('Location: /app-integracion');
     exit();
 }
 ?>

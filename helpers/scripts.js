@@ -6,10 +6,10 @@ function handleEye() {
 
     if (x.type === "password") {      
       x.type = "text";
-      icon.src = "../../img/BiEyeSlash.svg"; 
+      icon.src = "./img/BiEyeSlash.svg"; 
     } else {
       x.type = "password";
-      icon.src = "../../img/RiEyeLine.svg"; 
+      icon.src = "./img/RiEyeLine.svg"; 
     }
   
 }

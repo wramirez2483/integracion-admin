@@ -1,10 +1,18 @@
 <?php
+
     function validarLogin(){
-        session_start(); // Inicia o reanuda una sesión
         
-        if( ! isset($_SESSION['logueado'])) {
+        if( isset($_SESSION['logueado'])) {
             // echo isset($_SESSION['logueado']);
-            header('Location: views/login/login.php');
+            header('./views/inicio.php');
+            // $_SESSION['error-authorized'] = 'Inicia sesion para continuar.';
+        }
+    }
+    function autorizarVistaLogin(){
+        
+        if(!isset($_SESSION['logueado'])) {
+            echo isset($_SESSION['logueado']);
+            header('index.php');
             $_SESSION['error-authorized'] = 'Inicia sesion para continuar.';
         }
     }

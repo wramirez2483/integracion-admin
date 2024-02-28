@@ -1,5 +1,7 @@
 <?php
+
 session_start();
+
 define('APP_NAME', 'APP Integracion');
 define('SERVIDOR', 'localhost');
 define('USUARIO', 'root');
