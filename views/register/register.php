@@ -1,5 +1,5 @@
 <?php
-require_once('../../app/config.php')
+require_once '../../app/config.php'
 ?> 
 
 <!DOCTYPE html>
@@ -11,30 +11,37 @@ require_once('../../app/config.php')
     <title>Registro Integración</title>
 </head>
 <body>
-    <form action="" class="form" method="POST">
+    <form action="../../app/controllers/login/register.php" class="form" method="POST">
+    <?php
+        if (isset($_SESSION['error_message'])  ) {
+            echo '<div class="message">' .  $_SESSION['error_message']   . '</div>';
+            unset($_SESSION['error_message']);
+        }
+
+    ?> 
         <h2 class="form__title">Registrar</h2>
         <p class="form__paragraph">Administración de integración</p>   
         <div class="form__container">
             <div class="form__group">
-                <input type="email" id="email" name="email" class="form__input" placeholder="" required>
+                <input type="email" id="email" name="email" class="form__input" value="correo@correo.com" placeholder="" required>
                 <label for="email" class="form__label">Correo electrónico:</label>
                 <span class="form__line"></span>
             </div>
             <div class="form__group">
-                <input type="text" id="name" name="name" class="form__input" placeholder="" required>
+                <input type="text" id="name" name="name" class="form__input" placeholder="" value="nombre" required>
                 <label for="name" class="form__label">Nombre:</label>
                 <span class="form__line"></span>
             </div>
             <div class="form__group">
-                <label for="rol" class="form__label"></label>
-                <select id="rol" name="rol" class="form__input">
+                <label for="role" class="form__label"></label>
+                <select id="role" name="role" class="form__input">
                     <option value="admin">Administrador</option>
                     <option value="reader">Lector</option>
                 </select>
                 <span class="form__line"></span>
             </div>
             <div class="form__group input-password">
-                <input type="password" id="password" name="password" class="form__input" placeholder="" required>
+                <input type="password" id="password" name="password" class="form__input" value="contrasena" placeholder="" required>
                 
                 <label for="password" class="form__label">Contraseña:</label>
                 <span class="form__line"></span>
@@ -47,7 +54,7 @@ require_once('../../app/config.php')
 
             </div>
             <div class="form__group input-password">
-                <input type="password" id="verify-password" name="verificar_password" class="form__input" placeholder="" required>
+                <input type="password" id="verify-password" name="verificar_password" value="contrasena2" class="form__input" placeholder="" required>
                 
                 <label for="password" class="form__label">Confirmar contraseña:</label>
                 <span class="form__line"></span>
