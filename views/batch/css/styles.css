@@ -34,7 +34,7 @@ label {
 
 .input {
     display: flex;
-
+    align-items: center;
     gap: 2em;
 }
 /*  */
@@ -70,6 +70,13 @@ select{
     padding: .4em;
     border-radius: 5px;
 }
+
+.register-events{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
 
 /* Tabla */
 table.customTable {

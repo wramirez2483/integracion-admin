@@ -36,7 +36,8 @@ header{
 /* Inputs  */
 
 input[type='text'],
-input[type='email']
+input[type='email'],
+input[type='number']
 {
     padding: .5em;
     border-radius: 10px;
@@ -57,4 +58,20 @@ input[type="checkbox"]{
     grid-template-columns: 1em auto;
     gap: 0.5em;
     font-size: 2rem;
+}
+
+
+/* Botones */
+
+input[type="submit"]{
+    padding: 1em;
+    cursor: pointer;
+    border-radius: 30px;
+    background: #61bb68;
+    color: white;
+    border: none;
+    transition: all .3s ease;
+}
+input[type="submit"]:hover{
+    background-color: #4c9450;
 }

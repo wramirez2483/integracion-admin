@@ -36,7 +36,7 @@ img.admin-icon{
     gap: 1em;
 }
 
-.options div,
+.options a,
 .auth
 {
     display: flex;
@@ -52,8 +52,8 @@ img.admin-icon{
 .auth{
     font-size: .8em;
 }
-.options div:hover .icon,
-.options div:hover h2
+.options a:hover .icon,
+.options a:hover h2
 
 {
     color:#61BB68 ;
@@ -70,4 +70,10 @@ img.admin-icon{
 a{
     list-style: none;
     text-decoration: none;
+}
+.active h2,
+.active .icon
+{
+    color:#61BB68 ;
+    fill: #61BB68;
 }

@@ -6,8 +6,8 @@ define('APP_NAME', 'APP Integracion');
 define('SERVIDOR', 'localhost');
 define('USUARIO', 'root');
 define('PASSWORD', '');
-define('PUERTO', '3308');
-define('BD', 'db_integration');
+define('PUERTO', '3306');
+define('BD', 'db_integracion');
 
 // Intenta conectarte a la base de datos
 try {

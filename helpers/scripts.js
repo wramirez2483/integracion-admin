@@ -1,33 +1,33 @@
-
 function handleEye() {
-    
-    let x = document.getElementById("password");
-    let icon = document.getElementById('icon-toggle')
+  let x = document.getElementById("password");
+  let icon = document.getElementById('icon-toggle');
 
-    if (x.type === "password") {      
+  console.log("handleEye function is running");
+
+  if (x.type === "password") {      
       x.type = "text";
-      icon.src = "./img/BiEyeSlash.svg"; 
-    } else {
+      icon.src = "../../img/BiEyeSlash.svg"; 
+  } else {
       x.type = "password";
-      icon.src = "./img/RiEyeLine.svg"; 
-    }
-  
+      icon.src = "../../img/RiEyeLine.svg"; 
+  }
 }
 
 function handleEyeTwo() {
-    
   let x = document.getElementById("verify-password");
-  let icon = document.getElementById('icon-toggle2')
+  let icon = document.getElementById('icon-toggle2');
+
+  console.log("handleEyeTwo function is running");
 
   if (x.type === "password") {      
-    x.type = "text";
-    icon.src = "../../img/BiEyeSlash.svg"; 
+      x.type = "text";
+      icon.src = "../../img/BiEyeSlash.svg"; 
   } else {
-    x.type = "password";
-    icon.src = "../../img/RiEyeLine.svg"; 
+      x.type = "password";
+      icon.src = "../../img/RiEyeLine.svg"; 
   }
-
 }
+
 function handleCheckBox(checkboxId) {
   let si = document.getElementById('si');
   let no = document.getElementById('no');

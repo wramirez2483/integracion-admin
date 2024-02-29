@@ -11,7 +11,7 @@
 
     <link rel="stylesheet" href="../layouts/css/styles_layouts.css">
     
-    <link rel="stylesheet" href="../views/batch/css/styles.css">
+    <link rel="stylesheet" href="../views/josso/css/styles.css">
     
     <link rel="stylesheet" href="../assets/main.css">
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
@@ -26,15 +26,13 @@
                 include '../layouts/menu.php'
             ?>
         <div class="content-home">
-            
             <header>
-                <h1>Batch</h1>
+                <h1>Josso</h1>
             </header>
-
 
                 
             <?php   
-                include './batch/batch.php'
+                include './josso/josso.php'
             ?>
             
         </div>
