@@ -1,9 +1,3 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: 'Montserrat';
-}
 
 .container-menu{
     height: 100vh;
@@ -41,6 +35,7 @@ img.admin-icon{
     flex-direction: column;
     gap: 1em;
 }
+
 .options div,
 .auth
 {
@@ -51,12 +46,14 @@ img.admin-icon{
     font-size: 1em;
     justify-content: space-between;
     cursor: pointer;
-    height: 70px;
+    height: 3em;
     transition: .3s ease-in;
 }
+.auth{
+    font-size: .8em;
+}
 .options div:hover .icon,
-.options div:hover h2,
-.auth svg
+.options div:hover h2
 
 {
     color:#61BB68 ;
@@ -70,16 +67,7 @@ img.admin-icon{
     fill: white;
 }
 
-/* .auth{
-    color: white;
-    display: flex;
-    font-size: 1em;
-    align-items: center;
-    justify-content: space-between;
-
-    gap: 1.5em;
+a{
+    list-style: none;
+    text-decoration: none;
 }
-.auth svg{
-    height: 2em;
-    width: 2em;
-} */
