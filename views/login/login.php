@@ -5,6 +5,7 @@
                 echo '<div class="message">' .  $_SESSION['error_message']   . '</div>';
                 unset($_SESSION['error_message']);
             }
+            
             if (isset($_SESSION['error-authorized'])  ) {
                 echo '<div class="message">' .  $_SESSION['error-authorized']   . '</div>';
                 unset($_SESSION['error-authorized']);

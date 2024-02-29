@@ -28,3 +28,15 @@ function handleEyeTwo() {
   }
 
 }
+function handleCheckBox(checkboxId) {
+  let si = document.getElementById('si');
+  let no = document.getElementById('no');
+
+  if (checkboxId === 'si') {
+    si.checked = true;
+    no.checked = false;
+  } else if (checkboxId === 'no' ) {
+    no.checked = true;
+    si.checked = false;
+  }
+}

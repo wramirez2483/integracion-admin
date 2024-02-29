@@ -1,6 +1,7 @@
 <?php 
     require_once '../guards/validationLogin.php';
-    autorizarVistaLogin();
+    // autorizarVistaLogin();
+    validarLogin();
 ?>
 
 <!DOCTYPE html>
@@ -8,15 +9,36 @@
 <head>
     <meta charset="UTF-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="../layouts/css/styles_layouts.css">
-    <!-- <link rel="stylesheet" href="./views/login/css/style.css"> -->
+    
+    <link rel="stylesheet" href="../views/batch/css/styles.css">
+    
+    <link rel="stylesheet" href="../assets/main.css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <title>App-Integracion</title>
 </head>
 <body>
-    <!-- <h1>Hola usuario</h1> -->
-    <!-- <a href="app/controllers/login/logout.php"> Logout </a> -->
-    <?php
-        include '../layouts/menu.php'
-    ?>
+
+    
+    <div class="container-home">
+        
+            <?php
+                include '../layouts/menu.php'
+            ?>
+        <div class="content-home">
+            <?php
+                include '../layouts/header.php'
+            ?>
+
+                
+            <?php   
+                include './batch/batch.php'
+            ?>
+            
+        </div>
+     
+
+    </div>
 </body>
 </html>

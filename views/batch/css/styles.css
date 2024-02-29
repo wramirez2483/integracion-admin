@@ -1,0 +1,122 @@
+/* Batch */
+.container-batch {
+
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100vh;
+}
+
+.form-batch {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2.2em;
+}
+
+label {
+    font-weight: 700;
+    /* text-transform: uppercase; */
+}
+
+.checkboxes {
+    display: flex;
+    /* margin-top: 2em; */
+    gap: 2em;
+}
+
+.check {
+    font-weight: bold;
+    display: flex;
+    gap: 4px;
+}
+
+.input {
+    display: flex;
+
+    gap: 2em;
+}
+/*  */
+.events-sync {
+    width: 100%;
+}
+.events-sync h1 {
+    text-align: center;
+    margin-bottom: 2vh;
+}
+
+/* Paginacion y buscador */
+.other-pagination{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2em;
+}
+
+.search{
+    display: flex;
+    align-items: center;
+}
+
+.search svg{
+    width: 25px;
+    height: 25px;
+}
+.search path{
+    fill: black;
+}
+
+select{
+    padding: .4em;
+    border-radius: 5px;
+}
+
+/* Tabla */
+table.customTable {
+    width: 100%;
+    background-color: #FFFFFF;
+    border-collapse: collapse;
+    border-width: 2px;
+    border-color: #CCCCCC;
+    border-style: solid;
+    color: #000000;
+}
+
+table.customTable td,
+table.customTable th {
+    border-width: 2px;
+    border-color: #CCCCCC;
+    border-style: solid;
+    padding: 5px;
+}
+
+table.customTable thead {
+    background-color: #CCCCCC;
+}
+
+
+/* Paginacion */
+.pagination {
+    margin-top: 1em;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+.pagination a.active {
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+}
+
+.pagination a:hover:not(.active) {
+    background-color: #ddd;
+    border-radius: 5px;
+}
