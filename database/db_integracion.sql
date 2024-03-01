@@ -30,13 +30,14 @@ SET time_zone = "+00:00";
 DROP TABLE IF EXISTS `audit`;
 CREATE TABLE IF NOT EXISTS `audit` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `id_users` int NOT NULL,
+  `user_id` int NOT NULL,
   `events` enum('singIn','signUp') COLLATE utf8mb4_general_ci NOT NULL,
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
+
 
 --
 -- Estructura de tabla para la tabla `users`
