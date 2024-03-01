@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     // Obtiene los resultados
     $existing_user_id = $stmt_check_num_id->fetch();
-
+    
     // Verifica si el email ya está registrado
     $sql_check_email = "SELECT * FROM users WHERE email = :email";
     
@@ -67,6 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql_insert_user = "INSERT INTO users (email, name, role, tipe_id, num_id, password, date_created) VALUES (:email, :name, :role, :tipe_id, :num_id, :password, :date_created)";
 
     // Preparar la declaración después de la asignación de $date_created
+    
     $stmt_insert_user = $pdo->prepare($sql_insert_user);
     $stmt_insert_user->bindParam(':email', $email);
     $stmt_insert_user->bindParam(':name', $name);

@@ -6,6 +6,13 @@
             $_SESSION['error-authorized'] = 'Inicia sesion para continuar.';
         }
     }
+    // function dateStartSession (){
+
+    // }
+
+    function redigirLoginUser(){
+        
+    }
     // function autorizarVistaLogin(){
     //     echo isset($_SESSION['logueado']);
         

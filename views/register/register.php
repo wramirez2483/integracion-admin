@@ -43,7 +43,7 @@ require_once '../../app/config.php'
                 <span class="form__line"></span>
             </div>
             <div class="form__group">
-                <input type="text" id="num_id" name="num_id" class="form__input" placeholder="" pattern="[0-9]+" title="Ingrese solo números" required>
+                <input type="text" id="num_id" name="num_id" class="form__input" placeholder="" pattern="[0-9]+" minlength="7" maxlength="15" title="Ingrese solo números" required>
                 <label for="num_id" class="form__label">Número de Identificación:</label>
                 <span class="form__line"></span>
             </div>
