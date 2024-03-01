@@ -14,9 +14,9 @@ try {
     $servidor = "mysql:host=".SERVIDOR.";port=".PUERTO.";dbname=".BD;
     $pdo = new PDO($servidor, USUARIO, PASSWORD);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    //echo "Conexión exitosa con la base de datos";
+    // echo "Conexión exitosa con la base de datos";
 } catch(PDOException $e) {
-    //echo "Error: No se pudo conectar a la base de datos: " . $e->getMessage();
+    // echo "Error: No se pudo conectar a la base de datos: " . $e->getMessage();
 }
 
 $URL = "http://localhost/www.app-integration.com";
