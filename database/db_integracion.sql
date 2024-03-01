@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 01-03-2024 a las 13:48:58
+-- Tiempo de generación: 01-03-2024 a las 14:12:07
 -- Versión del servidor: 8.2.0
 -- Versión de PHP: 8.2.13
 
@@ -20,6 +20,21 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `db_integracion`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `audit`
+--
+
+DROP TABLE IF EXISTS `audit`;
+CREATE TABLE IF NOT EXISTS `audit` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `id_users` int NOT NULL,
+  `events` enum('singIn','signUp') COLLATE utf8mb4_general_ci NOT NULL,
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
