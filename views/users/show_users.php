@@ -1,32 +1,55 @@
-<?php 
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Usuarios</title>
+    <link rel="stylesheet" href="../users/css/styles.css">
+    <link rel="stylesheet" href="../layouts/css/styles_layouts.css">
 
-$inc = include("../../app/config.php");
-$consulta = "SELECT id, name, email, role, date_created FROM users";
-$resultado = $pdo->query($consulta);
-
-// Muestra los registros por pantalla
-if ($resultado) {
-    while ($row = $resultado->fetch(PDO::FETCH_ASSOC)) {
-        $id = $row['id'];
-        $name = $row['name'];
-        $email = $row['email'];
-        $role = $row['role'];
-        $date_created = $row['date_created'];
-        ?>
-        <div>
-            <h2><?php echo $name; ?></h2>
-            <div>
-                <p>
-                    <b>ID: </b> <?php echo $id; ?> <br>
-                    <b>Email: </b> <?php echo $email; ?> <br>
-                    <b>Rol: </b> <?php echo $role; ?> <br>
-                    <b>Fecha de creación: </b> <?php echo $date_created; ?> <br>
-                </p>
-            </div>
+</head>
+<body>
+    
+	<h1>Usuarios</h1>
+<div>
+    <table class="customTable">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>T_Id</th>
+                    <th>Numero_Id</th>
+                </tr>
+            </thead>
+            <tbody>
+            <tr>
+                    <td>01</td>
+                    <td>Pepito</td>
+                    <td>Pepito@correo.co</td>
+                    <td>Lector</td>
+                    <td>T.I</td>
+                    <td>1234567891</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+    </table>
+     <div class="pagination">
+            <a href="#">&laquo;</a>
+            <a href="#">1</a>
+            <a href="#" class="active">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#">6</a>
+            <a href="#">&raquo;</a>
         </div>
-        <?php
-    }
-} else {
-    echo "Error al ejecutar la consulta";
-}
-?>
+</div>
+</body>
+</html>
