@@ -1,0 +1,60 @@
+h1{
+    
+    margin: 0 auto;
+    display: block; /* Asegura que ocupe el ancho completo del contenedor */
+    width: fit-content ; /* Para que el ancho del h2 sea solo el necesario */
+    background-color: #4CAF50;
+}
+
+.form_group {
+    display: flex;
+    gap: 5em;
+    text-align: center; 
+}
+
+table.customTable {
+    width: 100%;
+    background-color: #FFFFFF;
+    border-collapse: collapse;
+    border-width: 2px;
+    border-color: #CCCCCC;
+    border-style: solid;
+    color: #000000;
+}
+
+table.customTable td,
+table.customTable th {
+    border-width: 2px;
+    border-color: #CCCCCC;
+    border-style: solid;
+    padding: 5px;
+}
+
+table.customTable thead {
+    background-color: #CCCCCC;
+}
+
+.pagination {
+    margin-top: 1em;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+.pagination a.active {
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+}
+
+.pagination a:hover:not(.active) {
+    background-color: #ddd;
+    border-radius: 5px;
+}
