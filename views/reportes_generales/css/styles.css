@@ -1,0 +1,36 @@
+h2{
+    
+    margin: 0 auto;
+    display: block; /* Asegura que ocupe el ancho completo del contenedor */
+    width: fit-content ; /* Para que el ancho del h2 sea solo el necesario */
+    background-color: #ffffff;
+} 
+.other-pagination{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2em;
+}
+
+.search{
+    display: flex;
+    align-items: center;
+}
+
+.search svg{
+    width: 25px;
+    height: 25px;
+}
+.search path{
+    fill: black;
+}
+
+select{
+    padding: .4em;
+    border-radius: 5px;
+}
+
+.register-events{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
