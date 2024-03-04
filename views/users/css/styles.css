@@ -1,18 +1,12 @@
-h1{
-    
-    margin: 0 auto;
-    display: block; /* Asegura que ocupe el ancho completo del contenedor */
-    width: fit-content ; /* Para que el ancho del h2 sea solo el necesario */
-    background-color: #4CAF50;
-}
-
-.form_group {
+.container-users{
     display: flex;
-    gap: 5em;
-    text-align: center; 
 }
-
+.content-users{
+    padding: 1em;
+    width: 100%;
+}
 table.customTable {
+    padding: 3em;
     width: 100%;
     background-color: #FFFFFF;
     border-collapse: collapse;

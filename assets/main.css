@@ -1,25 +1,26 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: 'Montserrat';
 }
 
-:root{
-    --primary-color: #61bb68  ;
+:root {
+    --primary-color: #61bb68;
 }
 
 /* Estilos inicio */
 
-.container-home{
+.container-home {
     width: 100%;
     height: 100vh;
     display: flex;
     /* display: grid; */
-    
+
 }
-header{
-    
+
+header {
+
     background-color: var(--primary-color);
     text-align: center;
     color: white;
@@ -27,7 +28,8 @@ header{
     /* width: 100%; */
 
 }
-.content-home{
+
+.content-home {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -37,8 +39,7 @@ header{
 
 input[type='text'],
 input[type='email'],
-input[type='number']
-{
+input[type='number'] {
     padding: .5em;
     border-radius: 10px;
     border: none;
@@ -46,13 +47,14 @@ input[type='number']
     /* transition: all .3s ease-out; */
     transition: 180ms box-shadow ease-in-out;
 }
-input:focus{
+
+input:focus {
     border: solid 1px #61bb68;
     outline: 3px solid transparent;
-    box-shadow: 0px 10px 8px -31px rgba(0,0,0,0.1);
+    box-shadow: 0px 10px 8px -31px rgba(0, 0, 0, 0.1);
 }
 
-input[type="checkbox"]{
+input[type="checkbox"] {
     line-height: 1.1;
     display: grid;
     grid-template-columns: 1em auto;
@@ -63,7 +65,7 @@ input[type="checkbox"]{
 
 /* Botones */
 
-input[type="submit"]{
+input[type="submit"] {
     padding: 1em;
     cursor: pointer;
     border-radius: 30px;
@@ -72,6 +74,42 @@ input[type="submit"]{
     border: none;
     transition: all .3s ease;
 }
-input[type="submit"]:hover{
+
+input[type="submit"]:hover {
     background-color: #4c9450;
+}
+
+
+/* Estilos Josso y Servidor de correo */
+
+
+/* Estilos formulario */
+.container-form {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form_inputs {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    gap: 5em;
+}
+
+.content-form {
+    display: flex;
+    padding: 2em;
+    gap: 2.5em;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    background: #fff;
+    box-shadow: 0 5px 10px -5px rgb(0 0 0 / 60%);
+}
+
+.botons{
+    margin: 0 auto;
 }

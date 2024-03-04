@@ -25,9 +25,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $event = "singin";
 
         // Guardar registro en la tabla de auditoría con evento "signIn"
-        $audit_sql = "INSERT INTO audit (id_users, events) VALUES (:id_users, :event)";
+        $audit_sql = "INSERT INTO audit (id_user, events) VALUES (:id_user, :event)";
         $audit_stmt = $pdo->prepare($audit_sql);
-        $audit_stmt->bindParam(':id_users', $num_id);
+        $audit_stmt->bindParam(':id_user', $num_id);
         $audit_stmt->bindParam(':event', $event); // Utilizando una consulta preparada también para $event
         $audit_stmt->execute();
 

@@ -1,4 +1,4 @@
-<?php
+<?php 
     require_once '../app/config.php';
     require_once '../guards/validationLogin.php';
     validarLogin();
@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="../layouts/css/styles_layouts.css">
     
-    <link rel="stylesheet" href="../views/batch/css/styles.css">
+    <link rel="stylesheet" href="../views/users/css/styles.css">
     
     <link rel="stylesheet" href="../assets/main.css">
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
@@ -29,13 +29,13 @@
         <div class="content-home">
             
             <header>
-                <h1>Batch</h1>
+                <h1>Usuarios</h1>
             </header>
 
 
                 
             <?php   
-                include './batch/batch.php'
+                include './users/show_users.php'
             ?>
             
         </div>

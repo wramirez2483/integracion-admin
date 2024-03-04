@@ -1,4 +1,5 @@
-<?php 
+<?php
+    require_once '../app/config.php';
     require_once '../guards/validationLogin.php';
     validarLogin();
 ?>
@@ -11,9 +12,8 @@
 
     <link rel="stylesheet" href="../layouts/css/styles_layouts.css">
     
-    <link rel="stylesheet" href="../views/josso/css/styles.css">
-    
     <link rel="stylesheet" href="../assets/main.css">
+    
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <title>App-Integracion</title>
 </head>

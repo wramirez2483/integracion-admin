@@ -7,6 +7,8 @@ $currentPath = $_SERVER['REQUEST_URI'];
 // Define las rutas correspondientes a cada elemento del menú
 $batchPath = '/app-integracion/views/inicio.php';
 $jossoPath = '/app-integracion/views/josso.php';
+$userPath = '/app-integracion/views/users.php';
+$serverPath = '/app-integracion/views/servidor-email.php';
 // Agrega más rutas según sea necesario
 
 ?>
@@ -48,7 +50,7 @@ $jossoPath = '/app-integracion/views/josso.php';
             </a>
 
             <!-- Usuarios -->
-            <a class="">
+            <a class="<?php echo ($currentPath == $userPath) ? 'active' : ''; ?>"  href="../views/users.php">
                 <h2>Usuarios</h2>
 
                 <div class="image-container">
@@ -58,7 +60,7 @@ $jossoPath = '/app-integracion/views/josso.php';
                 </div>
             </a>
             <!-- Servidor -->
-            <a class="">
+            <a class="<?php echo ($currentPath == $serverPath) ? 'active' : ''; ?>" href="../views/servidor-email.php">
                 <h2>Servidor</h2>
 
                 <div class="image-container">

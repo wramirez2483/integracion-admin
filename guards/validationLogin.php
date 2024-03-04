@@ -1,6 +1,6 @@
 <?php
     function validarLogin(){
-        session_start();
+        // session_start();
         if( !$_SESSION['logueado'] || !isset($_SESSION['logueado'])) {     
             $_SESSION['error-authorized'] = 'Inicia sesion para continuar.';
             // Regirige al login

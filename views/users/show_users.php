@@ -1,46 +1,37 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Usuarios</title>
-    <link rel="stylesheet" href="../users/css/styles.css">
-    <link rel="stylesheet" href="../layouts/css/styles_layouts.css">
+<?php
+    require_once '../app/config.php';
 
-</head>
-<body>
-    
-	<h1>Usuarios</h1>
-<div>
-    <table class="customTable">
+    $sql = "SELECT * FROM users";
+    $stmt = $pdo->query($sql);
+?>
+
+<div class="container-users">
+    <div class="content-users">
+        <table class="customTable">
             <thead>
                 <tr>
-                    <th>Id</th>
+                    <!-- <th>Id</th> -->
                     <th>Nombre</th>
                     <th>Email</th>
-                    <th>Role</th>
-                    <th>T_Id</th>
+                    <th>Rol</th>
+                    <th>Tipo de documento</th>
                     <th>Numero_Id</th>
                 </tr>
             </thead>
             <tbody>
-            <tr>
-                    <td>01</td>
-                    <td>Pepito</td>
-                    <td>Pepito@correo.co</td>
-                    <td>Lector</td>
-                    <td>T.I</td>
-                    <td>1234567891</td>
-                </tr>
+                <!-- <td><?php echo $row['id']; ?></td> -->
+                <?php while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) { ?>
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td><?php echo $row['name']; ?></td>
+                    <td><?php echo $row['email']; ?></td>
+                    <td><?php echo $row['role']; ?></td>
+                    <td><?php echo $row['tipe_id']; ?></td>
+                    <td><?php echo $row['num_id']; ?></td>
                 </tr>
+                <?php } ?>
             </tbody>
-    </table>
-     <div class="pagination">
+        </table>
+        <div class="pagination">
             <a href="#">&laquo;</a>
             <a href="#">1</a>
             <a href="#" class="active">2</a>
@@ -50,6 +41,6 @@
             <a href="#">6</a>
             <a href="#">&raquo;</a>
         </div>
+
+    </div>
 </div>
-</body>
-</html>

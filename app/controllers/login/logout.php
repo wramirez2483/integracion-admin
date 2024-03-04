@@ -13,9 +13,9 @@ if (isset($_SESSION['logueado']) && $_SESSION['logueado']) {
     $event = "logout";
     
     // Insertar un registro en la tabla de auditoría con el evento de cierre de sesión y el ID del usuario
-    $audit_sql = "INSERT INTO audit (id_users, events) VALUES (:id_users, :event)";
+    $audit_sql = "INSERT INTO audit (id_user, events) VALUES (:id_user, :event)";
     $audit_stmt = $pdo->prepare($audit_sql);
-    $audit_stmt->bindParam(':id_users', $user_id);
+    $audit_stmt->bindParam(':id_user', $user_id);
     $audit_stmt->bindParam(':event', $event);
     $audit_stmt->execute();
 }
