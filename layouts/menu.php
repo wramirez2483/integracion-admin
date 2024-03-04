@@ -36,7 +36,7 @@ $jossoPath = '/app-integracion/views/josso.php';
                 </div>
 
             </a>
-
+            <!-- Josso -->
             <a class="<?php echo ($currentPath == $jossoPath) ? 'active' : ''; ?>" href="../views/josso.php">
                 <h2>Josso</h2>
                 <div class="image-container">
@@ -47,6 +47,7 @@ $jossoPath = '/app-integracion/views/josso.php';
 
             </a>
 
+            <!-- Usuarios -->
             <a class="">
                 <h2>Usuarios</h2>
 
@@ -56,7 +57,7 @@ $jossoPath = '/app-integracion/views/josso.php';
                     </svg>
                 </div>
             </a>
-
+            <!-- Servidor -->
             <a class="">
                 <h2>Servidor</h2>
 

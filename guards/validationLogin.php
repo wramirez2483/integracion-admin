@@ -1,26 +1,18 @@
 <?php
-    session_start();
     function validarLogin(){
+        session_start();
         if( !$_SESSION['logueado'] || !isset($_SESSION['logueado'])) {     
-            header('Location: ../index.php');
             $_SESSION['error-authorized'] = 'Inicia sesion para continuar.';
+            // Regirige al login
+            header('Location: ../index.php');
         }
     }
-    // function dateStartSession (){
-
-    // }
 
     function redigirLoginUser(){
-        
+        if(isset($_SESSION['logueado'])){
+            // Redirige al inicio si esta logueado
+            header('Location: ./views/inicio.php');
+        }
     }
-    // function autorizarVistaLogin(){
-    //     echo isset($_SESSION['logueado']);
-        
-    //     if(!isset($_SESSION['logueado'])) {
-    //         echo isset($_SESSION['logueado']);
-    //         // header('Location: ../index.php');
-    //         $_SESSION['error-authorized'] = 'Inicia sesion para continuar.';
-    //     }
-    // }
-    
+
 
