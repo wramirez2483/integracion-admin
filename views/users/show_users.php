@@ -1,8 +1,5 @@
 <?php
-    require_once '../app/config.php';
-
-    $sql = "SELECT * FROM users";
-    $stmt = $pdo->query($sql);
+    require_once '../app/controllers/users/list_users.php';
 ?>
 
 <div class="container-users">
@@ -19,7 +16,6 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- <td><?php echo $row['id']; ?></td> -->
                 <?php while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) { ?>
                 <tr>
                     <td><?php echo $row['name']; ?></td>
