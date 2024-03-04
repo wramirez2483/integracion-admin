@@ -33,13 +33,16 @@ header {
     display: flex;
     flex-direction: column;
     width: 100%;
+    /* overflow-y: auto; */
 }
 
 /* Inputs  */
 
 input[type='text'],
 input[type='email'],
-input[type='number'] {
+input[type='number'],
+input[type='time']
+{
     padding: .5em;
     border-radius: 10px;
     border: none;

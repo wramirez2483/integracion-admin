@@ -40,3 +40,10 @@ function handleCheckBox(checkboxId) {
     si.checked = false;
   }
 }
+
+function submitForm() {
+  var selectedValue = document.getElementById("amount").value;
+  document.getElementById("selected_amount").value = selectedValue;
+  this.form.submit(); // Enviar el formulario actual
+  console.log(selectedValue);
+}
