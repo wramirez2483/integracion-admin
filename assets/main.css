@@ -92,7 +92,7 @@ input[type="submit"]:hover {
     align-items: center;
 }
 
-.form_inputs {
+div.form-inputs {
     display: flex;
     width: 100%;
     justify-content: space-between;
