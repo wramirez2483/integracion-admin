@@ -12,6 +12,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $training = $_POST['training'];
         $seed_code = $_POST['seed_code'];
     
+        // Consulta para verificar si ya existe un evento con el mismo código de semilla
+        $sql_check_seed = "SELECT COUNT(*) FROM events_without_sync WHERE seed_code = :seed_code";
+        $stmt_check_seed = $pdo->prepare($sql_check_seed);
+        $stmt_check_seed->bindParam(':seed_code', $seed_code);
+        $stmt_check_seed->execute();
+        $count = $stmt_check_seed->fetchColumn();
+        
+        if ($count > 0) {
+            // Si ya existe un evento con el mismo código de semilla, muestra un mensaje de error
+            $_SESSION['error_message_events'] = 'Ya existe un evento con el mismo código de semilla';
+            header('Location: ../../../index.php');
+            exit();
+        }
+    
         // Durante la inserción
         $sql_insert_event = "INSERT INTO events_without_sync (modality, training, seed_code) VALUES (:modality, :training, :seed_code)";
     
@@ -25,12 +39,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Evento registrado exitosamente
             $_SESSION['success_message'] = 'Evento registrado exitosamente';
             header('Location: ../../../index.php');
-            exit();
         } else {
             // Error al registrar el evento
-            $_SESSION['error_message'] = 'Error al registrar el evento';
-            header('Location: ../../../views/register/register.php');
-            exit();
+            $_SESSION['error_message_events'] = 'Error al registrar el evento';
+            header('Location: ../../../index.php');
         }
     }
 
@@ -40,5 +52,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     exit();
 }
 ?>
-
-

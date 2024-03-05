@@ -25,7 +25,7 @@ $current_page = isset($_GET['page']) && is_numeric($_GET['page']) ? $_GET['page'
 $offset = ($current_page - 1) * $records_per_page;
 
 // Consulta SQL para obtener los eventos registrados con limit y offset
-$sql_select_events = "SELECT modality, training, seed_code FROM events_without_sync LIMIT :offset, :records_per_page ";
+$sql_select_events = "SELECT modality, training, seed_code FROM events_without_sync ORDER BY date_created DESC LIMIT :offset, :records_per_page ";
 $stmt_select_events = $pdo->prepare($sql_select_events);
 $stmt_select_events->bindParam(':offset', $offset, PDO::PARAM_INT);
 $stmt_select_events->bindParam(':records_per_page', $records_per_page, PDO::PARAM_INT);

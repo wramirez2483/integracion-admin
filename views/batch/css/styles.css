@@ -4,7 +4,9 @@
     padding: 2em;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: center; 
+    gap: 3em;
+    overflow-y: auto;
     /* height: 100vh; */
 }
 
@@ -103,6 +105,11 @@ table.customTable thead {
 }
 
 
+/* Estilo botones (Editar, Eliminar)*/
+a{
+    
+}
+ 
 /* Paginacion */
 .pagination {
     margin-top: 1em;

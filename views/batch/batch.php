@@ -61,7 +61,7 @@ require_once '../app/controllers/batch/show_events.php';
             <div class="input">
 
                 <label for=""> Destinatario de notificaciónes </label>
-                <input value="<?php echo $notifications_target; ?>" type="text" name="notifications_target" id="notifications_target" placeholder="@correo">
+                <input value="<?php echo $notifications_target; ?>" type="email0" name="notifications_target" id="notifications_target" placeholder="@correo">
 
             </div>
 
@@ -72,6 +72,18 @@ require_once '../app/controllers/batch/show_events.php';
         </form>
     </div>
     <hr>
+
+    <?php
+    if (isset($_SESSION['success_message'])) {
+        echo '<div class="message success">' .  $_SESSION['success_message'] . '</div>';
+        unset($_SESSION['success_message']);
+    }
+    if (isset($_SESSION['error_message_events'])) {
+        echo '<div class="message error">' .  $_SESSION['error_message_events'] . '</div>';
+        unset($_SESSION['error_message_events']);
+    }
+    ?>
+
     <!-- Registrar evento -->
     <form action="../app/controllers/batch/create_events.php" method="POST" class="register-events">
 
@@ -102,7 +114,7 @@ require_once '../app/controllers/batch/show_events.php';
     </form>
 
     <div class="events-sync">
-        <h1>Eventos por Sincronizar</h1>
+        <h1>Eventos por Sincronizar</h1> 
 
         <div class="other-pagination">
             <!-- Formulario para seleccionar la cantidad de eventos por página -->
