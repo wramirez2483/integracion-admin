@@ -47,3 +47,8 @@ function submitForm() {
   this.form.submit(); // Enviar el formulario actual
   console.log(selectedValue);
 }
+
+
+function cerrarMensaje(button){
+  button.parentNode.style.display = "none"
+}
