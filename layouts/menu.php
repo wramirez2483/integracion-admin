@@ -9,6 +9,7 @@ $batchPath = '/app-integracion/views/inicio.php';
 $jossoPath = '/app-integracion/views/josso.php';
 $userPath = '/app-integracion/views/users.php';
 $serverPath = '/app-integracion/views/servidor-email.php';
+$reportPath = '/app-integracion/views/reportes.php';
 // Agrega más rutas según sea necesario
 
 ?>
@@ -71,8 +72,8 @@ $serverPath = '/app-integracion/views/servidor-email.php';
 
                 </div>
             </a>
-
-            <a class="">
+            <!-- Reportes -->
+            <a class="<?php echo ($currentPath == $reportPath) ? 'active' : '';?>" href="../views/reportes_g.php">
                 <h2>Reportes</h2>
                 <div class="image-container">
                     <svg class="icon" viewBox="0 0 42 46" fill="none" xmlns="http://www.w3.org/2000/svg">

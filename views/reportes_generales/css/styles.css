@@ -1,10 +1,9 @@
-h2{
-    
-    margin: 0 auto;
-    display: block; /* Asegura que ocupe el ancho completo del contenedor */
-    width: fit-content ; /* Para que el ancho del h2 sea solo el necesario */
-    background-color: #ffffff;
-} 
+.container-report{
+    padding: 2em;
+}
+
+
+ 
 .other-pagination{
     display: flex;
     justify-content: space-between;
