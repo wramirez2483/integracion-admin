@@ -12,7 +12,16 @@ require_once '../app/controllers/batch/show_events.php';
 
     <div>
         <form class="form-batch" action="../app/controllers/batch/create_batch.php" method="post">
-
+        <?php 
+            if (isset($_SESSION['message-created'])  ) {
+                echo '<div class="message success">' .  $_SESSION['message-created']   . '</div>';
+                unset($_SESSION['message-created']);
+            }
+            if (isset($_SESSION['error-created'])  ) {
+                echo '<div class="message error">' .  $_SESSION['error-created']   . '</div>';
+                unset($_SESSION['error-created']);
+            }
+        ?>
             <input type="hidden" name="id_batch" value="<?php echo $id_batch; ?>">
             <div class="input">
 
@@ -158,4 +167,3 @@ require_once '../app/controllers/batch/show_events.php';
 
 </div>
 <script src="../helpers/scripts.js"></script>
-

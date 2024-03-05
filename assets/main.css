@@ -15,6 +15,7 @@
     width: 100%;
     height: 100vh;
     display: flex;
+    overflow-y: hidden;
     /* display: grid; */
 
 }
@@ -25,6 +26,7 @@ header {
     text-align: center;
     color: white;
     padding: 1em;
+    z-index: 1;
     /* width: 100%; */
 
 }
@@ -33,7 +35,6 @@ header {
     display: flex;
     flex-direction: column;
     width: 100%;
-    /* overflow-y: auto; */
 }
 
 /* Inputs  */
@@ -115,4 +116,24 @@ div.form-inputs {
 
 .botons{
     margin: 0 auto;
+}
+
+
+/* Mensajes */
+div.message{
+    margin-bottom: 10px;
+    padding: 10px;
+    font-weight: 700;
+    font-size: 1.2em;
+    color: white;
+    border-radius: 8px;
+    text-align: center;
+}
+
+
+div.message.success{
+    background-color: rgb(33, 195, 76);   
+}
+div.message.error{
+    background-color: rgb(241, 65, 42);
 }

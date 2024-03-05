@@ -31,8 +31,6 @@
             <header>
                 <h1>Batch</h1>
             </header>
-
-
                 
             <?php   
                 include './batch/batch.php'

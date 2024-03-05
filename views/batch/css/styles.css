@@ -4,8 +4,8 @@
     padding: 2em;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    height: 100vh;
+    justify-content: center;
+    /* height: 100vh; */
 }
 
 .form-batch {
@@ -37,9 +37,10 @@ label {
     align-items: center;
     gap: 2em;
 }
-/*  */
 .events-sync {
     width: 100%;
+    overflow-y: auto;
+
 }
 .events-sync h1 {
     text-align: center;
