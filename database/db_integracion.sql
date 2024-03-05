@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 04-03-2024 a las 23:02:56
+-- Tiempo de generación: 05-03-2024 a las 14:00:35
 -- Versión del servidor: 8.2.0
 -- Versión de PHP: 8.2.13
 
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `audit` (
   `events` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `audit`
@@ -45,7 +45,9 @@ INSERT INTO `audit` (`id`, `id_user`, `events`, `date`) VALUES
 (5, 1020304050, 'logout', '2024-03-04 16:00:29'),
 (6, 1020304050, 'singin', '2024-03-04 16:00:37'),
 (7, 1020304050, 'singin', '2024-03-04 16:07:28'),
-(8, 1020304050, 'singin', '2024-03-04 17:03:45');
+(8, 1020304050, 'singin', '2024-03-04 17:03:45'),
+(9, 1020304050, 'singin', '2024-03-05 13:15:07'),
+(10, 1020304050, 'singin', '2024-03-05 13:51:44');
 
 -- --------------------------------------------------------
 
@@ -67,7 +69,7 @@ CREATE TABLE IF NOT EXISTS `batch` (
 --
 
 INSERT INTO `batch` (`id_batch`, `integration_availabity`, `execution_schedule`, `notifications_target`) VALUES
-(1, 0, '13:00:00', 'correo@correo.com');
+(1, 1, '14:00:00', 'correo@correo.com2');
 
 -- --------------------------------------------------------
 
