@@ -82,16 +82,24 @@ $reportPath = '/app-integracion/views/reportes.php';
                 </div>
 
             </a>
-
-            <a class="">
-
+            <!-- Reporte Josso -->
+            <a class="<?php echo ($currentPath == $reportPath) ? 'active' : '';?>" href="../views/r_josso.php">
                 <h2>Reportes Josso</h2>
+                <div class="image-container">
+                    <svg class="icon" viewBox="0 0 42 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 46V13.8H9.33333V46H0ZM16.3333 46V0H25.6667V46H16.3333ZM32.6667 46V27.6H42V46H32.6667Z" />
+                    </svg>
+                </div>
 
             </a>
-
-            <a class="">
+            <!-- Reporte Batch -->
+            <a class="<?php echo ($currentPath == $reportPath) ? 'active' : '';?>" href="../views/r_batch.php">
                 <h2>Reportes Batch</h2>
-
+                <div class="image-container">
+                    <svg class="icon" viewBox="0 0 42 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 46V13.8H9.33333V46H0ZM16.3333 46V0H25.6667V46H16.3333ZM32.6667 46V27.6H42V46H32.6667Z" />
+                    </svg>
+                </div>
 
             </a>
         </div>

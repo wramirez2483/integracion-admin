@@ -25,6 +25,7 @@
                     <td><?php echo $row['num_id']; ?></td>
                 </tr>
                 <?php } ?>
+                
             </tbody>
         </table>
         <div class="pagination">
