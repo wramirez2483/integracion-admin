@@ -36,7 +36,6 @@ require_once '../app/controllers/josso/create_josso.php';
     <div class="form-inputs">
       <h3>Tiempo de espera max de respuesta sockets</h3>
       <input type="number" id="time_socket" name="maximun_time_response_socket" min="0" placeholder="Minutos" required value="<?php echo isset($maximun_time_response_socket) ? $maximun_time_response_socket : '' ?>">
-
     </div>
 
     <div class="form-inputs">

@@ -49,6 +49,10 @@ label {
     margin-bottom: 2vh;
 }
 
+.notifications_target_edit_icon {
+    cursor: pointer;
+}
+
 /* Paginacion y buscador */
 .other-pagination{
     display: flex;
@@ -69,10 +73,6 @@ label {
     fill: black;
 }
 
-select{
-    padding: .4em;
-    border-radius: 5px;
-}
 
 .register-events{
     display: flex;
@@ -105,10 +105,10 @@ table.customTable thead {
 }
 
 
-/* Estilo botones (Editar, Eliminar)*/
+/* Estilo botones (Editar, Eliminar)
 a{
     
-}
+} */
  
 /* Paginacion */
 .pagination {

@@ -17,18 +17,15 @@
     display: flex;
     overflow-y: hidden;
     /* display: grid; */
-
 }
 
 header {
-
     background-color: var(--primary-color);
     text-align: center;
     color: white;
     padding: 1em;
     z-index: 1;
     /* width: 100%; */
-
 }
 
 .content-home {
@@ -42,7 +39,8 @@ header {
 input[type='text'],
 input[type='email'],
 input[type='number'],
-input[type='time']
+input[type='time'],
+input[type='password']
 {
     padding: .5em;
     border-radius: 10px;
@@ -66,10 +64,17 @@ input[type="checkbox"] {
     font-size: 2rem;
 }
 
+select{
+    padding: .4em;
+    border-radius: 5px;
+}
+
 
 /* Botones */
 
-input[type="submit"] {
+input[type="submit"],
+button
+{
     padding: 1em;
     cursor: pointer;
     border-radius: 30px;
@@ -79,10 +84,15 @@ input[type="submit"] {
     transition: all .3s ease;
 }
 
-input[type="submit"]:hover {
+input[type="submit"]:hover,
+button:hover
+{
     background-color: #4c9450;
 }
-
+button a{
+    text-decoration: none;
+    color: white;
+}
 
 /* Estilos Josso y Servidor de correo */
 
@@ -111,7 +121,9 @@ div.form-inputs {
     justify-content: center;
     margin: 0 auto;
     background: #fff;
-    box-shadow: 0 5px 10px -5px rgb(0 0 0 / 60%);
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+    border-radius: 12px;
+    width: 80vh;
 }
 
 .botons{
@@ -147,4 +159,10 @@ div.message.success{
 }
 div.message.error{
     background-color: rgb(241, 65, 42);
+}
+
+div.botones{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }

@@ -11,6 +11,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $modality = $_POST['modality'];
         $training = $_POST['training'];
         $seed_code = $_POST['seed_code'];
+        $user_id  = $_SESSION['document'];
+        $events = "create";
     
         // Consulta para verificar si ya existe un evento con el mismo código de semilla
         $sql_check_seed = "SELECT COUNT(*) FROM events_without_sync WHERE seed_code = :seed_code";
@@ -27,13 +29,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     
         // Durante la inserción
-        $sql_insert_event = "INSERT INTO events_without_sync (modality, training, seed_code) VALUES (:modality, :training, :seed_code)";
+        $sql_insert_event = "INSERT INTO events_without_sync (modality, training, seed_code, user_id, events) VALUES (:modality, :training, :seed_code, :user_id, :events)";
     
         // Preparar la declaración
         $stmt_insert_event = $pdo->prepare($sql_insert_event);
         $stmt_insert_event->bindParam(':modality', $modality);
         $stmt_insert_event->bindParam(':training', $training);
         $stmt_insert_event->bindParam(':seed_code', $seed_code);
+        $stmt_insert_event->bindParam(':user_id', $user_id);
+        $stmt_insert_event->bindParam(':events', $events);
     
         if ($stmt_insert_event->execute()) {
             // Evento registrado exitosamente

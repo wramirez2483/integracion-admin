@@ -2,14 +2,10 @@
     require_once '../app/config.php';
 
     $sql = "SELECT * FROM josso";
-        
     $stmt = $pdo->query($sql);
-
     $stmt->execute();
-    // Obtener los resultados de la consulta
+    
     $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
-    // var_dump($resultado);
-    // Asignar los valores obtenidos a las variables PHP
     if($resultado){
         $id_josso = $resultado['id_josso'];
         $url_service_gateway = $resultado['url_service_gateway'];

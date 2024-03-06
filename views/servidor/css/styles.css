@@ -1,0 +1,28 @@
+.password-input{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .1em;
+    border-radius: 10px;
+    border: none;
+    border: solid 1px #61bb68;
+}
+.password-input input
+{
+    background-color: none !important;
+    width: 11em;
+    border: none !important;
+}
+img.icon_handle{
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+}
+.input-password{
+    display: flex;
+    align-items: center;
+}
+.input-pwd{
+    
+    float: right;
+}

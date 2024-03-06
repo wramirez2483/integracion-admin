@@ -19,7 +19,7 @@ $reportPath = '/app-integracion/views/reportes.php';
 
         <div class="admin-title">
 
-            <img class="admin-icon" src="../img/ADMIN.svg" alt="" srcset="">
+            <img class="admin-icon" src="../img/logo-sena-verde.png" alt="" srcset="">
             <h1>Admin Integración</h1>
         </div>
 

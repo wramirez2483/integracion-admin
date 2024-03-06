@@ -26,13 +26,15 @@
             <?php
                 include '../layouts/menu.php'
             ?>
+
+        
         <div class="content-home">
             
             <header>
                 <h1>Batch</h1>
             </header>
-                
-            <?php   
+        
+            <?php
                 include './batch/batch.php'
             ?>
             
