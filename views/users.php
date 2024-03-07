@@ -13,8 +13,11 @@
     <link rel="stylesheet" href="../layouts/css/styles_layouts.css">
     
     <link rel="stylesheet" href="../views/users/css/styles.css">
-    
+
+    <link rel="stylesheet" href="../views/batch/css/styles.css">
+
     <link rel="stylesheet" href="../assets/main.css">
+
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <title>App-Integracion</title>
 </head>
