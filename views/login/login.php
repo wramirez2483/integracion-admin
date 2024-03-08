@@ -46,7 +46,7 @@
                 <div class="input-pwd">
 
                     <div class="eye">
-                        <img class="icon_handle" id="icon-toggle" src="./img/RiEyeLine.svg" onclick="handleEye()" alt="Toggle Password Visibility">
+                        <img class="icon_handle" id="icon-toggle" src="./img/RiEyeLine.svg" onclick="handleEyeGeneral('./img/')" alt="Toggle Password Visibility">
                     </div>
                 </div>
 

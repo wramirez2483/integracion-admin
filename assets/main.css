@@ -6,7 +6,27 @@
 }
 
 :root {
-    --primary-color: #61bb68;
+    --primary: #39a900;
+    --secondary: #98fe58;
+    --tertiary: #f2ffe5;
+    --alternate: #29690b;
+    --primary-text: black;
+    --secondary-text: #5d5d5d;
+    --alternate-text: #919191;
+    --primary-background: #fff;
+    --secondary-background: #E6E6E6;
+    --alternate-background: #04324d;
+    --color-success: #52d726;
+    --color-error: #e74c3c;
+    --color-warning: #f1c40f;
+    --color-info: #ffffff;
+    --primary-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+    --primary-font-family: 'Work Sans Regular', sans-serif;
+    --secondary-font-family: 'Work Sans Bold', sans-serif;
+    --bp-small: 480px;
+    --bp-medium: 767px;
+    --bp-large: 1200px;
+    --web-margin: 1366px;
 }
 
 /* Estilos inicio */
@@ -20,7 +40,7 @@
 }
 
 header {
-    background-color: var(--primary-color);
+    background-color: var(--primary);
     text-align: center;
     color: white;
     padding: 1em;
@@ -43,15 +63,16 @@ input[type='time'],
 input[type='password']
 {
     padding: .5em;
-    border-radius: 10px;
-    border: none;
-    border: solid 1px #61bb68;
+    border-radius: 12px;
+    border: 1px solid var(--primary);
+    /* background-color: var(--secondary-background); */
+
     /* transition: all .3s ease-out; */
-    transition: 180ms box-shadow ease-in-out;
+    transition: .3s box-shadow ease-in-out;
 }
 
 input:focus {
-    border: solid 1px #61bb68;
+    border: solid 1px var(--primary);
     outline: 3px solid transparent;
     box-shadow: 0px 10px 8px -31px rgba(0, 0, 0, 0.1);
 }
@@ -62,6 +83,7 @@ input[type="checkbox"] {
     grid-template-columns: 1em auto;
     gap: 0.5em;
     font-size: 2rem;
+    
 }
 
 select{
@@ -75,25 +97,31 @@ select{
 input[type="submit"],
 button
 {
-    padding: 1em;
+    padding: .3rem 2rem;
     cursor: pointer;
     border-radius: 30px;
-    background: #61bb68;
-    color: white;
     border: none;
-    transition: all .3s ease;
+    transition: all .4s ease-in;
+    font-weight: 800;
+    box-sizing: border-box;
+    background: var(--tertiary);
+    color: var(--primary);
+    border: 1px solid var(--primary);
 }
 
 input[type="submit"]:hover,
 button:hover
 {
-    background-color: #4c9450;
+    background-color: var(--primary);
+    color: white;
 }
 button a{
     text-decoration: none;
+    color: var(--primary);
+}
+button:hover a{
     color: white;
 }
-
 /* Estilos Josso y Servidor de correo */
 
 
@@ -142,7 +170,6 @@ div.message{
     color: white;
     border-radius: 8px;
     text-align: center;
-
 }
 
 strong{
@@ -155,14 +182,49 @@ strong:hover{
 
 
 div.message.success{
-    background-color: rgb(33, 195, 76);   
+
+    background: var(--tertiary);
+    color: var(--primary);
+    border: 1px solid var(--primary);
 }
 div.message.error{
-    background-color: rgb(241, 65, 42);
+    color: #f87171;
+    background-color: #fee2e2;
+    border: 1px solid #f87171;
+
 }
 
 div.botones{
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+/* Paginacion */
+
+/* Paginacion */
+.pagination {
+    margin-top: 1em;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+.pagination a.active {
+    background: var(--tertiary);
+    color: var(--primary);
+    border: 1px solid var(--primary);
+    border-radius: 5px;
+}
+
+.pagination a:hover:not(.active) {
+    background-color: #ddd;
+    border-radius: 5px;
 }

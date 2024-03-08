@@ -7,6 +7,7 @@
     $stmt->execute();
     // Obtener los resultados de la consulta
     $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
+
     if($resultado){
         $id_batch = $resultado['id_batch'];
         $integration_availabity = $resultado['integration_availabity'];

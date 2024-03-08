@@ -2,12 +2,12 @@ function handleEye() {
   let x = document.getElementById("password");
   let icon = document.getElementById('icon-toggle');
 
-  if (x.type === "password") {      
-      x.type = "text";
-      icon.src = "../../img/BiEyeSlash.svg"; 
+  if (x.type === "password") {
+    x.type = "text";
+    icon.src = "../../img/BiEyeSlash.svg";
   } else {
-      x.type = "password";
-      icon.src = "../../img/RiEyeLine.svg"; 
+    x.type = "password";
+    icon.src = "../../img/RiEyeLine.svg";
   }
 }
 
@@ -15,24 +15,24 @@ function handleEyeTwo() {
   let x = document.getElementById("verify-password");
   let icon = document.getElementById('icon-toggle2');
 
-  if (x.type === "password") {      
-      x.type = "text";
-      icon.src = "../../img/BiEyeSlash.svg"; 
+  if (x.type === "password") {
+    x.type = "text";
+    icon.src = "../../img/BiEyeSlash.svg";
   } else {
-      x.type = "password";
-      icon.src = "../../img/RiEyeLine.svg"; 
+    x.type = "password";
+    icon.src = "../../img/RiEyeLine.svg";
   }
 }
 function handleEyeGeneral(ruta) {
   let x = document.getElementById("password");
   let icon = document.getElementById('icon-toggle');
 
-  if (x.type === "password") {      
-      x.type = "text";
-      icon.src = `${ruta}BiEyeSlash.svg`; 
+  if (x.type === "password") {
+    x.type = "text";
+    icon.src = `${ruta}BiEyeSlash.svg`;
   } else {
-      x.type = "password";
-      icon.src = `${ruta}RiEyeLine.svg`; 
+    x.type = "password";
+    icon.src = `${ruta}RiEyeLine.svg`;
   }
 }
 
@@ -43,7 +43,7 @@ function handleCheckBox(checkboxId) {
   if (checkboxId === 'si') {
     si.checked = true;
     no.checked = false;
-  } else if (checkboxId === 'no' ) {
+  } else if (checkboxId === 'no') {
     no.checked = true;
     si.checked = false;
   }
@@ -57,14 +57,14 @@ function submitForm() {
 }
 
 
-function cerrarMensaje(button){
+function cerrarMensaje(button) {
   button.parentNode.style.display = "none"
 }
 
 function handleDelete(event) {
   // Obtener la fila del evento
   var row = event.target.parentNode.parentNode;
-  
+
   // Ocultar la fila
   row.style.display = 'none';
 
@@ -74,7 +74,7 @@ function handleDelete(event) {
 var deleteButtons = document.querySelectorAll('.delete-event');
 
 // Agregar un event listener a cada botón de borrar
-deleteButtons.forEach(function(button) {
+deleteButtons.forEach(function (button) {
   button.addEventListener('click', handleDelete);
 });
 
@@ -86,17 +86,25 @@ function notificationsTargetEdit1() {
   var botonActivar = document.getElementById("notifications_target_edit_icon");
 
   // Agregar un event listener al botón de imagen
-  botonActivar.addEventListener("click", function() {
-      // Habilitar el campo de entrada
-      input.disabled = false;
+  botonActivar.addEventListener("click", function () {
+    // Habilitar el campo de entrada
+    input.disabled = false;
   });
 
 }
 
-function notificationsTargetEdit() {
-  // Obtener referencias a los elementos del DOM
-  var input = document.getElementById("notifications_target");
-      // Habilitar el campo de entrada
-      input.disabled = false;
-      input.focus();
+function handleWindow(targetId) {
+  // Obtener referencia al elemento del DOM
+  let modal = document.querySelector(targetId);
+
+  if (modal.open) {
+    modal.close();
+  } else {
+    modal.showModal();
+  }
+
+}
+
+function borrar(element) {
+  element.parentNode.remove(); // Eliminar el elemento padre del botón (es decir, el div)
 }

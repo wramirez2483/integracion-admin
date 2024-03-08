@@ -1,21 +1,87 @@
 <?php
 
 require_once '../app/controllers/batch/create_batch.php';
+require_once '../app/controllers/batch/create_notification_target.php';
 require_once '../app/controllers/batch/show_batch.php';
 require_once '../app/controllers/batch/show_events.php';
 
 
 ?>
+<dialog class="modal-window close" id="window-target">
+    <div class="modal-cerrar" onclick="handleWindow('#window-target')">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path fill="#dc2626" d="M12 2c5.53 0 10 4.47 10 10s-4.47 10-10 10S2 17.53 2 12S6.47 2 12 2m3.59 5L12 10.59L8.41 7L7 8.41L10.59 12L7 15.59L8.41 17L12 13.41L15.59 17L17 15.59L13.41 12L17 8.41z" />
+        </svg>
+    </div>
+    <div class="content-modal">
+        <h3>Nuevo destinatarios</h3>
 
+        <div class="new-noti-target">
+
+            <form class="input-new-target" action="../app/controllers/batch/create_notification_target.php" method="post">
+                <input type="hidden" name="id_batch" value="<?php echo isset($id_batch) ?  $id_batch : ''; ?>">
+
+                <div class="new-target">
+                    <input type="email" name="notifications_target" id="notifications_target" placeholder="Nuevo destinatario">
+                </div>
+
+                <div class="acctions">
+
+                    <button type="submit">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path fill="#65a30d" d="M11 17h2v-4h4v-2h-4V7h-2v4H7v2h4zm1 5q-2.075 0-3.9-.788t-3.175-2.137q-1.35-1.35-2.137-3.175T2 12q0-2.075.788-3.9t2.137-3.175q1.35-1.35 3.175-2.137T12 2q2.075 0 3.9.788t3.175 2.137q1.35 1.35 2.138 3.175T22 12q0 2.075-.788 3.9t-2.137 3.175q-1.35 1.35-3.175 2.138T12 22" />
+                        </svg>
+                    </button>
+
+                    <button onclick="handleWindow()" id="two-button" disabled>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path fill="#dc2626" d="M12 2c5.53 0 10 4.47 10 10s-4.47 10-10 10S2 17.53 2 12S6.47 2 12 2m3.59 5L12 10.59L8.41 7L7 8.41L10.59 12L7 15.59L8.41 17L12 13.41L15.59 17L17 15.59L13.41 12L17 8.41z" />
+                        </svg>
+                    </button>
+                </div>
+
+            </form>
+
+        </div>
+        <h3>Lista de destinatarios actuales</h3>
+        <div class="list-targets">
+
+            <?php
+            foreach ($_SESSION['notifications_target'] as $destinatario) {
+
+                echo "
+                
+                <div class='targets'>
+                <input name='' type='text' value='" . $destinatario . "'>
+                
+                    <button onclick='borrar(this)'>
+                        <p>x</p>
+                    </button>
+                </div>
+                
+                ";
+            }
+            ?>
+
+        </div>
+    </div>
+
+
+</dialog>
 
 <div class="container-batch">
 
-    <div>
-        <form class="form-batch" action="../app/controllers/batch/create_batch.php" method="post">
+    <div class="content-batch">
+
+
+
+        <form class="form-batch" name="" action="../app/controllers/batch/create_batch.php" method="post">
             <?php
             if (isset($_SESSION['message-created'])) {
 
-                echo '<div class="message success">  
+                echo '<div class="message success">
+                    <div></div>
+
                     <p>' . $_SESSION['message-created'] . '</p>
                     <strong onclick="this.parentNode.style.display = \'none\';">X</strong>
                 </div>';
@@ -23,6 +89,8 @@ require_once '../app/controllers/batch/show_events.php';
             }
             if (isset($_SESSION['error-created'])) {
                 echo '<div class="message error">  
+                    <div></div>
+
                 <p>' . $_SESSION['error-created'] . '</p>
                 <strong onclick="this.parentNode.style.display = \'none\';">X</strong>
               </div>';
@@ -84,34 +152,59 @@ require_once '../app/controllers/batch/show_events.php';
 
             <div class="input">
                 <label for=""> Destinatario de notificaciones </label>
-                
-                <input value="<?php echo isset($notifications_target) ? $notifications_target : ''; ?>" type="email" name="notifications_target" id="notifications_target" placeholder="@correo" disabled>
-                    <svg class="notifications_target_edit_icon" onclick="notificationsTargetEdit()" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                        <title>Editar</title>
-                        <path fill="#61bb68" d="M5 21q-.825 0-1.412-.587T3 19V5q0-.825.588-1.412T5 3h6.525q.5 0 .75.313t.25.687q0 .375-.262.688T11.5 5H5v14h14v-6.525q0-.5.313-.75t.687-.25q.375 0 .688.25t.312.75V19q0 .825-.587 1.413T19 21zm4-7v-2.425q0-.4.15-.763t.425-.637l8.6-8.6q.3-.3.675-.45t.75-.15q.4 0 .763.15t.662.45L22.425 3q.275.3.425.663T23 4.4q0 .375-.137.738t-.438.662l-8.6 8.6q-.275.275-.637.438t-.763.162H10q-.425 0-.712-.288T9 14m12.025-9.6l-1.4-1.4zM11 13h1.4l5.8-5.8l-.7-.7l-.725-.7L11 11.575zm6.5-6.5l-.725-.7zl.7.7z" />
-                    </svg>
 
+                <select name="notifications_target" id="notifications_target" required>
+                    <?php
+                    // Comprueba si la consulta SQL se ejecutó correctamente
+                    if ($stmt->rowCount() > 0) {
+                        // Obtén los destinatarios de la fila obtenida
+                        $destinatarios = explode(",", $notifications_target);
+                        $_SESSION['notifications_target'] = $destinatarios;
+                        // Itera sobre los destinatarios y muestra cada uno como una opción en el select
+                        foreach ($_SESSION['notifications_target'] as $destinatario) {
+                            echo "<option value='" . $destinatario . "'>" . $destinatario . "</option>";
+                        }
+                    } else {
+                        echo "<option value='' disabled selected>No hay destinatarios disponibles</option>";
+                    }
+                    ?>
+                </select>
+
+
+                <svg class="notifications_target_edit_icon" onclick="handleWindow('#window-target')" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <title>Editar</title>
+                    <path fill="#61bb68" d="M5 21q-.825 0-1.412-.587T3 19V5q0-.825.588-1.412T5 3h6.525q.5 0 .75.313t.25.687q0 .375-.262.688T11.5 5H5v14h14v-6.525q0-.5.313-.75t.687-.25q.375 0 .688.25t.312.75V19q0 .825-.587 1.413T19 21zm4-7v-2.425q0-.4.15-.763t.425-.637l8.6-8.6q.3-.3.675-.45t.75-.15q.4 0 .763.15t.662.45L22.425 3q.275.3.425.663T23 4.4q0 .375-.137.738t-.438.662l-8.6 8.6q-.275.275-.637.438t-.763.162H10q-.425 0-.712-.288T9 14m12.025-9.6l-1.4-1.4zM11 13h1.4l5.8-5.8l-.7-.7l-.725-.7L11 11.575zm6.5-6.5l-.725-.7zl.7.7z" />
+                </svg>
             </div>
-
             <div class="input">
                 <input type="submit" name="notifications" value="Guardar">
             </div>
 
         </form>
+
+
+
     </div>
     <hr>
-
+    <div></div>
     <?php
     if (isset($_SESSION['success_message'])) {
-        echo '<div class="message success">  
-        <p>' . $_SESSION['success_message'] . '</p>
-        <strong onclick="this.parentNode.style.display = \'none\';">X</strong>
-      </div>';
+        echo
+        '<div class="message success">
+            <div></div>
+
+            <p>' . $_SESSION['success_message'] . '</p>
+            <strong onclick="this.parentNode.style.display = \'none\';">X</strong>
+
+        </div>';
         unset($_SESSION['success_message']);
     }
     if (isset($_SESSION['error_message_events'])) {
         echo '<div class="message error">  
+        
+        <div></div>
         <p>' . $_SESSION['error_message_events'] . '</p>
+
             <strong onclick="this.parentNode.style.display = \'none\';">X</strong>
         </div>';
         unset($_SESSION['error_message_events']);

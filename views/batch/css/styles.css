@@ -1,4 +1,11 @@
 /* Batch */
+
+h3{
+    font-size: 1em;
+    color: gray;
+    text-align: center;
+}
+
 .container-batch {
 
     padding: 2em;
@@ -104,34 +111,139 @@ table.customTable thead {
     background-color: #CCCCCC;
 }
 
+/* Modal */
+#window-target::backdrop{
+    background-color: rgb(0, 0, 0,.55);
+}
+#window-target::backdrop:focus{
+    outline: none;
+}
+dialog{
+    margin: auto !important;
+    border: none;
+    background: transparent;
+}
+dialog:focus{
+    outline: none;
+}
+.modal-cerrar{
+    position: absolute;
+    right: 0;
+    padding: 2px;
+    margin:4px;
 
-/* Estilo botones (Editar, Eliminar)
-a{
-    
-} */
- 
-/* Paginacion */
-.pagination {
-    margin-top: 1em;
+    cursor: pointer;
+}
+.modal-cerrar svg{
+    height: 1.5em;
+    width: 1.5em;
+}
+.content-modal{
+    padding: 1em;
     display: flex;
-    width: 100%;
+    flex-direction: column;
+    gap: 2em;
+    background-color: var(--primary-background);
+    box-shadow: var(--primary-shadow);
+    border-radius: 20px;
+    height: 50vh;
+    /* width: 30vh; */
+    margin: 0 auto;
+}
+.new-noti-target{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+
+.content-batch{
+    display: flex;
+    justify-content: space-between;
+    
+}
+.input-new-target{
+    display: flex;
+}
+
+.new-target,
+.targets
+{
+    display: flex;
+    justify-content: space-between;
+
+    align-items: center;
+    /* padding: .1em; */
+    border-radius: 10px 0px 0px 10px ;
+    border: none;
+    border: solid 1px #61bb68;
+}
+.acctions{
+    display: flex;
+}
+.input-new-target svg{
+    width: 20px ;
+    height: 20px;
+}
+.new-target input[type="email"]{
+    background-color: none !important;
+}
+.input-new-target input,
+.list-targets input
+{
+    background-color: none !important;
+    width: 11em;
+    border: none !important;
+}
+.input-new-target button,
+.list-targets button{
+    display: flex;
     justify-content: center;
+    padding: 0;
+    align-items: center;
+    background: none;
+    width: 40px;
+    height: 40px;
+    border: solid 1px #61bb68;
+    border-radius: 0;
+}
+.input-new-target button:hover
+{
+    background-color: unset !important;
 }
 
-.pagination a {
-    color: black;
-    float: left;
-    padding: 8px 16px;
-    text-decoration: none;
+.input-new-target button#two-button{
+    border-radius: 0px 10px 10px 0px ;
+
 }
 
-.pagination a.active {
-    background-color: #4CAF50;
-    color: white;
-    border-radius: 5px;
+.list-targets {
+    display: flex;
+    flex-direction: column;
+    gap: .4em;
+    overflow-y: scroll;
+
+}
+.targets{
+    border-radius: 10px;
+}
+.list-targets button{
+    /* background-color: #4caf4f31; */
+    border: none;
+    font-size: 1.5em;
+    color: rgba(255, 0, 0, 0.969);
+    border-radius: 0px 10px 10px 0px ;
+    transition: all .2s ease-in  ;
+    border-left: 1px solid #61bb68 ;
+}
+.list-targets p{
+    cursor: pointer;
 }
 
-.pagination a:hover:not(.active) {
-    background-color: #ddd;
-    border-radius: 5px;
+.list-targets p:hover{
+    color: rgba(255, 0, 0, 0.455);
+
+}
+.list-targets button:hover{
+    background-color:unset;
 }

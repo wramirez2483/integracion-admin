@@ -2,7 +2,7 @@
 .container-menu{
     height: 100vh;
     width: 30vh;
-    background-color: #CCCCCC;
+    background-color: var(--alternate-background);
 }
 
 .content{
@@ -56,8 +56,8 @@ img.admin-icon{
 .options a:hover h2
 
 {
-    color:#61BB68 ;
-    fill: #61BB68;
+    color:var(--primary) ;
+    fill: var(--primary);
 }
 .icon,
 .auth svg
@@ -74,6 +74,6 @@ a{
 .active h2,
 .active .icon
 {
-    color:#61BB68 ;
-    fill: #61BB68;
+    color:var(--primary) ;
+    fill: var(--primary);
 }
