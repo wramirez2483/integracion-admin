@@ -1,7 +1,5 @@
-<div class="container-report">
-    <h1>Reportes</h1><br>
+<div class="container-batch">
 
-    <h2>Procesos</h2>
     <div>
 
         <div class="other-pagination">
@@ -26,29 +24,47 @@
         <table class="customTable">
             <thead>
                 <tr>
-                    <th>I_P</th>
-                    <th>Fecha_Inicio</th>
-                    <th>Fecha_Fin</th>
-                    <th>Estado</th>
-                    <th>Ver_detalle</th>
-                    <th>Editar</th>
-                    <th>Borrar</th>
+                    <th>Id</th>
+                    <th>user_id</th>
+                    <th>event_id</th>
+                    <th>previos_state</th>
+                    <th>new_state</th>
+                    <th>date</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>01</td>
-                    <td>07/09/2024</td>
-                    <td>08/10/2020</td>
+                    <td>02</td>
+                    <td>01</td>
+                    <td>Inconcluso</td>
                     <td>Finalizado</td>
-                    <td>....</td>
-                    <td><a href="">Editar</a></td>
-                    <td><a href="">Borrar</a></td>
-
-                </tr>
+                    <td>02/09/2023</td>
+               </tr>
+                <!-- <?php 
+                foreach($events as $event) :
+                ?>
+                    <tr>
+                        <td><?php echo $event['Id']; ?></td>
+                        <td><?php echo $event['user_id']; ?></td>
+                        <td><?php echo $event['event_id']; ?></td>
+                        <td><?php echo $event['previos_state']; ?></td>
+                        <td><?php echo $event['new_state']; ?></td>
+                        <td><?php echo $event['date']; ?></td>
+                    </tr>
+                    <?php endforeach; ?> -->
             </tbody>
         </table>
-    </div><br>
+        <!-- <div class="pagination">
+            <?php if($total_pages > 1) :?>
+                <a href="?page=1&amount=<?php echo $records_per_page; ?>">&laquo;</a>
+                <?php for($i = 1; $i<= $total_pages; $i++) :?>
+                    <a href="?page=<?php echo $i; ?> &amount=<?php echo $records_per_page; ?>"<?php if($i == $current_page) echo 'class="active"';  ?>><?php echo $i; ?></a>
+                <?php endfor;?>
+                <a href="?page=<?php echo $total_pages; ?>&amount=<?php echo $records_per_page; ?>">&raquo;</a>
+            <?php endif; ?>
+        </div> -->
+    <!-- </div><br>
     <h2>Subprocesos</h2>
     <div>
         <div class="other-pagination">
@@ -94,7 +110,7 @@
 
             </tr>
         </tbody>
-    </table>
+    </table> -->
     <div class="pagination">
         <a href="#">&laquo;</a>
         <a href="#">1</a>
@@ -104,6 +120,6 @@
         <a href="#">5</a>
         <a href="#">6</a>
         <a href="#">&raquo;</a>
-    </div>
+    </div> 
 </div>
 </div>

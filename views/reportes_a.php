@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="../layouts/css/styles_layouts.css">
     
-    <link rel="stylesheet" href='./reportes_generales/css/styles.css'>
+    <link rel="stylesheet" href='./reportes_audit/css/styles.css'>
 
     <link rel="stylesheet" href="../assets/main.css"> 
 
@@ -37,9 +37,8 @@
                 <h1>Reportes</h1>
             </header>
 
-                
-            <?php   
-                include './reportes_generales/reportes.php'
+              <?php   
+                include './reporte_audit/reportes_audit.php'
             ?>
             
         </div>
