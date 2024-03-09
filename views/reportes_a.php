@@ -34,7 +34,7 @@
             ?>
         <div class="content-home">
             <header>
-                <h1>Reportes</h1>
+                <h1>Reportes Auditorias</h1>
             </header>
 
               <?php   

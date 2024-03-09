@@ -29,10 +29,11 @@ require_once '../app/controllers/reporte_audit/list_audit.php'
         <thead>
             <tr>
                 <th>Id</th>
+                <th>Numero Documento</th>
                 <th>Autor</th>
                 <th>Evento</th>
                 <th>Estado_Previo</th>
-                <th>Nuevo_Estadp</th>
+                <th>Nuevo_Estado</th>
                 <th>Fecha</th>
             </tr>
         </thead>
@@ -43,6 +44,7 @@ require_once '../app/controllers/reporte_audit/list_audit.php'
                 <tr>
                     <td><?php echo $event['id']; ?></td>
                     <td><?php echo $event['user_id']; ?></td>
+                    <td><?php echo $event['name']; ?></td>
                     <td><?php echo $event['event']; ?></td>
                     <td><?php echo $event['previous_state']; ?></td>
                     <td><?php echo $event['new_state']; ?></td>

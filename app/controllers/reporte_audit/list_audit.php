@@ -25,13 +25,15 @@ $current_page = isset($_GET['page']) && is_numeric($_GET['page']) ? $_GET['page'
 $offset = ($current_page - 1) * $records_per_page;
 
 // Consulta SQL para obtener los eventos registrados con limit y offset
-$sql_select_events = "SELECT id, user_id, event, previous_state,new_state,date
+$sql_select_events = "SELECT histories.id, user_id, users.name, event, previous_state, new_state, date
                       FROM histories
-                      ORDER BY id ASC
-                      LIMIT :offset, :records_per_page";
+                      JOIN users ON user_id = users.num_id
+                      ORDER BY date DESC
+                      LIMIT :offset, :records_per_page
+                      "
+                      ;
 $stmt_select_events = $pdo->prepare($sql_select_events);
 $stmt_select_events->bindParam(':offset', $offset, PDO::PARAM_INT);
 $stmt_select_events->bindParam(':records_per_page', $records_per_page, PDO::PARAM_INT);
 $stmt_select_events -> execute();
 $events = $stmt_select_events->fetchAll(PDO::FETCH_ASSOC);
-?>
