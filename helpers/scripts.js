@@ -37,6 +37,7 @@ function handleEyeGeneral(ruta) {
 }
 
 function handleCheckBox(checkboxId) {
+  console.log('xd')
   let si = document.getElementById('si');
   let no = document.getElementById('no');
 
@@ -107,4 +108,94 @@ function handleWindow(targetId) {
 
 function borrar(element) {
   element.parentNode.remove(); // Eliminar el elemento padre del botón (es decir, el div)
+}
+
+function addNotificationTarget() {
+  console.log('se ejecuto')
+
+  document.getElementById("agregar_destinatario").addEventListener("click", function () {
+    var nuevoDestinatario = document.getElementById("nuevo_destinatario").value;
+
+    // Crear una nueva opción
+    var nuevaOpcion = document.createElement("option");
+    nuevaOpcion.text = nuevoDestinatario;
+    nuevaOpcion.value = nuevoDestinatario;
+
+    // Agregar la nueva opción al select
+    document.getElementById("notifications_target").appendChild(nuevaOpcion);
+
+    // Limpiar el valor del campo de texto después de agregar el destinatario
+    document.getElementById("nuevo_destinatario").value = "";
+  });
+
+}
+
+function handleCheckBoxSofia(checkboxId) {
+
+  let si = document.getElementById('si-sofia');
+  let no = document.getElementById('no-sofia');
+  let element = document.getElementById('info-sofia')
+
+
+  if (checkboxId === 'si') {
+
+    if(element.classList.contains('active')){
+      si.checked = true;
+      return
+    }
+    //desactiva clase 'disabled'
+    element.className = element.className.replace('disabled','')
+    // activa la clase 'active'
+    element.className += ' active'
+
+
+    si.checked = true;
+    no.checked = false;
+  } else if (checkboxId === 'no') {
+
+    if(element.classList.contains('disabled')){
+      no.checked = true;
+      return
+    }
+    //desactiva clase 'active'
+    element.className += ' disabled'
+    // activa la clase 'disabled'che
+    element.className = element.className.replace('active','')
+
+    no.checked = true;
+    si.checked = false;
+  }
+}
+function handleCheckBoxLms(checkboxId) {
+
+  let si = document.getElementById('si-lms');
+  let no = document.getElementById('no-lms');
+  let element = document.getElementById('info-lms')
+
+  if (checkboxId === 'si') {
+    if(element.classList.contains('active')){
+      si.checked = true;
+      return
+    }
+    //desactiva clase 'disabled'
+    element.className = element.className.replace('disabled','')
+    // activa la clase 'active'
+    element.className += ' active'
+
+
+    si.checked = true;
+    no.checked = false;
+  } else if (checkboxId === 'no') {
+    if(element.classList.contains('disabled')){
+      no.checked = true;
+      return
+    }
+    //desactiva clase 'active'
+    element.className += ' disabled'
+    // activa la clase 'disabled'
+    element.className = element.className.replace('active','')
+
+    no.checked = true;
+    si.checked = false;
+  }
 }

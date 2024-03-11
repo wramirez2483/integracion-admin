@@ -12,10 +12,12 @@
 
     <link rel="stylesheet" href="../layouts/css/styles_layouts.css">
     
-    <link rel="stylesheet" href="./batch/css/styles.css">
+    <link rel="stylesheet" href="./R_josso/css/styles.css">
     
     <link rel="stylesheet" href="../assets/main.css">
-    
+
+    <link rel="stylesheet" href="../views/batch/css/styles.css">
+
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <title>App-Integracion</title>
 </head>

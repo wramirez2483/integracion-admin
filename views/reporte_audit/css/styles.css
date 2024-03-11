@@ -1,15 +1,19 @@
 .container-report{
     padding: 2em;
+    overflow-y: hidden;
 }
 
-
- 
 .other-pagination{
     display: flex;
     justify-content: space-between;
     margin-bottom: 2em;
 }
 
+
+.list-audits{
+    overflow-y: auto;
+    height: 60vh;
+}
 .search{
     display: flex;
     align-items: center;

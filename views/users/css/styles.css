@@ -5,25 +5,3 @@
     padding: 1em;
     width: 100%;
 }
-table.customTable {
-    padding: 3em;
-    width: 100%;
-    background-color: #FFFFFF;
-    border-collapse: collapse;
-    border-width: 2px;
-    border-color: #CCCCCC;
-    border-style: solid;
-    color: #000000;
-}
-
-table.customTable td,
-table.customTable th {
-    border-width: 2px;
-    border-color: #CCCCCC;
-    border-style: solid;
-    padding: 5px;
-}
-
-table.customTable thead {
-    background-color: #CCCCCC;
-}

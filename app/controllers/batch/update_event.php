@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['update_event'])) {
     if ($stmt_update_event->execute()) {
         // Redirigir a la página de eventos o mostrar un mensaje de éxito
         $_SESSION['success_message'] = 'El evento se actualizó correctamente';
-        header('Location: ../../../index.php');
+        header('Location: ../../../views/batch.php');
         exit();
     } else {
         // Mostrar un mensaje de error si la actualización falla
@@ -38,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['update_event'])) {
     }
 } else {
     // Si se intenta acceder a este script directamente sin enviar el formulario, redirigir a alguna página adecuada o mostrar un mensaje de error
-    header('Location: ../../../index.php');
+    header('Location: ../../../views/batch.php');
     exit();
 }
 ?>

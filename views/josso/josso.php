@@ -39,7 +39,7 @@ require_once '../app/controllers/josso/create_josso.php';
     </div>
 
     <div class="form-inputs">
-      <h3>Tiempo de espera max de respuetsa Webserver</h3>
+      <h3>Tiempo de espera max de respuesta Webserver</h3>
       <input type="number" id="time_webservice" name="maximun_time_response_webservice" min="0" placeholder="Minutos" required value="<?php echo  isset($maximun_time_response_webservice) ? $maximun_time_response_webservice : ''; ?>">
     </div>
 

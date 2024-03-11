@@ -13,17 +13,19 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
     $resultado = $stmt_find->fetch(PDO::FETCH_ASSOC);
 
     if($resultado){
-        $new_url_service_gateway = $resultado['url_service_gateway'];
-        $new_maximun_time_response_socket = $resultado['maximun_time_response_socket'];
-        $new_maximun_time_response_webservice = $resultado['maximun_time_response_webservice'];
-        $new_name_plataforma = $resultado['name_plataforma'];
+
+        $url_service_gateway = $resultado['url_service_gateway'];
+        $maximun_time_response_socket = $resultado['maximun_time_response_socket'];
+        $maximun_time_response_webservice = $resultado['maximun_time_response_webservice'];
+        $name_plataforma = $resultado['name_plataforma'];
+        
     }
-
-
-    $url_service_gateway = $_POST['url_service_gateway'];
-    $maximun_time_response_socket = $_POST['maximun_time_response_socket'];
-    $maximun_time_response_webservice = $_POST['maximun_time_response_webservice'];
-    $name_plataforma = $_POST['name_plataforma'];
+    
+    
+    $new_url_service_gateway = $_POST['url_service_gateway'];
+    $new_maximun_time_response_socket = $_POST['maximun_time_response_socket'];
+    $new_maximun_time_response_webservice = $_POST['maximun_time_response_webservice'];
+    $new_name_plataforma = $_POST['name_plataforma'];
 
     // Cuando no hay una configuraccion se crea
     if ($stmt_find->rowCount() == 0) {
@@ -67,10 +69,10 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
 
     $stmt = $pdo->prepare($sql);
     
-    $stmt->bindParam(':url_service_gateway', $url_service_gateway);
-    $stmt->bindParam(':maximun_time_response_socket', $maximun_time_response_socket);
-    $stmt->bindParam(':maximun_time_response_webservice', $maximun_time_response_webservice);
-    $stmt->bindParam(':name_plataforma', $name_plataforma);
+    $stmt->bindParam(':url_service_gateway', $new_url_service_gateway);
+    $stmt->bindParam(':maximun_time_response_socket', $new_maximun_time_response_socket);
+    $stmt->bindParam(':maximun_time_response_webservice', $new_maximun_time_response_webservice);
+    $stmt->bindParam(':name_plataforma', $new_name_plataforma);
     $stmt->bindParam(':user_id', $_SESSION['document']);
 
     if ($stmt_find->rowCount() > 0) {

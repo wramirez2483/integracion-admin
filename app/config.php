@@ -3,9 +3,9 @@
 session_start();
 
 define('APP_NAME', 'APP Integracion');
-define('SERVIDOR', '192.168.1.129');
-define('USUARIO', 'admin');
-define('PASSWORD', '123');
+define('SERVIDOR', 'localhost');
+define('USUARIO', 'root');
+define('PASSWORD', '');
 define('PUERTO', '3306');
 define('BD', 'db_integracion');
 
@@ -18,8 +18,6 @@ try {
 } catch(PDOException $e) {
     // echo "Error: No se pudo conectar a la base de datos: " . $e->getMessage();
 }
-
-$URL = "http://localhost/www.app-integration.com";
 
 date_default_timezone_set("America/Bogota");
 $fechaHora = date('Y-m-d H:i:s');

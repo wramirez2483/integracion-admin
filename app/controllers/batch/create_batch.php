@@ -1,9 +1,9 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (isset($_POST['notifications'])) {
-        require_once '../../config.php';
+
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['batch-submit'])) {
+        require_once '../app/config.php';
         // archivo que contiene el registro antiguo del batch
-        require_once '../../controllers/history/create_history.php';
+        require_once '../app/controllers/history/create_history.php';
         
         // busca si ya existen 
         $sql_find = "SELECT * FROM batch";
@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // verifica que los datos ingresados esten llenos
             if(empty($user_id)  || empty($new_execution_schedule) || empty($new_integration_availabity)){
                 $_SESSION['error-created'] = 'Todos los campos son obligatorios';
-                header('Location: ../../../views/inicio.php');
+                header('Location: ../../../views/batch.php');
                 exit;
             }
             // asigna el sql de crear
@@ -69,12 +69,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($stmt->execute()) {
             $_SESSION['message-created'] = 'Configuración cambiada con exito.';
-            // redirigir a la misma ubicacion
-            header('Location: ../../../views/inicio.php');
-            // var_dump($_POST);
         } else {
             // redirigir a la misma ubicacion
             $_SESSION['error-created'] = 'Error al cambiar la configuración.';
         }
-    }
+    
 }

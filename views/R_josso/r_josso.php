@@ -15,39 +15,64 @@ require_once '../app/controllers/josso/create_r_josso.php'
                     </select>
              </div>
         </form>
+        <?php
+        if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["search_term"])){
+            $search_term = $_POST["search_term"];
+            $search_by = $_POST["search_by"];
+
+            $sql_search_josso = "SELECT * FROM reporte_josso WHERE $search_by LIKE :search_term";
+            $stmt_search_josso = $pdo->prepare($sql_search_josso);
+
+            $search_term = "%$search_term%";
+            $stmt_search_josso->bindParam(':search_term', $search_term, PDO::PARAM_STR);
+
+            $stmt_search_josso->execute();
+            $josso = $stmt_search_josso->fetchAll(PDO::FETCH_ASSOC);
+        };
+        ?>
                 <div class="search">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path d="M10 18a7.952 7.952 0 0 0 4.897-1.688l4.396 4.396l1.414-1.414l-4.396-4.396A7.952 7.952 0 0 0 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8s3.589 8 8 8m0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6s-6-2.691-6-6s2.691-6 6-6" />
-                    </svg>
-                    <input type="text" name="search" id="search" placeholder="Buscar evento">
+                    <form method="post">
+                        <select name="search_by" id="search_by">
+                            <option value="name">Nombre</option>
+                            <option value="total_events">Total Eventos</option>
+                            <option value="date_event">Fecha Eventos</option>
+                        </select>
+                            <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M10 18a7.952 7.952 0 0 0 4.897-1.688l4.396 4.396l1.414-1.414l-4.396-4.396A7.952 7.952 0 0 0 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8s3.589 8 8 8m0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6s-6-2.691-6-6s2.691-6 6-6" />
+                            </svg> -->
+                            <input type="text" name="search_term" id="search_term" placeholder="Buscar Reporte josso">
+                            <button type="submit">Buscar</button>
+                        </form>
                 </div>
     
         </div>
-        <table class="customTable">
-            <thead>
-                <tr>
-                    <th>ID_SUB</th>
-                    <th>ID_Detalles</th>
-                    <th>Nombre</th>
-                    <th>Total_Eventos</th>
-                    <th>Fecha_Eventos</th>
-                    <th>Ver Detalle</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($events as $event) : ?>
+        <div class="list_audits">
+            <table class="customTable">
+                <thead>
                     <tr>
-                        <td><?php echo $event['id_subprocess']; ?></td>
-                        <td><?php echo $event['id_details_josso']; ?></td>
-                        <td><?php echo $event['name']; ?></td>
-                        <td><?php echo $event['total_events']; ?></td>
-                        <td><?php echo $event['date_event']; ?></td>
-                        <td><a href="#">Ver Detalle</a></td>
+                        <th>ID SUB</th>
+                        <th>ID Detalles</th>
+                        <th>Nombre</th>
+                        <th>Total Eventos</th>
+                        <th>Fecha Eventos</th>
+                        <th>Ver Detalle</th>
                     </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
-
+                </thead>
+                <tbody>
+                    <?php foreach ($events as $event) : ?>
+                        <tr>
+                            <td><?php echo $event['id_subprocess']; ?></td>
+                            <td><?php echo $event['id_details_josso']; ?></td>
+                            <td><?php echo $event['name']; ?></td>
+                            <td><?php echo $event['total_events']; ?></td>
+                            <td><?php echo $event['date_event']; ?></td>
+                            <td><a href="#">Ver Detalle</a></td>
+                        </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+            </div>
+                
         <div class="pagination">
         <?php if ($total_pages > 1) : ?>
                 <a href="?page=1&amount=<?php echo $records_per_page; ?>">&laquo;</a>

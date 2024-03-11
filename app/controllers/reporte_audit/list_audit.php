@@ -1,6 +1,6 @@
 <?php
 // Inicializar variables
-$records_per_page = 5;
+$records_per_page = 10;
 $current_page = isset($_GET['page']) && is_numeric($_GET['page']) ? $_GET['page'] : 1;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

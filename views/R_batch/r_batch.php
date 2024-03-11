@@ -15,25 +15,50 @@ require_once '../app/controllers/batch/create_r_batch.php'
                     </select>
              </div>
         </form>
+        <?php 
+        if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["search_term"])) {
+            $search_term = $_POST["search_term"];
+            $search_by =$_POST["search_by"];
+
+            $sql_search_batch = "SELECT * FROM reporte_batch WHERE $search_by LIKE :search_term";
+            $stm_search_batch = $pdo->prepare($sql_search_batch);
+
+            $search_term = "%$search_term%";
+            $stmt_search_batch->bindParam(':search_term', $search_term, PDO::PARAM_STR);
+
+            $stmt_search_batch->execute();
+            $batch = $stmt_search_batch->fetchAll(PDO::FETCH_ASSOC);
+        }
+        ?>
                 <div class="search">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path d="M10 18a7.952 7.952 0 0 0 4.897-1.688l4.396 4.396l1.414-1.414l-4.396-4.396A7.952 7.952 0 0 0 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8s3.589 8 8 8m0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6s-6-2.691-6-6s2.691-6 6-6" />
-                    </svg>
-                    <input type="text" name="search" id="search" placeholder="Buscar evento">
+                    <form method="post">
+                        <select name="search_by" id="search_by">
+                            <option value="start_date">Fecha Inicio</option>
+                            <option value="end_date">Fecha Fin</option>
+                            <option value="state">Estado</option>
+                        </select>
+                        <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M10 18a7.952 7.952 0 0 0 4.897-1.688l4.396 4.396l1.414-1.414l-4.396-4.396A7.952 7.952 0 0 0 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8s3.589 8 8 8m0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6s-6-2.691-6-6s2.691-6 6-6" />
+                        </svg> -->
+                        <input type="text" name="search_term" id="search_term" placeholder="Buscar Reporte batch">
+                        <button type="submit">Buscar</button>
+                    </form>
                 </div>
-    
         </div>
-        <table class="customTable">
-            <thead>
-                <tr>
-                    <th>ID_SUB</th>
-                    <th>ID_Detalles</th>
-                    <th>Fecha_Inicio</th>
-                    <th>Fecha_Fin</th>
-                    <th>Estado</th>
-                    <th>Ver Detalle</th>
-               </tr>
-            </thead>
+
+        <div class="list_audits">
+
+            <table class="customTable">
+                <thead>
+                    <tr>
+                        <th>ID SUB</th>
+                        <th>ID Detalles</th>
+                        <th>Fecha Inicio</th>
+                        <th>Fecha Fin</th>
+                        <th>Estado</th>
+                        <th>Ver Detalle</th>
+                    </tr>
+                </thead>
             <tbody>
                 <?php foreach ($events as $event) : ?>
                     <tr>
@@ -43,11 +68,12 @@ require_once '../app/controllers/batch/create_r_batch.php'
                         <td><?php echo $event['end_date']; ?></td>
                         <td><?php echo $event['state']; ?></td>
                         <td><a href="#">Ver Detalle</a></td>
-                   </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
-
+                    </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+            
         <div class="pagination">
         <?php if ($total_pages > 1) : ?>
                 <a href="?page=1&amount=<?php echo $records_per_page; ?>">&laquo;</a>

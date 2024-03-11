@@ -1,0 +1,42 @@
+/* .container.josso{
+     padding: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    gap: 3em;
+    overflow-y: hidden;  
+} */
+.other-pagination{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2em;
+}
+
+
+.list-audits{
+    overflow-y: auto;
+    height: 60vh;
+}
+.search{
+    display: flex;
+    align-items: center;
+}
+
+.search svg{
+    width: 25px;
+    height: 25px;
+}
+.search path{
+    fill: black;
+}
+
+select{
+    padding: .4em;
+    border-radius: 5px;
+}
+
+.register-events{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}

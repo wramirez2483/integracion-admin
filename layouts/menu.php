@@ -5,11 +5,14 @@ $currentPath = $_SERVER['REQUEST_URI'];
 // echo $currentPath;
 
 // Define las rutas correspondientes a cada elemento del menú
-$batchPath = '/app-integracion/views/inicio.php';
+$dashboard = '/app-integracion/views/inicio.php';
+$batchPath = '/app-integracion/views/batch.php';
 $jossoPath = '/app-integracion/views/josso.php';
 $userPath = '/app-integracion/views/users.php';
 $serverPath = '/app-integracion/views/servidor-email.php';
-$reportPath = '/app-integracion/views/reportes.php';
+$report_audit = '/app-integracion/views/reportes_a.php';
+$reportJosso = '/app-integracion/views/r_batch.php';
+$reportBatch = '/app-integracion/views/r_josso.php';
 // Agrega más rutas según sea necesario
 
 ?>
@@ -25,8 +28,26 @@ $reportPath = '/app-integracion/views/reportes.php';
 
         <div class="options">
             
+            <!-- Dashboard -->
+            <a class="<?php echo (strpos($currentPath,'inicio.php')) ? 'active' : ''; ?>" href="../views/inicio.php">
+
+            <h2>Dashboard</h2>
+
+            <div class="image-container">
+<!-- 
+                <svg  viewBox="0 0 47 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19.8684 29.25C20.8611 29.25 21.8295 29.1825 22.7979 29.115C23.2579 27.405 24.0326 25.785 25.0979 24.3675C23.4274 24.615 21.66 24.75 19.8684 24.75C14.0095 24.75 8.48947 23.4 5.34211 21.2625V14.94C8.90105 16.8075 14.0821 18 19.8684 18C25.6547 18 30.8358 16.8075 34.3947 14.94V18.4275C35.6053 18.1575 36.8158 18 38.1474 18C38.5105 18 38.8737 18 39.2368 18.0675V9C39.2368 4.0275 30.5695 0 19.8684 0C9.16737 0 0.5 4.0275 0.5 9V31.5C0.5 36.4725 9.19158 40.5 19.8684 40.5C21.4663 40.5 23.04 40.41 24.5168 40.23C23.6695 38.9025 23.04 37.44 22.6768 35.865C21.7811 36 20.8611 36 19.8684 36C10.4989 36 5.34211 32.625 5.34211 31.5V26.4825C9.24 28.2375 14.3484 29.25 19.8684 29.25ZM19.8684 4.5C29.2379 4.5 34.3947 7.875 34.3947 9C34.3947 10.125 29.2379 13.5 19.8684 13.5C10.4989 13.5 5.34211 10.125 5.34211 9C5.34211 7.875 10.4989 4.5 19.8684 4.5ZM46.5 32.625C46.5 34.47 45.8947 36.18 44.8779 37.5975L42.2389 35.145C42.6505 34.38 42.8684 33.525 42.8684 32.625C42.8684 29.52 40.1568 27 36.8158 27V30.375L31.3684 25.3125L36.8158 20.25V23.625C42.1663 23.625 46.5 27.6525 46.5 32.625ZM36.8158 34.875L42.2632 39.9375L36.8158 45V41.625C31.4653 41.625 27.1316 37.5975 27.1316 32.625C27.1316 30.78 27.7368 29.07 28.7537 27.6525L31.3926 30.105C30.9811 30.87 30.7632 31.725 30.7632 32.625C30.7632 35.73 33.4747 38.25 36.8158 38.25V34.875Z" />
+                </svg> -->
+
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24">
+                    <path d="M14 9q-.425 0-.712-.288T13 8V4q0-.425.288-.712T14 3h6q.425 0 .713.288T21 4v4q0 .425-.288.713T20 9zM4 13q-.425 0-.712-.288T3 12V4q0-.425.288-.712T4 3h6q.425 0 .713.288T11 4v8q0 .425-.288.713T10 13zm10 8q-.425 0-.712-.288T13 20v-8q0-.425.288-.712T14 11h6q.425 0 .713.288T21 12v8q0 .425-.288.713T20 21zM4 21q-.425 0-.712-.288T3 20v-4q0-.425.288-.712T4 15h6q.425 0 .713.288T11 16v4q0 .425-.288.713T10 21z"/>
+                </svg>
+            </div>
+
+            </a>
+        
             <!-- Batch -->
-            <a class="<?php echo ($currentPath == $batchPath) ? 'active' : ''; ?>" href="../views/inicio.php">
+            <a class="<?php echo (strpos($currentPath,'/batch.php')) ? 'active' : ''; ?>" href="../views/batch.php">
 
                 <h2>Batch</h2>
 
@@ -40,7 +61,7 @@ $reportPath = '/app-integracion/views/reportes.php';
 
             </a>
             <!-- Josso -->
-            <a class="<?php echo ($currentPath == $jossoPath) ? 'active' : ''; ?>" href="../views/josso.php">
+            <a class="<?php echo (strpos($currentPath,'/josso.php')) ? 'active' : ''; ?>" href="../views/josso.php">
                 <h2>Josso</h2>
                 <div class="image-container">
                     <svg class="icon" viewBox="0 0 35 54" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -51,7 +72,7 @@ $reportPath = '/app-integracion/views/reportes.php';
             </a>
 
             <!-- Usuarios -->
-            <a class="<?php echo ($currentPath == $userPath) ? 'active' : ''; ?>"  href="../views/users.php">
+            <a class="<?php echo (strpos($currentPath,'/users.php')) ? 'active' : ''; ?>"  href="../views/users.php">
                 <h2>Usuarios</h2>
 
                 <div class="image-container">
@@ -61,7 +82,7 @@ $reportPath = '/app-integracion/views/reportes.php';
                 </div>
             </a>
             <!-- Servidor -->
-            <a class="<?php echo ($currentPath == $serverPath) ? 'active' : ''; ?>" href="../views/servidor-email.php">
+            <a class="<?php echo (strpos($currentPath,'servidor-email')) ? 'active' : ''; ?>" href="../views/servidor-email.php">
                 <h2>Servidor</h2>
 
                 <div class="image-container">
@@ -73,7 +94,7 @@ $reportPath = '/app-integracion/views/reportes.php';
                 </div>
             </a>
             <!-- Reportes -->
-            <a class="<?php echo ($currentPath == $reportPath) ? 'active' : '';?>" href="../views/reportes_a.php">
+            <a class="<?php echo (strpos($currentPath,'reportes_a.php')) ? 'active' : '';?>" href="../views/reportes_a.php">
                 <h2>Reportes Audit</h2>
                 <div class="image-container">
                     <svg class="icon" viewBox="0 0 42 46" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -83,7 +104,7 @@ $reportPath = '/app-integracion/views/reportes.php';
 
             </a>
             <!-- Reporte Josso -->
-            <a class="<?php echo ($currentPath == $reportPath) ? 'active' : '';?>" href="../views/r_josso.php">
+            <a class="<?php echo (strpos($currentPath,'/r_josso.php')) ? 'active' : '';?>" href="../views/r_josso.php">
                 <h2>Reportes Josso</h2>
                 <div class="image-container">
                     <svg class="icon" viewBox="0 0 42 46" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -93,7 +114,7 @@ $reportPath = '/app-integracion/views/reportes.php';
 
             </a>
             <!-- Reporte Batch -->
-            <a class="<?php echo ($currentPath == $reportPath) ? 'active' : '';?>" href="../views/r_batch.php">
+            <a class="<?php echo (strpos($currentPath,'/r_batch.php')) ? 'active' : '';?>" href="../views/r_batch.php">
                 <h2>Reportes Batch</h2>
                 <div class="image-container">
                     <svg class="icon" viewBox="0 0 42 46" fill="none" xmlns="http://www.w3.org/2000/svg">

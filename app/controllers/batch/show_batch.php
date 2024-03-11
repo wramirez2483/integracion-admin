@@ -10,7 +10,15 @@
 
     if($resultado){
         $id_batch = $resultado['id_batch'];
+        $_SESSION['id_batch'] = $resultado['id_batch'];
         $integration_availabity = $resultado['integration_availabity'];
         $execution_schedule = $resultado['execution_schedule'];
-        $notifications_target = $resultado['notifications_target'];
+        if(empty($resultado['notifications_target'])){
+            $_SESSION['notifications_target'] = [];
+            return;
+        }else{
+            $_SESSION['notifications_target'] = unserialize($resultado['notifications_target']);
+  
+        }
+
     }

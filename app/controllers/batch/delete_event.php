@@ -13,12 +13,12 @@ if(isset($_GET['seed_code'])) {
 
     if ($stmt->execute(['user_id' => $user_id, 'events' => $events, 'seed_code' => $seed_code])) {
         // Redirigir a la página principal o mostrar un mensaje de éxito
-        $_SESSION['success_message'] = 'El evento se actualizó correctamente';
-        header('Location: ../../../index.php');
+        $_SESSION['success_message'] = 'El evento se eliminó correctamente';
+        header('Location: ../../../views/batch.php');
         exit();
     } else {
         // Mostrar un mensaje de error si la actualización falla
-        $_SESSION['error_message'] = 'Error al actualizar el evento';
+        $_SESSION['error_message'] = 'Error al eliminar el evento';
         header('Location: edit_event.php?seed_code=' . $seed_code); // Redirigir de vuelta al formulario de edición con el código de semilla del evento
         exit();
     }
@@ -26,6 +26,6 @@ if(isset($_GET['seed_code'])) {
 } else {
     // Si no se proporciona seed_code, redirigir a alguna página de error o la página principal
     $_SESSION['error_message'] = 'No se proporcionó un código de semilla válido';
-    header("Location: ../../../index.php");
+    header("Location: ../../../views/batch.php");
     exit();
 }

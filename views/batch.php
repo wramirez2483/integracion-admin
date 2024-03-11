@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="../layouts/css/styles_layouts.css">
     
-    <link rel="stylesheet" href="../views/dashboard/css/styles.css">
+    <link rel="stylesheet" href="../views/batch/css/styles.css">
     
     <link rel="stylesheet" href="../assets/main.css">
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
@@ -31,11 +31,11 @@
         <div class="content-home">
             
             <header>
-                <h1>Dashboard</h1>
+                <h1>Batch</h1>
             </header>
         
             <?php
-                include './dashboard/dashboard.php'
+                include './batch/batch.php'
             ?>
             
         </div>

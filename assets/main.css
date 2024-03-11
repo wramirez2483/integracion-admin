@@ -228,3 +228,26 @@ div.botones{
     background-color: #ddd;
     border-radius: 5px;
 }
+
+/* estilo de los tablas */
+
+/* Tabla */
+table.customTable {
+    width: 100%;
+    background-color: #FFFFFF;
+    border-collapse: collapse;
+    color: #000000;
+}
+
+table.customTable td,
+table.customTable th {
+    border-width: 2px;
+    border-color: #CCCC;
+    border-style: solid;
+    padding: 5px; 
+}
+
+table.customTable thead {
+    color: white;
+    background-color:var(--alternate-background) ;
+}

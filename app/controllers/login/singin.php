@@ -21,6 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($user && password_verify($password, $user['password'])) {
         // Iniciar sesión
         $_SESSION['document'] = $num_id;
+        $_SESSION['name'] = $user['name'];
         $_SESSION['logueado'] = true;
         $event = "singin";
 

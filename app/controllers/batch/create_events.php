@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($count > 0) {
             // Si ya existe un evento con el mismo código de semilla, muestra un mensaje de error
             $_SESSION['error_message_events'] = 'Ya existe un evento con el mismo código de semilla';
-            header('Location: ../../../index.php');
+            header('Location: ../../../views/batch.php');
             exit();
         }
     
@@ -42,11 +42,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($stmt_insert_event->execute()) {
             // Evento registrado exitosamente
             $_SESSION['success_message'] = 'Evento registrado exitosamente';
-            header('Location: ../../../index.php');
+            header('Location: ../../../views/batch.php');
         } else {
             // Error al registrar el evento
             $_SESSION['error_message_events'] = 'Error al registrar el evento';
-            header('Location: ../../../index.php');
+            header('Location: ../../../views/batch.php');
         }
     }
 

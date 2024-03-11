@@ -45,7 +45,7 @@
             <div class="botons">
                 <input type="submit" name="update_event" value="Actualizar">
                 <button> 
-                    <a href="../inicio.php">Cancelar</a>
+                    <a href="../batch.php">Cancelar</a>
                 </button>
                 
             </div>

@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="./batch/css/styles.css">
     
     <link rel="stylesheet" href="../assets/main.css">
+
+    <link rel="stylesheet" href="../views/R_batch/css/styles.css">
     
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <title>App-Integracion</title>
