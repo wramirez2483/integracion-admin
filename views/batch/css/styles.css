@@ -22,8 +22,16 @@ h3{
     flex-direction: column;
     gap: 2.2em;
 }
-.content-form-batch{
+
+.container-form-modal{
     display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+.content-form-modal{
+    display: flex;
+
     flex-direction: column;
     gap: 3em;
 }
@@ -94,10 +102,10 @@ label {
 
 
 /* Modal */
-#window-target::backdrop{
+dialog::backdrop{
     background-color: rgb(0, 0, 0,.55);
 }
-#window-target::backdrop:focus{
+dialog::backdrop:focus{
     outline: none;
 }
 dialog{
@@ -120,7 +128,9 @@ dialog:focus{
     height: 1.5em;
     width: 1.5em;
 }
-.content-modal{
+.content-modal,
+.content-modal-delete
+{
     padding: 1em;
     display: flex;
     flex-direction: column;
@@ -133,7 +143,12 @@ dialog:focus{
     margin: 0 auto;
 }
 
-
+.content-modal-delete{
+    height: max-content;
+}
+.content-modal h1{
+    text-align: center;
+}
 
 /* Form destinatario */
 .new-noti-target{
@@ -208,6 +223,7 @@ div.new-target input[type="email"]#notifications_target{
     flex-direction: column;
     gap: 1em;
     overflow-y:  auto;
+    margin-top: 1em;
 
 }
 .targets{
@@ -251,3 +267,11 @@ td.edit-icon{
     overflow-y: auto;
     height: 30vh;
 }
+
+.options-modal{
+    display: flex;
+    justify-content: space-around
+}
+/* .options-modal a{
+
+} */

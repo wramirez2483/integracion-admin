@@ -106,6 +106,24 @@ function handleWindow(targetId) {
 
 }
 
+
+function handleEditEvent(event, seedCode, modality, training) {
+  document.getElementById('event_seed_code').value = seedCode;
+  document.getElementById('modality').value = modality;
+  document.getElementById('training').value = training;
+  document.getElementById('seed_code').value = seedCode;
+  handleWindow('#window-target')
+}
+
+function handleDeleteEvent(seed){
+  console.log(seed)
+  let option = document.getElementById('delete-option');
+  option.setAttribute('href',`../app/controllers/batch/delete_event.php?seed_code=${seed}`)
+  handleWindow('#windows-delete')
+
+}
+
+
 function borrar(element) {
   element.parentNode.remove(); // Eliminar el elemento padre del botón (es decir, el div)
 }

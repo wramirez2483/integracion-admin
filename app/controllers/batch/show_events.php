@@ -3,11 +3,15 @@
 $records_per_page = 5;
 $current_page = isset($_GET['page']) && is_numeric($_GET['page']) ? $_GET['page'] : 1;
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Verificar si se ha enviado el formulario de cantidad de registros por página
-    if (isset($_POST['amount'])) {
-        $records_per_page = $_POST['amount'];
-    }
+// Si se envió el formulario de cantidad de registros por página
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['amount'])) {
+    // Almacenar el valor seleccionado en una variable de sesión
+    $_SESSION['records_per_page'] = $_POST['amount'];
+}
+
+// Obtener la cantidad de registros por página almacenada en la variable de sesión
+if (isset($_SESSION['records_per_page'])) {
+    $records_per_page = $_SESSION['records_per_page'];
 }
 
 // Obtener el número total de eventos registrados
@@ -17,9 +21,6 @@ $total_events = $stmt_total_events->fetchColumn();
 
 // Calcular el número total de páginas
 $total_pages = ceil($total_events / $records_per_page);
-
-// Obtener el número de página actual
-$current_page = isset($_GET['page']) && is_numeric($_GET['page']) ? $_GET['page'] : 1;
 
 // Calcular el desplazamiento para la consulta SQL
 $offset = ($current_page - 1) * $records_per_page;

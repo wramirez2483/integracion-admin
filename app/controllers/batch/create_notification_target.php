@@ -3,11 +3,6 @@
         
         require_once '../app/controllers/history/create_history.php';
 
-        if(empty($_POST['notifications_target'])){
-            $_SESSION['error-created'] = 'Todos los campos son obligatorios';
-            header('Location: ../../../views/bath.php');
-            exit;
-        }
 
         $user_id  = $_SESSION['document'];
         $id_batch = $_POST['id_batch'];
@@ -39,7 +34,14 @@
 
             // almacena los correos de la db
             $lista_correos = unserialize($resultado['notifications_target']);
+            if(in_array($_POST['notifications_target'],$lista_correos)){
+                // que no
+                $_SESSION['error-created'] = 'No puedes agregar un correo ya existente.';
+                return;
+            }
             
+            
+
             // guarda la cantidad de correos anterios 
             $cantidad_correos = count($lista_correos);
 

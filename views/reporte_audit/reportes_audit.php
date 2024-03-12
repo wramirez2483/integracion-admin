@@ -10,10 +10,10 @@ require_once '../app/controllers/reporte_audit/list_audit.php'
         <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
             <div class="amount-list">
                 <select name="amount" id="amount" onchange="this.form.submit()">
-                    <option value="10" <?php if ($records_per_page == 5) echo 'selected'; ?>>10</option>
+                    <option value="5" <?php if ($records_per_page == 5) echo 'selected'; ?>>5</option>
+                    <option value="10" <?php if ($records_per_page == 10) echo 'selected'; ?>>10</option>
                     <option value="20" <?php if ($records_per_page == 20) echo 'selected'; ?>>20</option>
-                    <option value="30" <?php if ($records_per_page == 30) echo 'selected'; ?>>30</option>
-                    <option value="50" <?php if ($records_per_page == 50) echo 'selected'; ?>>50</option>
+                    <option value="40" <?php if ($records_per_page == 40) echo 'selected'; ?>>40</option>
                 </select>
             </div>
         </form>
@@ -90,14 +90,15 @@ require_once '../app/controllers/reporte_audit/list_audit.php'
         </table>
     </div>
 
+    <!-- paginación -->
     <div class="pagination">
         <?php if ($total_pages > 1) : ?>
             <a href="?page=1&amount=<?php echo $records_per_page; ?>">&laquo;</a>
             <?php for ($i = 1; $i <= $total_pages; $i++) : ?>
-                <a href="?page=<?php echo $i; ?> &amount=<?php echo $records_per_page; ?>" <?php if ($i == $current_page) echo 'class="active"';  ?>><?php echo $i; ?></a>
+                <a href="?page=<?php echo $i; ?>&amount=<?php echo $records_per_page; ?>" <?php if ($i == $current_page) echo 'class="active"'; ?>><?php echo $i; ?></a>
             <?php endfor; ?>
             <a href="?page=<?php echo $total_pages; ?>&amount=<?php echo $records_per_page; ?>">&raquo;</a>
         <?php endif; ?>
     </div>
-    
+
 </div>

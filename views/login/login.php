@@ -33,7 +33,7 @@
             
             <div class="form__group">
                 <input type="text" id="num_id" name="num_id" class="form__input" placeholder="" pattern="[0-9]+" title="Ingrese solo números" required>
-                <label for="num_id" class="form__label">Número de Identificación:</label>
+                <label for="num_id" class="form__label">Número de Identificación</label>
                 <span class="form__line"></span>
             </div>
 
@@ -41,15 +41,16 @@
             <div class="form__group input-password">
                 <input type="password" id="password" name="password" class="form__input" placeholder="" required>
                 
-                <label for="password" class="form__label">Contraseña:</label>
-                <span class="form__line"></span>
+                <label for="password" class="form__label">Contraseña</label>
+                <span class="form__line">
+                </span>
                 <div class="input-pwd">
-
                     <div class="eye">
                         <img class="icon_handle" id="icon-toggle" src="./img/RiEyeLine.svg" onclick="handleEyeGeneral('./img/')" alt="Toggle Password Visibility">
                     </div>
                 </div>
-
+                <br>
+                
             </div>
 
             <input type="submit" class="form__submit" value="Entrar">
