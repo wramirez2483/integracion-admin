@@ -50,14 +50,12 @@
     gap: 4px;
 }
 .status{
-    height: 15em;
-    width: 15em;
+    height: 10em;
+    width: 10em;
     border-radius: 100%;
-    background-color: red;
     display: grid;
     place-items: center;
     box-shadow: inset 0px 0px 19px 0px black;
-    cursor: pointer;
     /* border: 1px solid rgba(0, 0, 0, 0.676); */
 }
 .status.active{

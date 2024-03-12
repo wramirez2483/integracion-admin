@@ -298,7 +298,7 @@ require_once '../app/controllers/batch/show_events.php';
                         <tr>
                             <th>Modalidad</th>
                             <th>Entrenamiento</th>
-                            <th>Codigo de Semilla</th>
+                            <th>Código de Semilla</th>
                             <th>Acciones</th>
                         </tr>
                     </thead>
