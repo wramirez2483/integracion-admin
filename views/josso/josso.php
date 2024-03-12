@@ -35,12 +35,18 @@ require_once '../app/controllers/josso/create_josso.php';
 
     <div class="form-inputs">
       <h3>Tiempo de espera max de respuesta sockets</h3>
-      <input type="number" id="time_socket" name="maximun_time_response_socket" min="0" placeholder="Minutos" required value="<?php echo isset($maximun_time_response_socket) ? $maximun_time_response_socket : '' ?>">
+      <div class="tooltip">
+        <span class="tooltiptext">Segundos</span>
+        <input type="number" id="time_socket" name="maximun_time_response_socket" min="0" placeholder="Segundos" required value="<?php echo isset($maximun_time_response_socket) ? $maximun_time_response_socket : '' ?>">
+      </div>
     </div>
 
     <div class="form-inputs">
       <h3>Tiempo de espera max de respuesta Webserver</h3>
-      <input type="number" id="time_webservice" name="maximun_time_response_webservice" min="0" placeholder="Minutos" required value="<?php echo  isset($maximun_time_response_webservice) ? $maximun_time_response_webservice : ''; ?>">
+      <div class="tooltip">
+        <span class="tooltiptext">Segundos</span>
+        <input type="number" id="time_webservice" name="maximun_time_response_webservice" min="0" placeholder="Segundos" required value="<?php echo  isset($maximun_time_response_webservice) ? $maximun_time_response_webservice : ''; ?>">
+    </div>
     </div>
 
     <div class="form-inputs">
