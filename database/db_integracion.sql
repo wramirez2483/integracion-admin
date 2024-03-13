@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 13-03-2024 a las 19:20:16
+-- Tiempo de generación: 13-03-2024 a las 19:58:28
 -- Versión del servidor: 8.2.0
 -- Versión de PHP: 8.2.13
 
@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `audit` (
   `id_user` bigint NOT NULL,
   PRIMARY KEY (`id`),
   KEY `id_user` (`id_user`)
-) ENGINE=InnoDB AUTO_INCREMENT=233 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=234 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `audit`
@@ -236,7 +236,8 @@ INSERT INTO `audit` (`id`, `events`, `date`, `id_user`) VALUES
 (229, 'logout', '2024-03-13 18:09:44', 1020304052),
 (230, 'singin', '2024-03-13 18:11:28', 1020304052),
 (231, 'singin', '2024-03-13 19:02:15', 1020304052),
-(232, 'singin', '2024-03-13 19:04:50', 1020304050);
+(232, 'singin', '2024-03-13 19:04:50', 1020304050),
+(233, 'singin', '2024-03-13 19:24:06', 1020304050);
 
 -- --------------------------------------------------------
 
@@ -261,7 +262,7 @@ CREATE TABLE IF NOT EXISTS `batch` (
 --
 
 INSERT INTO `batch` (`id_batch`, `integration_availabity`, `execution_schedule`, `notifications_target`, `user_id`, `date_updated`) VALUES
-(3, 0, '10:53:00', 'a:4:{i:3;s:16:\"corre@correo.com\";i:4;s:20:\"admin_sena@gmail.com\";i:5;s:13:\"123213123@com\";i:6;s:14:\"kare@correo.co\";}', 1020304050, '2024-03-07 20:28:41');
+(3, 0, '10:53:00', 'a:3:{i:3;s:16:\"corre@correo.com\";i:4;s:20:\"admin_sena@gmail.com\";i:5;s:13:\"123213123@com\";}', 1020304050, '2024-03-07 20:28:41');
 
 -- --------------------------------------------------------
 
@@ -392,7 +393,7 @@ CREATE TABLE IF NOT EXISTS `histories` (
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=187 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=188 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `histories`
@@ -566,7 +567,8 @@ INSERT INTO `histories` (`id`, `user_id`, `event`, `previous_state`, `new_state`
 (183, 1020304050, 'Josso - Modificó el Url del servicio gateway', 'urled', 'url', '2024-03-13 19:09:32'),
 (184, 1020304050, 'Josso - Modificó tiempo de espera maxi de respuesta sockets', '45', '2', '2024-03-13 19:09:32'),
 (185, 1020304050, 'Josso - Modificó tiempo de espera maxi de respuesta webserver', '16', '1', '2024-03-13 19:09:32'),
-(186, 1020304050, 'ServerEmail - Modificó el protocolo', 'PAP', 'PEP', '2024-03-13 19:09:42');
+(186, 1020304050, 'ServerEmail - Modificó el protocolo', 'PAP', 'PEP', '2024-03-13 19:09:42'),
+(187, 1020304050, 'Batch - Borro un destinatario ', '4 correos', '3 correos', '2024-03-13 19:32:10');
 
 -- --------------------------------------------------------
 
@@ -602,19 +604,19 @@ INSERT INTO `josso` (`id_josso`, `url_service_gateway`, `maximun_time_response_s
 DROP TABLE IF EXISTS `platform_status`;
 CREATE TABLE IF NOT EXISTS `platform_status` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `name_platform` text NOT NULL,
+  `name_platform` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `status` tinyint NOT NULL,
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `platform_status`
 --
 
 INSERT INTO `platform_status` (`id`, `name_platform`, `status`, `date`) VALUES
-(1, 'sofia', 1, '2024-03-13 15:23:26'),
-(2, 'lms', 0, '2024-03-13 15:23:35');
+(1, 'sofia', 0, '2024-03-13 15:23:26'),
+(2, 'lms', 1, '2024-03-13 15:23:35');
 
 -- --------------------------------------------------------
 
