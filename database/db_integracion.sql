@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 13-03-2024 a las 19:58:28
+-- Tiempo de generación: 13-03-2024 a las 20:05:28
 -- Versión del servidor: 8.2.0
 -- Versión de PHP: 8.2.13
 
@@ -288,7 +288,7 @@ CREATE TABLE IF NOT EXISTS `email_server` (
 --
 
 INSERT INTO `email_server` (`id_email_server`, `email_server`, `portocol`, `port`, `user`, `password`, `user_id`) VALUES
-(3, 'SSL://outlook.office365.co', 'PEP', 995, 'USUARIO', 'contrasen123', 1020304050);
+(3, 'SSL://outlook.office365.co', 'POP', 995, 'USUARIO', 'contrasen123', 1020304052);
 
 -- --------------------------------------------------------
 
@@ -375,7 +375,7 @@ INSERT INTO `events_without_sync` (`id`, `modality`, `training`, `seed_code`, `d
 (83, 'A', '6', 'Prueba', '2024-03-11 13:42:38', 0, 'delete', 1020304050),
 (84, 'V', '6', '1535', '2024-03-11 17:01:13', 0, 'delete', 1020304052),
 (85, 'V', '2', 'asesoria1121212', '2024-03-11 18:45:57', 0, 'delete', 1020304050),
-(86, 'V', '6', '5653', '2024-03-13 19:06:34', 1, 'update', 1020304050);
+(86, 'V', '6', 'Semilla_prueba_33', '2024-03-13 19:06:34', 1, 'update', 1020304052);
 
 -- --------------------------------------------------------
 
@@ -393,7 +393,7 @@ CREATE TABLE IF NOT EXISTS `histories` (
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=188 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=190 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `histories`
@@ -568,7 +568,9 @@ INSERT INTO `histories` (`id`, `user_id`, `event`, `previous_state`, `new_state`
 (184, 1020304050, 'Josso - Modificó tiempo de espera maxi de respuesta sockets', '45', '2', '2024-03-13 19:09:32'),
 (185, 1020304050, 'Josso - Modificó tiempo de espera maxi de respuesta webserver', '16', '1', '2024-03-13 19:09:32'),
 (186, 1020304050, 'ServerEmail - Modificó el protocolo', 'PAP', 'PEP', '2024-03-13 19:09:42'),
-(187, 1020304050, 'Batch - Borro un destinatario ', '4 correos', '3 correos', '2024-03-13 19:32:10');
+(187, 1020304050, 'Batch - Borro un destinatario ', '4 correos', '3 correos', '2024-03-13 19:32:10'),
+(188, 1020304052, 'ServerEmail - Modificó el protocolo', 'PEP', 'P89', '2024-03-13 20:01:16'),
+(189, 1020304052, 'ServerEmail - Modificó el protocolo', 'P89', 'POP', '2024-03-13 20:01:33');
 
 -- --------------------------------------------------------
 
@@ -604,7 +606,7 @@ INSERT INTO `josso` (`id_josso`, `url_service_gateway`, `maximun_time_response_s
 DROP TABLE IF EXISTS `platform_status`;
 CREATE TABLE IF NOT EXISTS `platform_status` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `name_platform` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `name_platform` text COLLATE utf8mb4_general_ci NOT NULL,
   `status` tinyint NOT NULL,
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
