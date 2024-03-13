@@ -70,12 +70,14 @@
     font-family: 900;
     font-size: 1.5em;
 }
-small.active{
+
+
+/* small.active{
     color: var(--primary);
 }
 small.disabled{
     color: red;
-}
+} */
 .status svg{
 
     height: 8em;

@@ -70,6 +70,7 @@ img.admin-icon{
 a{
     list-style: none;
     text-decoration: none;
+    cursor: pointer;
 }
 .active h2,
 .active .icon

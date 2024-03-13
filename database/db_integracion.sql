@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 11-03-2024 a las 23:09:27
+-- Tiempo de generación: 13-03-2024 a las 19:20:16
 -- Versión del servidor: 8.2.0
 -- Versión de PHP: 8.2.13
 
@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `audit` (
   `id_user` bigint NOT NULL,
   PRIMARY KEY (`id`),
   KEY `id_user` (`id_user`)
-) ENGINE=InnoDB AUTO_INCREMENT=181 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=233 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `audit`
@@ -184,7 +184,59 @@ INSERT INTO `audit` (`id`, `events`, `date`, `id_user`) VALUES
 (177, 'singin', '2024-03-11 21:25:00', 1020304050),
 (178, 'singin', '2024-03-11 21:52:31', 1020304050),
 (179, 'logout', '2024-03-11 23:02:20', 1020304052),
-(180, 'singin', '2024-03-11 23:03:42', 1020304052);
+(180, 'singin', '2024-03-11 23:03:42', 1020304052),
+(181, 'singin', '2024-03-12 13:00:32', 1020304050),
+(182, 'logout', '2024-03-12 13:03:29', 1020304050),
+(183, 'singin', '2024-03-12 13:03:33', 1020304050),
+(184, 'singin', '2024-03-12 13:12:00', 1020304052),
+(185, 'singin', '2024-03-12 13:18:32', 1020304050),
+(186, 'singin', '2024-03-12 13:19:25', 1020304052),
+(187, 'logout', '2024-03-12 13:21:59', 1020304050),
+(188, 'logout', '2024-03-12 13:23:12', 1020304052),
+(189, 'singin', '2024-03-12 13:36:24', 1020304051),
+(190, 'logout', '2024-03-12 13:36:52', 1020304051),
+(191, 'singin', '2024-03-12 13:37:54', 1020304051),
+(192, 'logout', '2024-03-12 13:50:44', 1020304051),
+(193, 'singin', '2024-03-12 13:51:10', 1020304051),
+(194, 'logout', '2024-03-12 13:51:20', 1020304051),
+(195, 'singin', '2024-03-12 13:51:31', 1020304051),
+(196, 'logout', '2024-03-12 14:29:27', 1020304051),
+(197, 'singin', '2024-03-12 14:32:27', 1020304051),
+(198, 'logout', '2024-03-12 15:50:45', 1020304050),
+(199, 'singin', '2024-03-12 15:50:51', 1020304050),
+(200, 'singin', '2024-03-12 16:22:09', 1020304051),
+(201, 'logout', '2024-03-12 16:22:19', 1020304051),
+(202, 'singin', '2024-03-12 16:22:27', 1020304052),
+(203, 'logout', '2024-03-12 18:36:31', 1020304052),
+(204, 'singin', '2024-03-12 18:36:37', 1020304052),
+(205, 'logout', '2024-03-12 18:36:44', 1020304052),
+(206, 'singin', '2024-03-12 18:36:50', 1020304052),
+(207, 'logout', '2024-03-12 18:54:22', 1020304052),
+(208, 'singin', '2024-03-12 18:54:29', 1020304052),
+(209, 'singin', '2024-03-12 20:18:37', 1020304050),
+(210, 'logout', '2024-03-12 20:25:53', 1020304051),
+(211, 'logout', '2024-03-12 20:26:06', 1020304052),
+(212, 'singin', '2024-03-12 21:23:44', 1020304050),
+(213, 'singin', '2024-03-12 21:32:56', 1020304050),
+(214, 'singin', '2024-03-12 21:50:18', 1020304052),
+(215, 'logout', '2024-03-12 22:04:16', 1020304052),
+(216, 'logout', '2024-03-12 22:23:04', 1020304050),
+(217, 'singin', '2024-03-12 22:38:03', 1020304052),
+(218, 'logout', '2024-03-12 22:50:10', 1020304052),
+(219, 'singin', '2024-03-13 13:06:23', 1020304050),
+(220, 'singin', '2024-03-13 13:08:08', 1020304050),
+(221, 'singin', '2024-03-13 13:28:35', 1020304052),
+(222, 'singin', '2024-03-13 15:54:43', 1020304050),
+(223, 'singin', '2024-03-13 15:57:19', 1020304050),
+(224, 'logout', '2024-03-13 16:05:57', 1020304052),
+(225, 'singin', '2024-03-13 16:09:22', 1020304052),
+(226, 'singin', '2024-03-13 16:16:03', 1020304052),
+(227, 'logout', '2024-03-13 16:19:47', 1020304052),
+(228, 'singin', '2024-03-13 16:20:04', 1020304052),
+(229, 'logout', '2024-03-13 18:09:44', 1020304052),
+(230, 'singin', '2024-03-13 18:11:28', 1020304052),
+(231, 'singin', '2024-03-13 19:02:15', 1020304052),
+(232, 'singin', '2024-03-13 19:04:50', 1020304050);
 
 -- --------------------------------------------------------
 
@@ -209,7 +261,7 @@ CREATE TABLE IF NOT EXISTS `batch` (
 --
 
 INSERT INTO `batch` (`id_batch`, `integration_availabity`, `execution_schedule`, `notifications_target`, `user_id`, `date_updated`) VALUES
-(3, 1, '06:29:00', 'a:18:{i:0;s:13:\"123213123@com\";i:1;s:17:\"correo@correo.com\";i:2;s:17:\"correo@correo.com\";i:3;s:17:\"correo@correo.com\";i:4;s:17:\"correo@correo.com\";i:5;s:13:\"123213123@com\";i:6;s:10:\"prueba@com\";i:7;s:10:\"prueba@com\";i:8;s:17:\"correo@correo.com\";i:9;s:17:\"correo@correo.com\";i:10;s:17:\"correo@correo.com\";i:11;s:17:\"correo@correo.com\";i:12;s:17:\"correo@correo.com\";i:13;s:17:\"correo@correo.com\";i:14;s:17:\"correo@correo.com\";i:15;s:17:\"correo@correo.com\";i:16;s:17:\"correo@correo.com\";i:17;s:17:\"correo@correo.com\";}', 1020304052, '2024-03-07 20:28:41');
+(3, 0, '10:53:00', 'a:4:{i:3;s:16:\"corre@correo.com\";i:4;s:20:\"admin_sena@gmail.com\";i:5;s:13:\"123213123@com\";i:6;s:14:\"kare@correo.co\";}', 1020304050, '2024-03-07 20:28:41');
 
 -- --------------------------------------------------------
 
@@ -235,7 +287,7 @@ CREATE TABLE IF NOT EXISTS `email_server` (
 --
 
 INSERT INTO `email_server` (`id_email_server`, `email_server`, `portocol`, `port`, `user`, `password`, `user_id`) VALUES
-(3, 'SSL://outlook.office365.co', 'PEP', 995, 'USUARIO', 'contrasena2', 1020304050);
+(3, 'SSL://outlook.office365.co', 'PEP', 995, 'USUARIO', 'contrasen123', 1020304050);
 
 -- --------------------------------------------------------
 
@@ -268,7 +320,7 @@ CREATE TABLE IF NOT EXISTS `events_without_sync` (
   `user_id` bigint NOT NULL,
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=86 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=87 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `events_without_sync`
@@ -276,14 +328,14 @@ CREATE TABLE IF NOT EXISTS `events_without_sync` (
 
 INSERT INTO `events_without_sync` (`id`, `modality`, `training`, `seed_code`, `date_created`, `status_event`, `events`, `user_id`) VALUES
 (39, 'A', '6', 'Semilla_prueba', '2024-03-07 15:54:40', 0, 'delete', 1020304052),
-(40, 'A', '6', 'Semilla_prueba_78', '2024-03-07 19:49:37', 0, 'delete', 1020304050),
-(41, 'A', '6', 'INTRODUCCION_', '2024-03-07 22:33:53', 1, 'create', 1020304050),
+(40, 'A', '6', 'Semilla_prueba_105', '2024-03-07 19:49:37', 0, 'delete', 1020304051),
+(41, 'A', '6', 'INTRODUCCION_', '2024-03-07 22:33:53', 0, 'delete', 1020304052),
 (42, 'A', '6', 'INTRODUCCION', '2024-03-07 22:34:01', 1, 'create', 1020304050),
 (43, 'A', '6', 'INTRODUCION48', '2024-03-07 22:34:22', 1, 'update', 1020304050),
 (44, 'V', '6', 'ADSO1254', '2024-03-07 22:34:33', 0, 'delete', 1020304050),
 (45, 'A', '6', 'Semilla_prueba_33', '2024-03-07 22:34:51', 0, 'delete', 1020304050),
 (46, 'A', '2', 'Semilla_prueba_33', '2024-03-08 13:55:15', 0, 'delete', 1020304050),
-(47, 'A', '2', 'Semilla_prueba_789', '2024-03-08 15:29:49', 0, 'delete', 1020304050),
+(47, 'A', '6', 'Semilla_prueba_105', '2024-03-08 15:29:49', 0, 'delete', 1020304051),
 (48, 'V', '2', 'fgfgf', '2024-03-08 15:30:00', 0, 'delete', 1020304050),
 (49, 'A', '6', 'ADSO', '2024-03-09 13:19:49', 0, 'delete', 1020304050),
 (50, 'V', '2', 'Semilla_prueba_88', '2024-03-09 14:03:22', 1, 'create', 1020304050),
@@ -305,23 +357,24 @@ INSERT INTO `events_without_sync` (`id`, `modality`, `training`, `seed_code`, `d
 (66, 'A', '2', 'quimica', '2024-03-09 17:04:04', 1, 'create', 1020304050),
 (67, 'A', '6', 'fisica', '2024-03-09 17:04:13', 1, 'create', 1020304050),
 (68, 'A', '2', 'matematica', '2024-03-09 17:04:24', 1, 'create', 1020304050),
-(69, 'V', '2', 'algebra', '2024-03-09 17:04:31', 1, 'create', 1020304050),
-(70, 'V', '6', 'dibujo', '2024-03-09 17:04:42', 1, 'create', 1020304050),
-(71, 'A', '6', 'php', '2024-03-09 17:04:50', 1, 'create', 1020304050),
-(72, 'A', '6', 'html', '2024-03-09 17:05:03', 1, 'create', 1020304050),
-(73, 'A', '2', 'python', '2024-03-09 17:05:21', 1, 'create', 1020304050),
-(74, 'V', '6', 'java', '2024-03-09 17:05:35', 1, 'create', 1020304050),
-(75, 'A', '2', '456', '2024-03-09 17:05:52', 1, 'create', 1020304050),
-(76, 'A', '6', '413', '2024-03-09 17:05:59', 1, 'create', 1020304050),
-(77, 'A', '2', '4541', '2024-03-09 17:06:04', 1, 'create', 1020304050),
-(78, 'V', '6', '532', '2024-03-09 17:06:10', 1, 'create', 1020304050),
-(79, 'V', '6', '535', '2024-03-09 17:06:19', 1, 'create', 1020304050),
-(80, 'A', '6', '53', '2024-03-09 17:06:27', 1, 'create', 1020304050),
-(81, 'A', '2', '89', '2024-03-09 17:06:31', 1, 'update', 1020304052),
+(69, 'V', '2', 'algebra', '2024-03-09 17:04:31', 1, 'update', 1020304052),
+(70, 'V', '6', 'dibujo', '2024-03-09 17:04:42', 0, 'delete', 1020304052),
+(71, 'A', '6', 'php', '2024-03-09 17:04:50', 0, 'delete', 1020304051),
+(72, 'A', '6', 'html', '2024-03-09 17:05:03', 0, 'delete', 1020304051),
+(73, 'A', '2', 'python', '2024-03-09 17:05:21', 0, 'delete', 1020304052),
+(74, 'A', '6', 'java', '2024-03-09 17:05:35', 0, 'delete', 1020304051),
+(75, 'A', '2', '456', '2024-03-09 17:05:52', 0, 'delete', 1020304051),
+(76, 'A', '6', '413', '2024-03-09 17:05:59', 0, 'delete', 1020304052),
+(77, 'A', '2', '4541', '2024-03-09 17:06:04', 0, 'delete', 1020304052),
+(78, 'V', '6', '532', '2024-03-09 17:06:10', 0, 'delete', 1020304052),
+(79, 'A', '6', '535', '2024-03-09 17:06:19', 0, 'delete', 1020304051),
+(80, 'A', '6', 'Semilla_prueba_105', '2024-03-09 17:06:27', 0, 'delete', 1020304051),
+(81, 'V', '2', '89', '2024-03-09 17:06:31', 0, 'delete', 1020304050),
 (82, 'A', '6', '5', '2024-03-09 17:06:36', 0, 'delete', 1020304052),
 (83, 'A', '6', 'Prueba', '2024-03-11 13:42:38', 0, 'delete', 1020304050),
 (84, 'V', '6', '1535', '2024-03-11 17:01:13', 0, 'delete', 1020304052),
-(85, 'V', '2', 'asesoria1121212', '2024-03-11 18:45:57', 1, 'update', 1020304050);
+(85, 'V', '2', 'asesoria1121212', '2024-03-11 18:45:57', 0, 'delete', 1020304050),
+(86, 'V', '6', '5653', '2024-03-13 19:06:34', 1, 'update', 1020304050);
 
 -- --------------------------------------------------------
 
@@ -339,7 +392,7 @@ CREATE TABLE IF NOT EXISTS `histories` (
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=92 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=187 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `histories`
@@ -418,7 +471,102 @@ INSERT INTO `histories` (`id`, `user_id`, `event`, `previous_state`, `new_state`
 (88, 1020304050, 'Batch - Borro un destinatario ', '18 correos', '18 correos', '2024-03-11 23:01:49'),
 (89, 1020304050, 'Batch - Borro un destinatario ', '18 correos', '18 correos', '2024-03-11 23:01:50'),
 (90, 1020304050, 'Batch - Borro un destinatario ', '18 correos', '18 correos', '2024-03-11 23:01:51'),
-(91, 1020304050, 'Batch - Borro un destinatario ', '18 correos', '18 correos', '2024-03-11 23:01:51');
+(91, 1020304050, 'Batch - Borro un destinatario ', '18 correos', '18 correos', '2024-03-11 23:01:51'),
+(92, 1020304050, 'Batch - Deshabilito la disponibilidad de integración la disponibilidad de integración', '1', '0', '2024-03-12 13:01:46'),
+(93, 1020304050, 'Batch - Borro un destinatario ', '18 correos', '18 correos', '2024-03-12 13:02:18'),
+(94, 1020304050, 'Batch - Borro un destinatario ', '18 correos', '18 correos', '2024-03-12 13:03:27'),
+(95, 1020304050, 'Batch - Borro un destinatario ', '18 correos', '18 correos', '2024-03-12 13:03:28'),
+(96, 1020304050, 'Batch - Borro un destinatario ', '18 correos', '18 correos', '2024-03-12 13:03:28'),
+(97, 1020304050, 'Batch - Borro un destinatario ', '18 correos', '18 correos', '2024-03-12 13:08:13'),
+(98, 1020304050, 'Batch - Borro un destinatario ', '18 correos', '18 correos', '2024-03-12 13:08:26'),
+(99, 1020304050, 'Batch - Borro un destinatario ', '18 correos', '18 correos', '2024-03-12 13:09:13'),
+(100, 1020304050, 'Batch - Borro un destinatario ', '18 correos', '18 correos', '2024-03-12 13:09:28'),
+(101, 1020304050, 'Batch - Borro un destinatario ', '18 correos', '18 correos', '2024-03-12 13:10:22'),
+(102, 1020304050, 'Batch - Borro un destinatario ', '18 correos', '18 correos', '2024-03-12 13:10:23'),
+(103, 1020304050, 'Batch - Borro un destinatario ', '18 correos', '18 correos', '2024-03-12 13:10:30'),
+(104, 1020304050, 'Batch - Borro un destinatario ', '18 correos', '17 correos', '2024-03-12 13:12:16'),
+(105, 1020304050, 'Batch - Borro un destinatario ', '17 correos', '16 correos', '2024-03-12 13:12:33'),
+(106, 1020304050, 'Batch - Borro un destinatario ', '16 correos', '15 correos', '2024-03-12 13:12:34'),
+(107, 1020304050, 'Batch - Borro un destinatario ', '15 correos', '14 correos', '2024-03-12 13:12:35'),
+(108, 1020304050, 'Batch - Borro un destinatario ', '14 correos', '13 correos', '2024-03-12 13:12:38'),
+(109, 1020304050, 'Batch - Borro un destinatario ', '13 correos', '12 correos', '2024-03-12 13:12:38'),
+(110, 1020304050, 'Batch - Borro un destinatario ', '12 correos', '11 correos', '2024-03-12 13:12:39'),
+(111, 1020304050, 'Batch - Borro un destinatario ', '11 correos', '10 correos', '2024-03-12 13:12:40'),
+(112, 1020304050, 'Batch - Borro un destinatario ', '10 correos', '9 correos', '2024-03-12 13:12:40'),
+(113, 1020304050, 'Batch - Borro un destinatario ', '9 correos', '8 correos', '2024-03-12 13:12:40'),
+(114, 1020304050, 'Batch - Borro un destinatario ', '8 correos', '7 correos', '2024-03-12 13:12:41'),
+(115, 1020304050, 'Batch - Borro un destinatario ', '7 correos', '6 correos', '2024-03-12 13:12:41'),
+(116, 1020304050, 'Batch - Borro un destinatario ', '6 correos', '5 correos', '2024-03-12 13:12:42'),
+(117, 1020304050, 'Batch - Borro un destinatario ', '5 correos', '4 correos', '2024-03-12 13:12:42'),
+(118, 1020304050, 'Batch - Borro un destinatario ', '4 correos', '3 correos', '2024-03-12 13:12:43'),
+(119, 1020304050, 'Batch - Borro un destinatario ', '3 correos', '2 correos', '2024-03-12 13:12:45'),
+(120, 1020304050, 'Batch - Borro un destinatario ', '2 correos', '1 correos', '2024-03-12 13:12:46'),
+(121, 1020304050, 'Batch - Borro un destinatario ', '1 correos', '0 correos', '2024-03-12 13:13:02'),
+(122, 1020304050, 'Batch - Agregó destinatario ', '1 correos', '2 correos', '2024-03-12 13:13:13'),
+(123, 1020304050, 'Batch - Agregó destinatario ', '2 correos', '3 correos', '2024-03-12 13:16:27'),
+(124, 1020304050, 'Batch - Agregó destinatario ', '3 correos', '4 correos', '2024-03-12 13:18:11'),
+(125, 1020304050, 'Batch - Agregó destinatario ', '4 correos', '5 correos', '2024-03-12 13:18:17'),
+(126, 1020304050, 'Batch - Agregó destinatario ', '5 correos', '6 correos', '2024-03-12 13:18:24'),
+(127, 1020304050, 'Batch - Borro un destinatario ', '6 correos', '5 correos', '2024-03-12 13:18:26'),
+(128, 1020304050, 'Batch - Borro un destinatario ', '5 correos', '4 correos', '2024-03-12 13:18:28'),
+(129, 1020304050, 'Batch - Habilito la disponibilidad de integración', '0', '1', '2024-03-12 13:18:34'),
+(130, 1020304050, 'Batch - Modificó la hora de ejecución', '06:29:00', '09:29', '2024-03-12 13:18:34'),
+(131, 1020304050, 'Josso - Modificó el Url del servicio gateway', 'urlreal', 'url', '2024-03-12 13:19:22'),
+(132, 1020304050, 'Josso - Modificó tiempo de espera maxi de respuesta sockets', '10', '1', '2024-03-12 13:19:27'),
+(133, 1020304050, 'Josso - Modificó tiempo de espera maxi de respuesta webserver', '10', '1', '2024-03-12 13:19:27'),
+(134, 1020304050, 'ServerEmail - Modificó el protocolo', 'PEP', 'POP', '2024-03-12 13:20:09'),
+(135, 1020304050, 'ServerEmail - Modificó la contraseña', 'contrasena2', 'contrasen123', '2024-03-12 13:20:09'),
+(136, 1020304050, 'Batch - Borro un destinatario ', '4 correos', '3 correos', '2024-03-12 13:21:55'),
+(137, 1020304051, 'Batch - Deshabilito la disponibilidad de integración la disponibilidad de integración', '1', '0', '2024-03-12 13:38:01'),
+(138, 1020304051, 'Batch - Modificó la hora de ejecución', '09:29:00', '10:30', '2024-03-12 13:38:01'),
+(139, 1020304051, 'Batch - Borro un destinatario ', '3 correos', '2 correos', '2024-03-12 13:40:53'),
+(140, 1020304051, 'Batch - Borro un destinatario ', '2 correos', '1 correos', '2024-03-12 13:40:54'),
+(141, 1020304051, 'Batch - Borro un destinatario ', '1 correos', '0 correos', '2024-03-12 13:40:55'),
+(142, 1020304051, 'Batch - Agregó destinatario ', '1 correos', '2 correos', '2024-03-12 13:42:10'),
+(143, 1020304051, 'Batch - Borro un destinatario ', '2 correos', '1 correos', '2024-03-12 13:42:23'),
+(144, 1020304051, 'ServerEmail - Modificó el protocolo', 'POP', 'PEP', '2024-03-12 13:51:38'),
+(145, 1020304051, 'ServerEmail - Modificó el servidor de correo', 'SSL://outlook.office365.co', 'SSL://hotmail.office365.co', '2024-03-12 14:57:51'),
+(146, 1020304051, 'Batch - Agregó destinatario ', '1 correos', '2 correos', '2024-03-12 15:02:57'),
+(147, 1020304051, 'Batch - Agregó destinatario ', '2 correos', '3 correos', '2024-03-12 15:03:00'),
+(148, 1020304051, 'Batch - Agregó destinatario ', '3 correos', '4 correos', '2024-03-12 15:03:03'),
+(149, 1020304051, 'Batch - Borro un destinatario ', '4 correos', '3 correos', '2024-03-12 15:07:03'),
+(150, 1020304051, 'Batch - Borro un destinatario ', '3 correos', '2 correos', '2024-03-12 15:07:04'),
+(151, 1020304052, 'Batch - Habilito la disponibilidad de integración', '0', '1', '2024-03-12 16:23:00'),
+(152, 1020304052, 'Batch - Modificó la hora de ejecución', '10:30:00', '12:00', '2024-03-12 16:23:00'),
+(153, 1020304052, 'Batch - Agregó destinatario ', '2 correos', '3 correos', '2024-03-12 16:26:24'),
+(154, 1020304052, 'Batch - Borro un destinatario ', '3 correos', '2 correos', '2024-03-12 16:26:27'),
+(155, 1020304051, 'Josso - Modificó tiempo de espera maxi de respuesta sockets', '1', '2', '2024-03-12 16:57:02'),
+(156, 1020304051, 'ServerEmail - Modificó el servidor de correo', 'SSL://hotmail.office365.co', 'SSL://outlook.office365.co', '2024-03-12 16:57:12'),
+(157, 1020304052, 'Batch - Modificó la hora de ejecución', '12:00:00', '15:00', '2024-03-12 19:49:56'),
+(158, 1020304052, 'Batch - Modificó la hora de ejecución', '15:00:00', '15:00', '2024-03-12 19:50:01'),
+(159, 1020304051, 'Batch - Agregó destinatario ', '2 correos', '3 correos', '2024-03-12 20:06:34'),
+(160, 1020304051, 'Batch - Agregó destinatario ', '3 correos', '4 correos', '2024-03-12 20:08:00'),
+(161, 1020304051, 'Batch - Agregó destinatario ', '4 correos', '5 correos', '2024-03-12 20:16:41'),
+(162, 1020304051, 'Batch - Agregó destinatario ', '5 correos', '6 correos', '2024-03-12 20:18:31'),
+(163, 1020304051, 'Batch - Borro un destinatario ', '6 correos', '5 correos', '2024-03-12 20:18:56'),
+(164, 1020304051, 'Batch - Borro un destinatario ', '5 correos', '4 correos', '2024-03-12 20:18:58'),
+(165, 1020304051, 'Batch - Borro un destinatario ', '4 correos', '3 correos', '2024-03-12 20:19:06'),
+(166, 1020304051, 'Batch - Borro un destinatario ', '3 correos', '2 correos', '2024-03-12 20:19:10'),
+(167, 1020304051, 'Batch - Agregó destinatario ', '2 correos', '3 correos', '2024-03-12 20:19:14'),
+(168, 1020304051, 'Batch - Agregó destinatario ', '3 correos', '4 correos', '2024-03-12 20:19:18'),
+(169, 1020304051, 'Batch - Borro un destinatario ', '4 correos', '3 correos', '2024-03-12 20:19:34'),
+(170, 1020304051, 'Batch - Agregó destinatario ', '3 correos', '4 correos', '2024-03-12 20:21:54'),
+(171, 1020304051, 'Batch - Agregó destinatario ', '4 correos', '5 correos', '2024-03-12 20:21:57'),
+(172, 1020304052, 'Batch - Borro un destinatario ', '5 correos', '4 correos', '2024-03-12 21:59:05'),
+(173, 1020304052, 'Batch - Borro un destinatario ', '4 correos', '3 correos', '2024-03-12 21:59:06'),
+(174, 1020304052, 'Batch - Modificó la hora de ejecución', '15:00:00', '17:30', '2024-03-12 22:38:29'),
+(175, 1020304052, 'Batch - Modificó la hora de ejecución', '17:30:00', '20:30', '2024-03-13 14:03:55'),
+(176, 1020304050, 'Batch - Deshabilito la disponibilidad de integración la disponibilidad de integración', '1', '0', '2024-03-13 14:04:44'),
+(177, 1020304052, 'Batch - Modificó la hora de ejecución', '20:30:00', '10:53', '2024-03-13 15:53:55'),
+(178, 1020304050, 'Batch - Agregó destinatario ', '3 correos', '4 correos', '2024-03-13 19:06:09'),
+(179, 1020304050, 'Josso - Modificó el Url del servicio gateway', 'url', 'urled', '2024-03-13 19:08:57'),
+(180, 1020304050, 'Josso - Modificó tiempo de espera maxi de respuesta sockets', '2', '45', '2024-03-13 19:08:57'),
+(181, 1020304050, 'Josso - Modificó tiempo de espera maxi de respuesta webserver', '1', '16', '2024-03-13 19:08:57'),
+(182, 1020304050, 'ServerEmail - Modificó el protocolo', 'PEP', 'PAP', '2024-03-13 19:09:13'),
+(183, 1020304050, 'Josso - Modificó el Url del servicio gateway', 'urled', 'url', '2024-03-13 19:09:32'),
+(184, 1020304050, 'Josso - Modificó tiempo de espera maxi de respuesta sockets', '45', '2', '2024-03-13 19:09:32'),
+(185, 1020304050, 'Josso - Modificó tiempo de espera maxi de respuesta webserver', '16', '1', '2024-03-13 19:09:32'),
+(186, 1020304050, 'ServerEmail - Modificó el protocolo', 'PAP', 'PEP', '2024-03-13 19:09:42');
 
 -- --------------------------------------------------------
 
@@ -443,7 +591,30 @@ CREATE TABLE IF NOT EXISTS `josso` (
 --
 
 INSERT INTO `josso` (`id_josso`, `url_service_gateway`, `maximun_time_response_socket`, `maximun_time_response_webservice`, `name_plataforma`, `user_id`) VALUES
-(6, 'urlreal', 10, 10, 'SENAPRODUCTO', 1020304052);
+(6, 'url', 2, 1, 'SENAPRODUCTO', 1020304050);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `platform_status`
+--
+
+DROP TABLE IF EXISTS `platform_status`;
+CREATE TABLE IF NOT EXISTS `platform_status` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name_platform` text NOT NULL,
+  `status` tinyint NOT NULL,
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Volcado de datos para la tabla `platform_status`
+--
+
+INSERT INTO `platform_status` (`id`, `name_platform`, `status`, `date`) VALUES
+(1, 'sofia', 1, '2024-03-13 15:23:26'),
+(2, 'lms', 0, '2024-03-13 15:23:35');
 
 -- --------------------------------------------------------
 
