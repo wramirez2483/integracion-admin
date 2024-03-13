@@ -107,12 +107,14 @@ function handleWindow(targetId) {
 }
 
 
-function handleEditEvent(event, seedCode, modality, training) {
+function handleEditEvent(seedCode, modality, training) {
+
   document.getElementById('event_seed_code').value = seedCode;
   document.getElementById('modality').value = modality;
   document.getElementById('training').value = training;
   document.getElementById('seed_code').value = seedCode;
   handleWindow('#window-target')
+
 }
 
 function handleDeleteEvent(seed){

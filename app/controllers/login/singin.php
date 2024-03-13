@@ -22,6 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Iniciar sesión
         $_SESSION['document'] = $num_id;
         $_SESSION['name'] = $user['name'];
+        $_SESSION['role'] = $user['role'];
         $_SESSION['logueado'] = true;
         $event = "singin";
 
