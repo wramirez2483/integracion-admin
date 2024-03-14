@@ -76,7 +76,6 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
     $stmt->bindParam(':user_id', $_SESSION['document']);
 
     if ($stmt_find->rowCount() > 0) {
-        // Agregar vinculación de parámetro :id_josso
         $stmt->bindParam(':id_josso', $_POST['id_josso']);
     }
     if ($stmt->execute()) { 
@@ -86,5 +85,5 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
     }
 
     header('Location: ../../../views/josso.php');
-    exit; // Importante para detener la ejecución después de redirigir
+    exit;
 }

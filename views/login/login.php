@@ -2,12 +2,12 @@
     <form action="/app-integracion/app/controllers/login/singin.php" class="form" method="POST">
         <?php
             if (isset($_SESSION['error_message'])  ) {
-                echo '<div class="message">' .  $_SESSION['error_message']   . '</div>';
+                echo '<div class="message message--error">' .  $_SESSION['error_message']   . '</div>';
                 unset($_SESSION['error_message']);
             }
             
             if (isset($_SESSION['error-authorized'])  ) {
-                echo '<div class="message">' .  $_SESSION['error-authorized']   . '</div>';
+                echo '<div class="message message--error">' .  $_SESSION['error-authorized']   . '</div>';
                 unset($_SESSION['error-authorized']);
             }
 
@@ -46,7 +46,7 @@
                 </span>
                 <div class="input-pwd">
                     <div class="eye">
-                        <img class="icon_handle" id="icon-toggle" src="./img/RiEyeLine.svg" onclick="handleEyeGeneral('./img/')" alt="Toggle Password Visibility">
+                        <img class="icon_handle" id="icon-toggle" src="./img/RiEyeLine.svg" onclick="handleEyeGeneral('./img/','password')" alt="Toggle Password Visibility">
                     </div>
                 </div>
                 <br>

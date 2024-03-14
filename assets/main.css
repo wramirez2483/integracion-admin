@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
 * {
     padding: 0;
     margin: 0;
@@ -21,41 +23,29 @@
     --color-warning: #f1c40f;
     --color-info: #ffffff;
     --primary-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
-    --primary-font-family: 'Work Sans Regular', sans-serif;
-    --secondary-font-family: 'Work Sans Bold', sans-serif;
-    --bp-small: 480px;
-    --bp-medium: 767px;
-    --bp-large: 1200px;
-    --web-margin: 1366px;
 }
 
-/* Estilos inicio */
-
-.container-home {
+/*  ------ | Estilos inicio  | ------ */
+.container__home {
     width: 100%;
     height: 100vh;
     display: flex;
     overflow-y: hidden;
-    /* display: grid; */
 }
-
 header {
     background-color: var(--primary);
     text-align: center;
     color: white;
     padding: 1em;
     z-index: 1;
-    /* width: 100%; */
 }
-
-.content-home {
+.content__home {
     display: flex;
     flex-direction: column;
     width: 100%;
 }
 
-/* Inputs  */
-
+/* ------ | Inputs | ------ */
 input[type='text'],
 input[type='email'],
 input[type='number'],
@@ -65,9 +55,6 @@ input[type='password']
     padding: .5em;
     border-radius: 12px;
     border: 1px solid var(--primary);
-    /* background-color: var(--secondary-background); */
-
-    /* transition: all .3s ease-out; */
     transition: .3s box-shadow ease-in-out;
 }
 
@@ -82,8 +69,7 @@ input[type="checkbox"] {
     display: grid;
     grid-template-columns: 1em auto;
     gap: 0.5em;
-    font-size: 2rem;
-    
+    font-size: 2rem;    
 }
 
 select{
@@ -92,8 +78,7 @@ select{
 }
 
 
-/* Botones */
-
+/*  ------ | Botones | ------ */
 input[type="submit"],
 button
 {
@@ -122,26 +107,24 @@ button a{
 button:hover a{
     color: white;
 }
-/* Estilos Josso y Servidor de correo */
 
+/* Estilos Josso , Servidor de correo */
 
-/* Estilos formulario */
-.container-form {
+/* Estilos formulario  */
+.container__form {
     width: 100%;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
-div.form-inputs {
+div.form__inputs {
     display: flex;
     width: 100%;
     justify-content: space-between;
     gap: 5em;
 }
-
-.content-form {
+.content__form {
     display: flex;
     padding: 2em;
     gap: 2.5em;
@@ -153,13 +136,29 @@ div.form-inputs {
     border-radius: 12px;
     width: 80vh;
 }
-
-.botons{
+.content__form__botons{
     margin: 0 auto;
 }
 
+.checkboxes {
+    display: flex;
+    gap: 2em;
+}
 
-/* Mensajes */
+.check {
+    font-weight: bold;
+    display: flex;
+    gap: 4px;
+}
+/* Paginacion y buscador */
+.other__pagination{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2em;
+}
+
+
+/* ------ | Mensajes | ------ */
 div.message{
     display: flex;
     justify-content: space-between;
@@ -171,7 +170,6 @@ div.message{
     border-radius: 8px;
     text-align: center;
 }
-
 strong{
     cursor: pointer;
     transition: all .2s ease  ;
@@ -179,30 +177,20 @@ strong{
 strong:hover{
     color: rgb(223, 223, 223);
 }
-
-
-div.message.success{
+div.message--success{
 
     background: var(--tertiary);
     color: var(--primary);
     border: 1px solid var(--primary);
 }
-div.message.error{
+div.message--error{
     color: #f87171;
     background-color: #fee2e2;
     border: 1px solid #f87171;
-
 }
 
-div.botones{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
+/* ------ | Paginacion | ------*/
 
-/* Paginacion */
-
-/* Paginacion */
 .pagination {
     margin-top: 1em;
     display: flex;
@@ -229,25 +217,111 @@ div.botones{
     border-radius: 5px;
 }
 
-/* estilo de los tablas */
+/* ESTILOS OTRA PAGINACION */
+.other__pagination__search{
+    display: flex;
+    align-items: center;
+}
 
-/* Tabla */
-table.customTable {
+.other__pagination__search svg{
+    width: 25px;
+    height: 25px;
+}
+
+.other__pagination__search path{
+    fill: black;
+}
+/* ------ | Tabla | ------*/
+
+table.table__list {
     width: 100%;
     background-color: #FFFFFF;
     border-collapse: collapse;
     color: #000000;
 }
 
-table.customTable td,
-table.customTable th {
+table.table__list td,
+table.table__list th {
     border-width: 2px;
     border-color: #CCCC;
     border-style: solid;
     padding: 5px; 
 }
 
-table.customTable thead {
+table.table__list thead {
     color: white;
     background-color:var(--alternate-background) ;
+}
+
+
+/* ------ | Estilos Menu | ------ */
+.menu__container{
+    height: 100vh;
+    width: 30vh;
+    background-color: var(--alternate-background);
+}
+.menu__content{
+    height: 100vh;
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.menu__content__admin__title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3em;
+}
+.menu__content__admin__title h1{
+    color: white;
+    font-size: 1.7em;
+    text-align: center;
+}
+.menu__content__admin__title img{
+    height: 4em;
+    width: 4em;
+}
+.menu__content__options{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    transition: all .3s ease-in;
+}
+.menu__content__options a,
+.menu__auth{
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    color: white;
+    font-size: 1em;
+    justify-content: space-between;
+    cursor: pointer;
+    height: 3em;
+}
+.menu__auth{
+    font-size: .8em;
+}
+
+.icon, .menu__auth svg{
+    height: 2em;
+    width: 2em;
+    fill: white;
+}
+.menu__content__options a{
+    list-style: none;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all .3s ease-in;
+}
+.menu__content__options a:hover .icon, .menu__content__options a:hover h2{
+    transition: all .3s ease-in;
+    color:var(--primary);
+    fill: var(--primary);
+}
+
+.menu__content__options .active h2, .menu__content__options .active .icon{
+    color:var(--primary) ;
+    fill: var(--primary);
 }

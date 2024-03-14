@@ -1,7 +1,5 @@
 <?php
     require_once '../../app/config.php';
-    //require_once '../../guards/validationLogin.php';
-    //validarLogin();
 ?> 
 
 <!DOCTYPE html>
@@ -16,7 +14,7 @@
     <form action="../../app/controllers/login/register.php" class="form" method="POST">
     <?php
     if (isset($_SESSION['error_message'])) {
-        echo '<div class="message error">' .  $_SESSION['error_message'] . '</div>';
+        echo '<div class="message message--error">' .  $_SESSION['error_message'] . '</div>';
         unset($_SESSION['error_message']);
     }
     ?>
@@ -33,7 +31,7 @@
                 <label for="name" class="form__label">Nombre:</label>
                 <span class="form__line"></span>
             </div>
-            <div class="form__group">
+            <div class="form_h_group">
                 <label for="tipe_id" class="form__label"></label>
                 <select id="tipe_id" name="tipe_id" class="form__input">
                     <option value="cc">Cédula de Ciudadanía</option>
@@ -65,7 +63,7 @@
                 <div class="input-pwd">
 
                     <div class="eye">
-                        <img class="icon_handle" id="icon-toggle" src="../../img/RiEyeLine.svg" onclick="handleEye()" alt="Toggle Password Visibility">
+                        <img class="icon_handle" id="icon-toggle" src="../../img/RiEyeLine.svg" onclick="handleEyeGeneral('../../img/','password')" alt="Toggle Password Visibility">
                     </div>
                 </div>
 
@@ -78,7 +76,7 @@
                 <div class="input-pwd">
 
                     <div class="eye">
-                        <img class="icon_handle" id="icon-toggle2" src="../../img/RiEyeLine.svg" onclick="handleEyeTwo()" alt="Toggle Password Visibility">
+                        <img class="icon_handle" id="icon-toggle2" src="../../img/RiEyeLine.svg" onclick="handleEyeGeneral('../../img/','verify-password')" alt="Toggle Password Visibility">
                     </div>
                 </div>
 

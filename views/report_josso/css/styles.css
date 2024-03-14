@@ -1,0 +1,11 @@
+
+.list-audits{
+    overflow-y: auto;
+    height: 60vh;
+}
+
+select{
+    padding: .4em;
+    border-radius: 5px;
+}
+

@@ -1,21 +1,21 @@
 <?php 
-   $sql = "SELECT status FROM platform_status";
-
-   $stmt = $pdo->query($sql);
-   $stmt->execute();
-
-   // Obtener los resultados de la consulta
-   $resultado = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    // Trae la info al carga por primera vez
+    $sql = "SELECT status FROM platform_status";
+    $stmt = $pdo->query($sql);
+    $stmt->execute();
+    $resultado = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
-<div class="container-dashboard">
+
+<!-- Contenedor principal del dashboard -->
+<div class="container__dashboard">
 
     <h1>Bienvenid@ - <?php echo $_SESSION['name']; ?></h1>
     <h2>Conexiones</h2>
-    <div class="info">
+    <div class="container__dashboard__info">
 
-        
-        <div class="info-connection">
+        <!-- Información de conexion con "SOFIAPLUS" -->
+        <div class="container__dashboard__info__connection">
             <h1>SOFIA</h1>
 
             <div  class="status <?php echo $resultado[0]['status'] == 1 ? 'active' : 'disabled';   ?>" id="status-sofia">
@@ -28,8 +28,8 @@
             </small>
         </div>
 
-        <div class="info-connection">
-
+        <!-- Información de conexion con "LMS" -->
+        <div class="container__dashboard__info__connection">
             <h1>LMS</h1>
 
             <div class="status <?php echo $resultado[1]['status'] == 1 ? 'active' : 'disabled';   ?>" id="status-lms" >
@@ -41,10 +41,10 @@
             </small>
 
         </div>
+
     </div>
 
-    <div id="conexion"></div>
-    <!-- 3 forma -->
+    <!-- Script para que las conexiones se actualice cada 30s -->
     <script>
         // Función para realizar una solicitud al servidor y actualizar el contenido
         function actualizarConexion() {
@@ -83,38 +83,11 @@
             xhr.send();
         }
 
-        // Llamar a la función de actualización cada 5 segundos
-        setInterval(actualizarConexion, 5000);
+        // Llamar a la función cada 30s
+        setInterval(actualizarConexion, 30000);
     </script>
 
-    <!-- 2 forma -->
-    <?php
-        // require_once '../app/config.php';
-
-
-        // while(true){
-        //     $sql = "SELECT * FROM platform_status";
-        //     // Realizar consulta a la base de datos
-        //     $stmt = $pdo->query($sql);
-        //     while($fila = $stmt->fetch(PDO::FETCH_ASSOC)){
-        //         var_dump($fila);
-        //     }
-        //     // sleep(2);
-        // }
-    ?>
-
-
-    <!-- 1 forma -->
-    <!-- <div id="data"></div> -->
-<!-- 
-    <script>
-        const eventSource = new EventSource('../app/controllers/dashboard/event_connection_platform.php');
-
-        eventSource.onmessage = function(event) {
-            const data = JSON.parse(event.data);
-            document.getElementById('data').innerHTML = `Hora: ${data.time}, Valor: ${data.value}`;
-        };
-    </script> -->
 </div>
 
+<!-- Conectar el JavaScript -->
 <script src="../helpers/scripts.js"></script>

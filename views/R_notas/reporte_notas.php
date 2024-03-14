@@ -1,8 +1,8 @@
-<div class="container-batch">
+<div class="container__box">
     <div class="content-">
-        <div class="other-pagination">
+        <div class="other__pagination">
         <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-            <div class="amount-list">
+            <div class="other__pagination__amount__list">
                 <select name="amount" id="amount" onchange="this.form.submit()">
                     <option value="5"<?php if($records_per_page == 5) echo 'selected';?>>5</option>            
                     <option value="10"<?php if($records_per_page == 10) echo 'selected';?>>10</option>            

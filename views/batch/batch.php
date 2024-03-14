@@ -8,11 +8,12 @@ require_once '../app/controllers/batch/show_events.php';
 
 ?>
 
-<dialog class="modal-window close" id="windows-delete">
+<!-- Modal eliminar -->
+<dialog class="modal__window close" id="windows-delete">
 
     <!-- Contenido modal -->
 
-    <div class="content-modal-delete">
+    <div class="content__modal-delete">
         <h1>¿Estas seguro de eliminarlo?</h1>
         <div class="options-modal">
             <button>
@@ -28,21 +29,23 @@ require_once '../app/controllers/batch/show_events.php';
 </dialog>
 
 <!-- Modal editar -->
-<dialog class="modal-window close" id="window-target">
+<dialog class="modal__window close" id="window-target">
     <!-- Botón de cerrar -->
-    <div class="modal-cerrar" onclick="handleWindow('#window-target')">
+    <div class="modal__cerrar" onclick="handleWindow('#window-target')">
+
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <path fill="#dc2626" d="M12 2c5.53 0 10 4.47 10 10s-4.47 10-10 10S2 17.53 2 12S6.47 2 12 2m3.59 5L12 10.59L8.41 7L7 8.41L10.59 12L7 15.59L8.41 17L12 13.41L15.59 17L17 15.59L13.41 12L17 8.41z" />
         </svg>
+
     </div>
     <!-- Contenido del modal -->
-    <div class="content-modal">
+    <div class="content__modal">
         <!-- Editar -->
         <h1>Editar Evento</h1>
-        <div class="container-form-modal">
-            <form action="../app/controllers/batch/update_event.php" method="POST" class="content-form-modal">
+        <div class="container__form-modal">
+            <form action="../app/controllers/batch/update_event.php" method="POST" class="content__form-modal">
                 <input type="hidden" name="event_seed_code" id="event_seed_code" value="">
-                <div class="form-inputs">
+                <div class="form__inputs">
 
                     <h3 for="modality">Modalidad</h3>
                     <select name="modality" id="modality" required>
@@ -51,7 +54,7 @@ require_once '../app/controllers/batch/show_events.php';
                     </select>
 
                 </div>
-                <div class="form-inputs">
+                <div class="form__inputs">
 
                     <h3 for="training">Entrenamiento</h3>
                     <select name="training" id="training" required>
@@ -60,26 +63,27 @@ require_once '../app/controllers/batch/show_events.php';
                     </select>
 
                 </div>
-                <div class="form-inputs">
+                <div class="form__inputs">
                     <h3 for="seed_code">Código Semilla</h3>
                     <input type="text" name="seed_code" id="seed_code" placeholder="Semilla" required>
                 </div>
-                <div class="botons">
+                <div class="content__form__botons">
                     <input type="submit" name="update_event" value="Actualizar">
-                    <button onclick="content-modal('#window-target')">Cancelar</button>
+                    <button onclick="content__modal('#window-target')">Cancelar</button>
                 </div>
             </form>
         </div>
     </div>
 </dialog>
 
-<div class="container-batch">
+<!-- Contenedor principal del batch -->
+<div class="container__box">
 
-    <!-- Mensajes batch -->
+    <!-- Mensajes batch-->
     <?php
     if (isset($_SESSION['message-created'])) {
 
-        echo '<div class="message success">
+        echo '<div class="message message--success">
                     <div></div>
 
                     <p>' . $_SESSION['message-created'] . '</p>
@@ -88,7 +92,7 @@ require_once '../app/controllers/batch/show_events.php';
         unset($_SESSION['message-created']);
     }
     if (isset($_SESSION['error-created'])) {
-        echo '<div class="message error">  
+        echo '<div class="message message--error">  
                     <div></div>
 
                 <p>' . $_SESSION['error-created'] . '</p>
@@ -97,13 +101,16 @@ require_once '../app/controllers/batch/show_events.php';
         unset($_SESSION['error-created']);
     }
     ?>
-    <div class="content-batch">
 
-        <form class="form-batch" method="post">
+    <!-- Contenido del batch -->
+    <div class="content__batch">
+
+        <!-- Formulario para guardar la configuración del batch -->
+        <form class="form__batch" method="post">
             <input type="hidden" name="id_batch" value="<?php echo isset($id_batch) ?  $id_batch : ''; ?>">
 
-            <!-- checkbox -->
-            <div class="input">
+            <!-- Opciones configuración batch -->
+            <div class="input form__batch_input">
                 <label for=""> Integración Disponible </label>
                 <div class="checkboxes">
 
@@ -157,48 +164,50 @@ require_once '../app/controllers/batch/show_events.php';
             ?>
 
         </form>
+        <!-- Contenedor para agregar nuevos destinatarios -->
+        <div class="content__batch__form__target">
 
-        <div class="form-target">
-
-
-            <div class="new-noti-target">
+            <!-- Input para ingresar un nuevo destinatario -->
+            <div class="new__noti__target">
                 <?php
                 if ($_SESSION['role'] == 'admin') {
                     echo "
-                            <h3>Nuevo destinatarios</h3>
-                            <form class='input-new-target' method='post'>
-            
-                                <input type='hidden' name='id_batch' value=' ".(isset($id_batch) ?  $id_batch : '') ." '>
-                                
-                                    <div class='content-new-target'>
-            
-                                        <!-- Input nuevo destinatario -->
-                                        <div class='new-target'>
-                                            <input type='email' name='notifications_target' id='notifications_target' placeholder='Nuevo destinatario' required >
-                                        </div>
-                                        <!-- Boton de acciones -->
-                                        <div class='acctions'>
-                                            
-                                            <button type='submit' name='new_notification_target'>
-                                                <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
-                                                    <path fill='#ffffff' d='M11 13H6q-.425 0-.712-.288T5 12q0-.425.288-.712T6 11h5V6q0-.425.288-.712T12 5q.425 0 .713.288T13 6v5h5q.425 0 .713.288T19 12q0 .425-.288.713T18 13h-5v5q0 .425-.288.713T12 19q-.425 0-.712-.288T11 18z' />
-                                                </svg>
-                                            </button>
-                
-                                        </div>
+                        <h3>Nuevo destinatarios</h3>
+                        <form class='input-new-target' method='post'>
+        
+                            <input type='hidden' name='id_batch' value=' ".(isset($id_batch) ?  $id_batch : '') ." '>
+                            
+                                <div class='content-new-target'>
+        
+                                    <!-- Input nuevo destinatario -->
+                                    <div class='new-target'>
+                                        <input type='email' name='notifications_target' id='notifications_target' placeholder='Nuevo destinatario' required >
                                     </div>
-                                
+                                    <!-- Boton de acciones -->
+                                    <div class='acctions'>
+                                        
+                                        <button type='submit' name='new_notification_target'>
+                                            <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
+                                                <path fill='#ffffff' d='M11 13H6q-.425 0-.712-.288T5 12q0-.425.288-.712T6 11h5V6q0-.425.288-.712T12 5q.425 0 .713.288T13 6v5h5q.425 0 .713.288T19 12q0 .425-.288.713T18 13h-5v5q0 .425-.288.713T12 19q-.425 0-.712-.288T11 18z' />
+                                            </svg>
+                                        </button>
             
-                            </form>
-                            ";
+                                    </div>
+                                </div>
+                            
+        
+                        </form>
+                    ";
                 }
                 ?>
 
             </div>
-            <div class="content-list-targets">
+
+            <!-- Contenedor para listar los destinatarios -->
+            <div class="content__list__targets">
                 <h3>Lista de destinatarios actuales</h3>
 
-                <div class="list-targets">
+                <div class="list__targets">
                     <?php
                     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['new_notification_target'])) {
 
@@ -219,7 +228,7 @@ require_once '../app/controllers/batch/show_events.php';
                                 ";
                             if ($_SESSION['role'] == 'admin') {
                                 echo "
-                                        <button onclick='borrar(this)' data-indice='" . $indice . "'>
+                                        <button onclick='deleteLocalNotificationTarget(this)' data-indice='" . $indice . "'>
                                             <a href='../app/controllers/batch/delete_notifications.php?indice=" . $indice . "'>X</a>
                                         </button>
                                     ";
@@ -234,16 +243,17 @@ require_once '../app/controllers/batch/show_events.php';
                 </div>
 
             </div>
+
         </div>
     </div>
 
     <hr>
 
-    <!-- Mensajes -->
+    <!-- Mensajes para los eventos por sincronizar-->
     <?php
     if (isset($_SESSION['success_message'])) {
         echo
-        '<div class="message success">
+        '<div class="message message--success">
                 <div></div>
     
                 <p>' . $_SESSION['success_message'] . '</p>
@@ -253,7 +263,7 @@ require_once '../app/controllers/batch/show_events.php';
         unset($_SESSION['success_message']);
     }
     if (isset($_SESSION['error_message_events'])) {
-        echo '<div class="message error">  
+        echo '<div class="message message--error">  
             
             <div></div>
             <p>' . $_SESSION['error_message_events'] . '</p>
@@ -263,17 +273,20 @@ require_once '../app/controllers/batch/show_events.php';
         unset($_SESSION['error_message_events']);
     }
     ?>
-    <!-- -- EVENTOS --  -->
+    <!-- 
+        -----------------
+        ---- EVENTOS ----
+        -----------------
+    -->
+
     <!-- Registrar evento -->
-    <div class="container-events">
+    <div class="container__events">
 
         <?php 
         
             if($_SESSION['role'] == 'admin'){
                 echo "
-
-
-                <form action='../app/controllers/batch/create_events.php' method='POST' class='register-events'>
+                <form action='../app/controllers/batch/create_events.php' method='POST' class='container__events__register__events'>
         
                     <div class='input'>
                         <label for='modality'>Modalidad</label>
@@ -306,17 +319,16 @@ require_once '../app/controllers/batch/show_events.php';
             }
         ?>
 
-
         <!-- Lista de eventos -->
-        <div class="events-sync">
+        <div class="event__sync">
             <h1>Eventos por Sincronizar</h1>
 
             <!-- Paginacion cantidad -->
-
-            <div class="other-pagination">
+            <div class="other__pagination">
+                
                 <!-- Formulario para seleccionar la cantidad de eventos por página -->
                 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-                    <div class="amount-list">
+                    <div class="other__pagination__amount__list">
                         <select name="amount" id="amount" onchange="this.form.submit()">
                             <option value="5" <?php if ($records_per_page == 5) echo 'selected'; ?>>5</option>
                             <option value="10" <?php if ($records_per_page == 10) echo 'selected'; ?>>10</option>
@@ -325,6 +337,7 @@ require_once '../app/controllers/batch/show_events.php';
                         </select>
                     </div>
                 </form>
+
                 <?php
                 // Verificar si se ha enviado el formulario de búsqueda
                 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["search_term"])) {
@@ -345,15 +358,17 @@ require_once '../app/controllers/batch/show_events.php';
                     $events = $stmt_search_events->fetchAll(PDO::FETCH_ASSOC);
                 }
                 ?>
+
                 <!-- Barra de búsqueda -->
-                <div class="search">
+                <div class="other__pagination__search">
                     <form method="post">
                         <select name="search_by" id="search_by">
                             <option value="modality">Modalidad</option>
                             <option value="training">Entrenamiento</option>
                             <option value="seed_code">Código de Semilla</option>
                         </select>
-                        <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <!-- Icono de busqueda -->
+                            <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                 <path d="M10 18a7.952 7.952 0 0 0 4.897-1.688l4.396 4.396l1.414-1.414l-4.396-4.396A7.952 7.952 0 0 0 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8s3.589 8 8 8m0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6s-6-2.691-6-6s2.691-6 6-6" />
                             </svg> -->
                         <input type="text" name="search_term" id="search_term" placeholder="Buscar evento">
@@ -363,9 +378,9 @@ require_once '../app/controllers/batch/show_events.php';
             </div>
 
             <!-- Tabla de eventos -->
-            <div class="list-events">
+            <div class="list__events">
 
-                <table class="customTable">
+                <table class="table__list">
                     <thead>
                         <tr>
                             <th>Modalidad</th>
@@ -394,7 +409,7 @@ require_once '../app/controllers/batch/show_events.php';
                                            
 
                                         <!-- Agrega los enlaces de editar y borrar según sea necesario -->
-                                        <td class='edit-icon'>  
+                                        <td class='edit__icon'>  
 
                                             <a onclick=\"handleEditEvent('".$event['seed_code'] ."','". $event['modality'] ."', '".$event['training']."')\">
                                             
@@ -428,7 +443,7 @@ require_once '../app/controllers/batch/show_events.php';
 
         </div>
 
-        <!-- paginación -->
+        <!-- Paginación -->
         <div class="pagination">
             <?php if ($total_pages > 1) : ?>
                 <a href="?page=1&amount=<?php echo $records_per_page; ?>">&laquo;</a>
@@ -444,5 +459,5 @@ require_once '../app/controllers/batch/show_events.php';
 
 </div>
 
-
+<!-- Conectar el JavaScript -->
 <script src="../helpers/scripts.js"></script>

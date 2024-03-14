@@ -3,9 +3,9 @@
     // require_once '../app/controllers/users/create_users.php';
 ?>
 
-<div class="container-batch">
+<div class="container__box">
     <div class="content-users">
-        <div class="other-pagination">
+        <div class="other__pagination">
 
             <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
                 <div class="amount_list">
@@ -38,7 +38,7 @@
             }
             ?>
             <!-- Barra de búsqueda -->
-            <div class="search">
+            <div class="other__pagination__search">
                 <form method="post">
                     <select name="search_by" id="search_by">
                         <option value="name">Nombre</option>
@@ -56,7 +56,7 @@
             </div>
         </div>
 
-        <table class="customTable">
+        <table class="table__list">
             <thead>
                 <tr>
                     <!-- <th>Id</th> -->

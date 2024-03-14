@@ -1,0 +1,15 @@
+.container-report{
+    padding: 2em;
+    overflow-y: hidden;
+}
+
+.list-audits{
+    overflow-y: auto;
+    height: 60vh;
+}
+
+
+select{
+    padding: .4em;
+    border-radius: 5px;
+}

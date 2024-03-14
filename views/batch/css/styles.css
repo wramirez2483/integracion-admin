@@ -6,29 +6,34 @@ h3{
     text-align: center;
 }
 
-.container-batch {
-
+.container__box {
     padding: 2em;
     display: flex;
     flex-direction: column;
     justify-content: center; 
     gap: 2em;
-    /* overflow-y: auto; */
-    /* height: 100vh; */
 }
-.form-batch {
-    /* width: 100; */
+
+
+.content__batch{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    
+}
+
+.content__batch__form__target{
+    display: flex;
+    justify-content: space-around;
+    gap: 1em;
+}
+
+.form__batch {
     display: flex;
     flex-direction: column;
     gap: 2.2em;
 }
 
-.container-form-modal{
-    display: flex;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-}
 .content-form-modal{
     display: flex;
 
@@ -38,19 +43,6 @@ h3{
 
 label {
     font-weight: 700;
-    /* text-transform: uppercase; */
-}
-
-.checkboxes {
-    display: flex;
-    /* margin-top: 2em; */
-    gap: 2em;
-}
-
-.check {
-    font-weight: bold;
-    display: flex;
-    gap: 4px;
 }
 
 .input {
@@ -58,13 +50,15 @@ label {
     align-items: center;
     gap: 2em;
 }
-.events-sync {
+
+.event__sync {
     width: 100%;
     overflow-y: auto;
     margin-top: 15px;
 
 }
-.events-sync h1 {
+
+.event__sync h1 {
     text-align: center;
     margin-bottom: 2vh;
 }
@@ -73,50 +67,32 @@ label {
     cursor: pointer;
 }
 
-/* Paginacion y buscador */
-.other-pagination{
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 2em;
-}
 
-.search{
-    display: flex;
-    align-items: center;
-}
-
-.search svg{
-    width: 25px;
-    height: 25px;
-}
-.search path{
-    fill: black;
-}
-
-
-.register-events{
+.container__events__register__events{
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
 
-
 /* Modal */
 dialog::backdrop{
     background-color: rgb(0, 0, 0,.55);
 }
+
 dialog::backdrop:focus{
     outline: none;
 }
+
 dialog{
     margin: auto !important;
     border: none;
     background: transparent;
 }
+
 dialog:focus{
     outline: none;
 }
-.modal-cerrar{
+.modal__cerrar{
     position: absolute;
     right: 0;
     padding: 2px;
@@ -124,12 +100,12 @@ dialog:focus{
 
     cursor: pointer;
 }
-.modal-cerrar svg{
+.modal__cerrar svg{
     height: 1.5em;
     width: 1.5em;
 }
-.content-modal,
-.content-modal-delete
+.content__modal,
+.content__modal-delete
 {
     padding: 1em;
     display: flex;
@@ -143,28 +119,20 @@ dialog:focus{
     margin: 0 auto;
 }
 
-.content-modal-delete{
+.content__modal-delete{
     height: max-content;
 }
-.content-modal h1{
+.content__modal h1{
     text-align: center;
 }
 
 /* Form destinatario */
-.new-noti-target{
+.new__noti__target{
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     gap: 1em;
-}
-
-.content-batch{
-    display: flex;
-    justify-content: space-evenly;
-    /* flex-direction: column; */
-    align-items: center;
-    
 }
 
 .input-new-target{
@@ -180,27 +148,32 @@ dialog:focus{
     border: solid 1px #61bb68;
     border-radius: 10px 0px 0px 10px ;
 }
+
 .acctions{
     border-radius: 0px 10px 10px 0px ;
     background-color: var(--primary);
     display: flex;
 }
+
 .acctions svg{
     width: 2.5em;
     height: 2.5em;
 }
+
 div.new-target input[type="email"]#notifications_target{
     background-color: none !important;
 }
+
 .new-target input,
-.list-targets input
+.list__targets input
 {
     background-color: none !important;
     width: 11em;
     border: none !important;
 }
+
 .acctions button,
-.list-targets button{
+.list__targets button{
     display: flex;
     justify-content: center;
     padding: 0;
@@ -208,28 +181,27 @@ div.new-target input[type="email"]#notifications_target{
     background: none;
     width: 40px;
     height: 40px;
-
 }
+
 .acctions button:hover
 {
     background-color: unset !important;
 }
 
-
-
-.list-targets {
+.list__targets {
     height: 15em;
     display: flex;
     flex-direction: column;
     gap: 1em;
     overflow-y:  auto;
     margin-top: 1em;
-
 }
+
 .targets{
     border-radius: 10px;
 }
-.list-targets button{
+
+.list__targets button{
     /* background-color: #4caf4f31; */
     border: none;
     font-size: 1.5em;
@@ -238,32 +210,35 @@ div.new-target input[type="email"]#notifications_target{
     transition: all .2s ease-in  ;
     border-left: 1px solid #61bb68 ;
 }
-.list-targets p{
+
+.list__targets p{
     /* cursor: pointer; */
     text-align: center;
 }
 
-.list-targets button:hover{
+.list__targets button:hover{
     background-color:unset;
 }
 
-.form-target{
-    display: flex;
-    justify-content: space-around;
-    gap: 1em;
-}
+
 .content-new-target{
     display: flex;
     margin: 0 auto;
 }
+.container__form-modal{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+}
 
-td.edit-icon{
+td.edit__icon{
     justify-content: space-evenly;
     display: flex;
     align-items: center;
 }
 
-.list-events{
+.list__events{
     overflow-y: auto;
     height: 30vh;
 }
@@ -272,6 +247,17 @@ td.edit-icon{
     display: flex;
     justify-content: space-around
 }
-/* .options-modal a{
 
-} */
+.content__form-modal{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;    
+    align-items: center;
+    gap: 4em;
+
+}
+
+a{
+    cursor: pointer;
+}

@@ -31,6 +31,7 @@ $sql_select_events = "SELECT histories.id, user_id, users.name, event, previous_
                       JOIN users ON user_id = users.num_id
                       ORDER BY date DESC
                       LIMIT :offset, :records_per_page";
+   
 $stmt_select_events = $pdo->prepare($sql_select_events);
 $stmt_select_events->bindParam(':offset', $offset, PDO::PARAM_INT);
 $stmt_select_events->bindParam(':records_per_page', $records_per_page, PDO::PARAM_INT);

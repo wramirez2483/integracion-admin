@@ -9,7 +9,7 @@ var_dump($_SESSION['notifications_target']);
 // traer el indice del correo en la lista.
 var_dump($_GET['indice']);
 $indice = intval($_GET['indice']);
-// borrar el correo de session['correos'] con el indice
+// deleteLocalNotificationTarget el correo de session['correos'] con el indice
 
 $cantidad_correos = count($_SESSION['notifications_target']);
 unset($_SESSION['notifications_target'][$indice]);
@@ -26,8 +26,6 @@ $consulta->bindParam(':notifications_target', $emails_serial);
 if($consulta->execute()){
     createHistory($_SESSION['document'], "Batch - Borro un destinatario ", $cantidad_correos . " correos",   count($_SESSION['notifications_target']) . " correos",$pdo);
         header('Location: ../../../views/batch.php');
-    // var_dump($_SESSION['notifications_target']);
-
 }
 
 

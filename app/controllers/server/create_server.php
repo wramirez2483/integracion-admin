@@ -5,7 +5,6 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
     require_once '../../config.php';
     require_once '../../controllers/history/create_history.php';
 
-
     // Validar que existe una configuracion de josso anterior
     $sql_find = "SELECT * FROM email_server";
     $stmt_find = $pdo->query($sql_find);
@@ -31,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
         
         if (empty($new_email_server) || empty($new_portocol) || empty($new_port) || empty($new_user) || empty($new_password)) {
             $_SESSION['error-created'] = 'Todos los campos son obligatorios';
-            header('Location: ../../../views/servidor-email.php');
+            header('Location: ../../../views/server-email.php');
             exit; 
         }
         $sql = "INSERT INTO email_server (email_server , portocol , port , user , password, user_id) 
@@ -78,14 +77,14 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
 
     if ($stmt->execute()) { 
         $_SESSION['message-created'] = 'Configuración cambiada con éxito.';
-        header('Location: ../../../views/servidor-email.php');
+        header('Location: ../../../views/server-email.php');
 
     } else {
         $_SESSION['error-created'] = 'Error al cambiar la configuración.';
-        header('Location: ../../../views/servidor-email.php');
+        header('Location: ../../../views/server-email.php');
 
     }
 
-    header('Location: ../../../views/servidor-email.php');
-    exit; // Importante para detener la ejecución después de redirigir
+    header('Location: ../../../views/server-email.php');
+    exit;
 }
