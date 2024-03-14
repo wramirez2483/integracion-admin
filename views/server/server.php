@@ -4,8 +4,6 @@ require_once '../app/controllers/server/show_server.php';
 require_once '../app/controllers/server/create_server.php';
 ?>
 
-
-
 <div class="container__form">
 
     <form class="content__form" method="post" action="../app/controllers/server/create_server.php">

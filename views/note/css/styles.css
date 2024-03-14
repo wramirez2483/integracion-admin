@@ -1,0 +1,87 @@
+.container__config__notes{
+    margin-top: 3em;
+}
+
+
+.password-input{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .1em;
+    border-radius: 10px;
+    border: none;
+    border: solid 1px #61bb68;
+}
+.password-input input
+{
+    background-color: none !important;
+    width: 11em;
+    border: none !important;
+}
+img.icon_handle{
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+}
+.input-password{
+    display: flex;
+    align-items: center;
+}
+.input-pwd{
+    
+    float: right;
+}
+
+.content__forms{
+    display: flex;
+    padding: 2em;
+    gap: 2.5em;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.content__form__notes{
+    display: flex;
+    padding: 2em;
+    gap: 4em;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    background: #fff;
+    box-shadow: 0px 10px 15px 5px rgba(0,0,0,0.1);
+    border-radius: 12px;
+    width: 80vh;
+}
+.content__forms__inputs{
+    display: flex;
+    justify-content: center;
+    gap: 3em;
+    flex-direction: column;
+    align-items: left;
+}
+
+.form__inputs__notes{
+    display: flex;
+    justify-content:space-between;
+    
+}
+.form__inputs__notes label{
+    font-size: 1em;
+    font-weight: 700;
+
+}
+
+.form__config__notes{
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+}
+.content__forms{
+    margin: unset !important;
+} 
+.content__form__botons {
+    display: grid;
+    place-items: center;
+
+}

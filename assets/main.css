@@ -275,8 +275,8 @@ table.table__list thead {
     margin-bottom: 3em;
 }
 .menu__content__admin__title h1{
-    color: white;
-    font-size: 1.7em;
+    color:white;
+    font-size: 1.2em;
     text-align: center;
 }
 .menu__content__admin__title img{
@@ -295,10 +295,13 @@ table.table__list thead {
     align-items: center;
     gap: 2em;
     color: white;
-    font-size: 1em;
-    justify-content: space-between;
+    font-size: .8em;
     cursor: pointer;
     height: 3em;
+}
+.menu__content__options h2{
+    font-weight: 600;
+    text-align: left;
 }
 .menu__auth{
     font-size: .8em;
@@ -324,4 +327,14 @@ table.table__list thead {
 .menu__content__options .active h2, .menu__content__options .active .icon{
     color:var(--primary) ;
     fill: var(--primary);
+}
+h3.title__options{
+    margin-top: 1em;
+    margin-bottom: 1em;
+    /* text-align: center; */
+    color: #f3f3f3cc;
+    text-transform: uppercase;
+    font-size: .8em;
+    text-align: left;
+    font-weight: bold;
 }
