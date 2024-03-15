@@ -65,6 +65,23 @@
 
             </a>
 
+            <!-- API CONNECTION -->
+            <a class="<?php echo (strpos($currentPath,'/api_connection.php')) ? 'active' : ''; ?>" href="../views/api_connection.php">
+
+                <div class="menu__content-image-container">
+
+                    <!--svg class="icon" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 48 48"><defs><mask id="IconifyId18e3f3e27103b74862"><g fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="4">
+                        <path fill="#555" d="m37 22l-3 3l-11-11l3-3c1.5-1.5 7-4 11 0s1.5 9.5 0 11"/><path d="m42 6l-5 5"/><path fill="#555" d="m11 26l3-3l11 11l-3 3c-1.5 1.5-7 4-11 0s-1.5-9.5 0-11"/><path d="m23 32l4-4M6 42l5-5m5-12l4-4"/></g></mask></defs><path fill="#ffffff" d="M0 0h48v48H0z" mask="url(#IconifyId18e3f3e27103b74862)"/>
+                    </svg>-->
+
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5.5 13L7 11.5l5.5 5.5l-1.5 1.5c-.75.75-3.5 2-5.5 0s-.75-4.75 0-5.5M3 21l2.5-2.5m13-7.5L17 12.5L11.5 7L13 5.5c.75-.75 3.5-2 5.5 0s.75 4.75 0 5.5m-6-3l-2 2M21 3l-2.5 2.5m-2.5 6l-2 2"/></svg>
+
+            
+                </div>
+                <h2>API</h2>
+
+            </a>
+
             <!-- Usuarios -->
             <a class="<?php echo (strpos($currentPath,'/users.php')) ? 'active' : ''; ?>"  href="../views/users.php">
 
