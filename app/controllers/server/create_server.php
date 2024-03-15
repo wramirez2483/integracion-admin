@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
 
     if($resultado){
         $email_server = $resultado['email_server'];
-        $portocol = $resultado['portocol'];
+        $protocol = $resultado['protocol'];
         $port = $resultado['port'];
         $user = $resultado['user'];
         $password = $resultado['password'];    
@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
 
     $user_id  = $_SESSION['document'];
     $new_email_server = $_POST['email_server'];
-    $new_portocol = $_POST['portocol'];
+    $new_protocol = $_POST['protocol'];
     $new_port = $_POST['port'];
     $new_user = $_POST['user'];
     $new_password = $_POST['password'];
@@ -28,26 +28,26 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
     // Cuando no hay una configuraccion se crea
     if ($stmt_find->rowCount() == 0) {
         
-        if (empty($new_email_server) || empty($new_portocol) || empty($new_port) || empty($new_user) || empty($new_password)) {
+        if (empty($new_email_server) || empty($new_protocol) || empty($new_port) || empty($new_user) || empty($new_password)) {
             $_SESSION['error-created'] = 'Todos los campos son obligatorios';
             header('Location: ../../../views/server-email.php');
             exit; 
         }
-        $sql = "INSERT INTO email_server (email_server , portocol , port , user , password, user_id) 
-            VALUES (:email_server , :portocol , :port , :user, :password , :user_id)";
+        $sql = "INSERT INTO email_server (email_server , protocol , port , user , password, user_id) 
+            VALUES (:email_server , :protocol , :port , :user, :password , :user_id)";
     }
     // Si ya existe se actualiza 
     else {
 
-        $sql = "UPDATE email_server SET email_server = :email_server , portocol = :portocol , port = :port , user = :user  , password = :password , user_id = :user_id WHERE id_email_server = :id_email_server";
+        $sql = "UPDATE email_server SET email_server = :email_server , protocol = :protocol , port = :port , user = :user  , password = :password , user_id = :user_id WHERE id_email_server = :id_email_server";
     }
 
     if($new_email_server != $email_server){
         createHistory($user_id,'ServerEmail - Modificó el servidor de correo',$email_server,$new_email_server,$pdo);
     }
 
-    if($new_portocol != $portocol){
-        createHistory($user_id,'ServerEmail - Modificó el protocolo',$portocol,$new_portocol,$pdo);
+    if($new_protocol != $protocol){
+        createHistory($user_id,'ServerEmail - Modificó el protocolo',$protocol,$new_protocol,$pdo);
     }
 
     if($new_port != $port){
@@ -64,7 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
 
     $stmt = $pdo->prepare($sql);
     $stmt->bindParam(':email_server', $new_email_server);
-    $stmt->bindParam(':portocol', $new_portocol);
+    $stmt->bindParam(':protocol', $new_protocol);
     $stmt->bindParam(':port', $new_port);
     $stmt->bindParam(':user', $new_user);
     $stmt->bindParam(':password', $new_password);

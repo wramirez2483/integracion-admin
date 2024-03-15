@@ -116,8 +116,8 @@
             <a class="<?php echo (strpos($currentPath,'report_audit.php')) ? 'active' : '';?>" href="../views/report_audit.php">
 
                 <div class="menu__content-image-container">
-                    <svg class="icon" viewBox="0 0 42 46" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M0 46V13.8H9.33333V46H0ZM16.3333 46V0H25.6667V46H16.3333ZM32.6667 46V27.6H42V46H32.6667Z" />
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                        <path d="M15 20h2v4h-2zm5-2h2v6h-2zm-10-4h2v10h-2z"/><path fill="currentColor" d="M25 5h-3V4a2 2 0 0 0-2-2h-8a2 2 0 0 0-2 2v1H7a2 2 0 0 0-2 2v21a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2M12 4h8v4h-8Zm13 24H7V7h3v3h12V7h3Z"/>
                     </svg>
                 </div>
                 <h2>Reportes Audit</h2>
@@ -140,8 +140,8 @@
             <a class="<?php echo (strpos($currentPath,'/report_batch.php')) ? 'active' : '';?>" href="../views/report_batch.php">
 
                 <div class="menu__content-image-container">
-                    <svg class="icon" viewBox="0 0 42 46" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M0 46V13.8H9.33333V46H0ZM16.3333 46V0H25.6667V46H16.3333ZM32.6667 46V27.6H42V46H32.6667Z" />
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                        <path d="M15 20h2v4h-2zm5-2h2v6h-2zm-10-4h2v10h-2z"/><path fill="currentColor" d="M25 5h-3V4a2 2 0 0 0-2-2h-8a2 2 0 0 0-2 2v1H7a2 2 0 0 0-2 2v21a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2M12 4h8v4h-8Zm13 24H7V7h3v3h12V7h3Z"/>
                     </svg>
                 </div>
                 <h2>Reportes Batch</h2>
@@ -151,12 +151,12 @@
             <!--Reporte notas -->
             <a class="<?php echo (strpos($currentPath,'/r_notas.php')) ? 'active' : '';?>" href="../views/r_notas.php">
             
-                <h2>Reporte Notas</h2>
                 <div class="menu__content-image-container">
                     <svg class="icon" viewBox="0 0 42 46" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M0 46V13.8H9.33333V46H0ZM16.3333 46V0H25.6667V46H16.3333ZM32.6667 46V27.6H42V46H32.6667Z" />
                     </svg>
                 </div>
+                <h2>Reporte Notas</h2>
             </a>
 
          </div>

@@ -7,10 +7,10 @@ require_once '../../config.php';
 // Verificar si se ha enviado el formulario de actualización del evento
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['update_event'])) {
     // Recuperar los datos del formulario
-    $event_seed_code = $_POST['event_seed_code'];
-    $modality = $_POST['modality'];
-    $training = $_POST['training'];
-    $seed_code = $_POST['seed_code'];
+    $event_seed_code = $_POST['new_event_seed_code'];
+    $modality = $_POST['new_modality'];
+    $training = $_POST['new_training'];
+    $seed_code = $_POST['new_seed_code'];
     $user_id = $_SESSION['document'];
     $events = "update";
 

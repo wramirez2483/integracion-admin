@@ -36,7 +36,7 @@ require_once '../app/controllers/server/create_server.php';
         </div>
         <div class="form__inputs">
             <h3>Protocolo</h3>
-            <input type="text" id="portocol" name="portocol" class="form__input" value="<?php echo isset($portocol) ? $portocol : ''  ?>" placeholder="" required <?php echo $_SESSION['role'] == 'reader' ? 'disabled' : '' ?>>
+            <input type="text" id="protocol" name="protocol" class="form__input" value="<?php echo isset($protocol) ? $protocol : ''  ?>" placeholder="" required <?php echo $_SESSION['role'] == 'reader' ? 'disabled' : '' ?>>
 
         </div>
         <div class="form__inputs">

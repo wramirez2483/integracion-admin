@@ -32,7 +32,7 @@ require_once '../app/controllers/reporte_nota/list_notas.php'
         <div class="other__pagination_search">
             <form method="post">
                 <select name="search_by" id="search_by">
-                    <option value="name">Nombre</option>
+                    <option value="name">Usuario</option>
                 </select>
                     <input type="text" name="search_term" id="search_term" placeholder="Buscar Notas">
                     <button type="submit">Buscar</button>
