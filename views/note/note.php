@@ -2,34 +2,33 @@
 
 require_once '../app/controllers/note/show_note.php';
 require_once '../app/controllers/note/create_note.php';
+
 ?>
 
 <div class="container__box">
     <div class="container__config__notes">
         <form class="form__config__notes" method="post" action="../app/controllers/note/create_note.php">
     
-
             <input type="hidden" name="id_note" value="<?php echo isset($id_note) ? $id_note : ''; ?>">
             <div class="content__form__notes">
-            <?php
-    if (isset($_SESSION['message-created'])) {
-        echo '<div class="message message--success">  
-            <p>' . $_SESSION['message-created'] . '</p>
-            <strong onclick="this.parentNode.style.display = \'none\';">X</strong>
-        </div>';
-        unset($_SESSION['message-created']);
-    }
+                <?php
+                    if (isset($_SESSION['message-created'])) {
+                        echo '<div class="message message--success">  
+                            <p>' . $_SESSION['message-created'] . '</p>
+                            <strong onclick="this.parentNode.style.display = \'none\';">X</strong>
+                        </div>';
+                        unset($_SESSION['message-created']);
+                    }
 
-    if (isset($_SESSION['error-created'])) {
-        echo '<div class="message message--error">  
-            <p>' . $_SESSION['error-created'] . '</p>
-            <strong onclick="this.parentNode.style.display = \'none\';">X</strong>
-        </div>';
+                    if (isset($_SESSION['error-created'])) {
+                        echo '<div class="message message--error">  
+                            <p>' . $_SESSION['error-created'] . '</p>
+                            <strong onclick="this.parentNode.style.display = \'none\';">X</strong>
+                        </div>';
 
-        unset($_SESSION['error-created']);
-    }
-
-    ?>
+                        unset($_SESSION['error-created']);
+                    }
+                ?>
                 <div class="content__forms">
                     <div class="form__inputs">
                         <h3>Url Webservice</h3>
@@ -56,18 +55,15 @@ require_once '../app/controllers/note/create_note.php';
                             }
                             ?>
 
-
                         </div>
-
 
                     </div>
 
                 </div>
-
             
             </div>
             <div class="content__form__notes">
-            <div class="content__forms">
+                <div class="content__forms">
                     <h2>Cursos Autogestionables</h2>
                     <div class="content__forms__inputs">
 
@@ -88,8 +84,7 @@ require_once '../app/controllers/note/create_note.php';
                                                 : ''
     
                                             ?> type="checkbox" name="sync_notes" id="si" onclick="handleCheckBox('si')" <?php echo $_SESSION['role'] == 'reader' ? 'disabled' : '' ?>>
-    
-    
+        
                                 </div>
     
                                 <div class="check">
@@ -102,7 +97,7 @@ require_once '../app/controllers/note/create_note.php';
                                                     : ''
                                                 )
                                                 : ''
-                                            ?> type="checkbox" name="sync_notes" id="no" onclick="handleCheckBox('no')" <?php echo $_SESSION['role'] == 'reader' ? 'disabled' : '' ?>>
+                                            ?> type="checkbox" name="not_sync_notes" id="no" onclick="handleCheckBox('no')" <?php echo $_SESSION['role'] == 'reader' ? 'disabled' : '' ?>>
     
                                 </div>
     
@@ -113,7 +108,7 @@ require_once '../app/controllers/note/create_note.php';
 
                             <label>Configurar letra por defecto</label>
 
-                            <select required id="default_letter" name="default_letter">
+                            <select required id="default_letter" name="default_letter" <?php echo $_SESSION['role'] == 'reader' ? 'disabled' : '' ?>>
 
                                 <option value="A" <?php  echo ($default_letter == 'A' ? 'selected' : '') ?>>A</option>
                                 <option value="D" <?php  echo ($default_letter == 'D' ? 'selected' : '') ?>>D</option>
@@ -130,7 +125,7 @@ require_once '../app/controllers/note/create_note.php';
                 if ($_SESSION['role'] == 'admin') {
                     echo "
 
-                    <input type='submit' name='Guardar' value='Guardar'>
+                    <input type='submit' name='note_submit' value='Guardar'>
 
                 ";
                 }
@@ -141,8 +136,6 @@ require_once '../app/controllers/note/create_note.php';
             </div>
 
         </form>
-
-
 
     </div>
     <script src="../helpers/scripts.js"></script>

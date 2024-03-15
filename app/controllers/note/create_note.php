@@ -1,6 +1,6 @@
 <?php
 
-if ($_SERVER["REQUEST_METHOD"] == 'POST') {
+if ($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['note_submit'])) {
 
     require_once '../../config.php';
     require_once '../../controllers/history/create_history.php';
@@ -23,8 +23,8 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
     $new_url_web_service = $_POST['url_web_service'];
     $new_user = $_POST['user'];
     $new_password = $_POST['password'];
-    $new_sync_notes = $_POST['sync_notes'];
     $new_default_letter = $_POST['default_letter'];
+    $new_sync_notes = isset($_POST['not_sync_notes']) ? 0 : 1;
 
     // Cuando no hay una configuraccion se crea
     if ($stmt_find->rowCount() == 0) {

@@ -15,7 +15,7 @@ if (isset($_SESSION['records_per_page'])) {
 }
 
 // Obtener el número total de eventos registrados
-$sql_total_events = "SELECT COUNT(*) AS total FROM events_without_sync";
+$sql_total_events = "SELECT COUNT(*) AS total FROM events_without_sync WHERE status_event = 1";
 $stmt_total_events = $pdo->query($sql_total_events);
 $total_events = $stmt_total_events->fetchColumn();
 

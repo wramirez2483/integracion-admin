@@ -5,9 +5,7 @@ require_once '../app/controllers/batch/create_notification_target.php';
 require_once '../app/controllers/batch/show_batch.php';
 require_once '../app/controllers/batch/show_events.php';
 
-
 ?>
-
 
 <!-- Modal de añadir -->
 <dialog class="modal_window close" id="window__create">
@@ -74,7 +72,7 @@ require_once '../app/controllers/batch/show_events.php';
 </dialog>
 
 <!-- Modal editar -->
-<dialog class="modal__window close" id="window-target">
+<dialog class="modal__window close" id="windows-edit">
 
     <!-- Contenido del modal -->
     <div class="content__modal">
@@ -107,7 +105,7 @@ require_once '../app/controllers/batch/show_events.php';
                 </div>
                 <div class="content__form__botons">
                     <input type="submit" name="update_event" value="Actualizar">
-                    <div onclick="handleWindow('#window-target')" class="boton_cancelar">Cancelar</div>
+                    <div onclick="handleWindow('#windows-edit')" class="boton_cancelar">Cancelar</div>
                 </div>
             </form>
         </div>

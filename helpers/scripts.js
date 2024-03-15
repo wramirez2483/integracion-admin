@@ -36,13 +36,13 @@ function handleWindow(targetId) {
   }
 }
 // Metodo para asignar los datos a los inputs del evento a editar
-function handleEditEvent(seedCode, modality, training) {
-  document.getElementById('event_seed_code').value = seedCode;
-  document.getElementById('modality').value = modality;
-  document.getElementById('training').value = training;
-  document.getElementById('seed_code').value = seedCode;
+function handleEditEvent(seed_code, modality, training) {
+  document.getElementById('new_event_seed_code').value = seed_code;
+  document.getElementById('new_modality').value = modality;
+  document.getElementById('new_training').value = training;
+  document.getElementById('new_seed_code').value = seed_code;
   // abre el modal
-  handleWindow('#window-target')
+  handleWindow('#windows-edit')
 
 }
 // Borrar evento
