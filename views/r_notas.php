@@ -8,12 +8,13 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
-    <link rel="stylesheet" href="./report_josso/css/styles.css">
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
     <link rel="stylesheet" href="../assets/main.css">
 
+    <link rel="stylesheet" href="../views/report_audit/css/styles.css">
+
     <link rel="stylesheet" href="../views/batch/css/styles.css">
+    
 
     <title>App-Integracion</title>
 </head>
@@ -34,7 +35,7 @@
 
                 
             <?php   
-                include '../views/R_notas/reporte_notas.php'
+                include './R_notas/r_notas.php'
             ?>
             
         </div>

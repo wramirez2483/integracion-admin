@@ -15,25 +15,25 @@ if (isset($_SESSION['records_per_page'])) {
 }
 
 // Obtener el número total de eventos registrados
-$sql_total_events = "SELECT COUNT(*) AS total FROM histories";
-$stmt_total_events = $pdo->query($sql_total_events);
-$total_events = $stmt_total_events->fetchColumn();
+$sql_total_notes = "SELECT COUNT(*) AS total FROM note";
+$stmt_total_notes = $pdo->query($sql_total_notes);
+$total_notes = $stmt_total_notes->fetchColumn();
 
 // Calcular el número total de páginas
-$total_pages = ceil($total_events / $records_per_page);
+$total_pages = ceil($total_notes / $records_per_page);
 
 // Calcular el desplazamiento para la consulta SQL
 $offset = ($current_page - 1) * $records_per_page;
 
 // Consulta SQL para obtener los eventos registrados con limit y offset
-$sql_select_events = "SELECT histories.id, user_id, users.name, event, previous_state, new_state, date
-                      FROM histories
-                      JOIN users ON user_id = users.num_id
-                      ORDER BY date DESC
+$sql_select_notes = "SELECT id, url_web_service, user, password, sync_notes, default_letter
+                      FROM note 
+                      ORDER BY id ASC
                       LIMIT :offset, :records_per_page";
    
-$stmt_select_events = $pdo->prepare($sql_select_events);
-$stmt_select_events->bindParam(':offset', $offset, PDO::PARAM_INT);
-$stmt_select_events->bindParam(':records_per_page', $records_per_page, PDO::PARAM_INT);
-$stmt_select_events -> execute();
-$events = $stmt_select_events->fetchAll(PDO::FETCH_ASSOC);
+$stmt_select_notes = $pdo->prepare($sql_select_notes);
+$stmt_select_notes->bindParam(':offset', $offset, PDO::PARAM_INT);
+$stmt_select_notes->bindParam(':records_per_page', $records_per_page, PDO::PARAM_INT);
+$stmt_select_notes -> execute();
+$notes = $stmt_select_notes->fetchAll(PDO::FETCH_ASSOC);
+?>

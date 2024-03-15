@@ -132,7 +132,7 @@
             </a>
       
             <!--Reporte notas -->
-            <!-- <a class="<?php echo (strpos($currentPath,'/r.notas.php')) ? 'active' : '';?>" href="../views/r.notas.php">
+            <a class="<?php echo (strpos($currentPath,'/r_notas.php')) ? 'active' : '';?>" href="../views/r_notas.php">
             
                 <h2>Reporte Notas</h2>
                 <div class="menu__content-image-container">
@@ -140,7 +140,7 @@
                         <path d="M0 46V13.8H9.33333V46H0ZM16.3333 46V0H25.6667V46H16.3333ZM32.6667 46V27.6H42V46H32.6667Z" />
                     </svg>
                 </div>
-            </a> -->
+            </a>
 
          </div>
         <!-- Cerrar Sesion -->
