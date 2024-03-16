@@ -84,7 +84,7 @@
         }
 
         // Llamar a la función cada 30s
-        setInterval(actualizarConexion, 30000);
+        setInterval(actualizarConexion, 5000);
     </script>
 
 </div>

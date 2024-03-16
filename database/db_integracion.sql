@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 14-03-2024 a las 23:30:56
+-- Tiempo de generación: 16-03-2024 a las 15:06:45
 -- Versión del servidor: 8.2.0
--- Versión de PHP: 8.2.13
+-- Versión de PHP: 8.3.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,17 +24,24 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `api`
+-- Estructura de tabla para la tabla `api_connection`
 --
 
-DROP TABLE IF EXISTS `api`;
-CREATE TABLE IF NOT EXISTS `api` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `url_web_service` text NOT NULL,
-  `user` text NOT NULL,
-  `password` text NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+DROP TABLE IF EXISTS `api_connection`;
+CREATE TABLE IF NOT EXISTS `api_connection` (
+  `id_api_connection` int NOT NULL,
+  `user` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `password` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `api_connection_url` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  PRIMARY KEY (`id_api_connection`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `api_connection`
+--
+
+INSERT INTO `api_connection` (`id_api_connection`, `user`, `password`, `api_connection_url`) VALUES
+(1, 'user-api', 'sena123', 'url-api');
 
 -- --------------------------------------------------------
 
@@ -50,7 +57,7 @@ CREATE TABLE IF NOT EXISTS `audit` (
   `id_user` bigint NOT NULL,
   PRIMARY KEY (`id`),
   KEY `id_user` (`id_user`)
-) ENGINE=InnoDB AUTO_INCREMENT=289 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=332 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `audit`
@@ -307,7 +314,50 @@ INSERT INTO `audit` (`id`, `events`, `date`, `id_user`) VALUES
 (285, 'singin', '2024-03-14 22:10:21', 1020304050),
 (286, 'logout', '2024-03-14 22:19:03', 1020304050),
 (287, 'singin', '2024-03-14 22:20:59', 1020304050),
-(288, 'singin', '2024-03-14 22:55:25', 1020304050);
+(288, 'singin', '2024-03-14 22:55:25', 1020304050),
+(289, 'singin', '2024-03-15 13:05:11', 1020304050),
+(290, 'singin', '2024-03-15 13:39:35', 1020304052),
+(291, 'singin', '2024-03-15 14:05:07', 1020304050),
+(292, 'logout', '2024-03-15 15:36:10', 1020304052),
+(293, 'singin', '2024-03-15 15:36:19', 1020304040),
+(294, 'logout', '2024-03-15 15:36:56', 1020304040),
+(295, 'singin', '2024-03-15 15:37:39', 1020304052),
+(296, 'logout', '2024-03-15 16:38:59', 1020304052),
+(297, 'singin', '2024-03-15 16:39:04', 1020304040),
+(298, 'logout', '2024-03-15 18:10:21', 1020304050),
+(299, 'singin', '2024-03-15 18:10:40', 1020304052),
+(300, 'singin', '2024-03-15 20:02:01', 1020304050),
+(301, 'logout', '2024-03-15 20:05:57', 1020304052),
+(302, 'singin', '2024-03-15 20:06:52', 1020304052),
+(303, 'singin', '2024-03-15 20:33:55', 1020304050),
+(304, 'logout', '2024-03-15 21:42:41', 1020304052),
+(305, 'singin', '2024-03-15 21:42:46', 1020304052),
+(306, 'logout', '2024-03-15 21:43:24', 1020304052),
+(307, 'singin', '2024-03-15 21:43:30', 1020304052),
+(308, 'logout', '2024-03-15 21:43:35', 1020304050),
+(309, 'singin', '2024-03-15 21:43:45', 1020304050),
+(310, 'singin', '2024-03-15 21:50:58', 1020304050),
+(311, 'singin', '2024-03-15 21:51:03', 1020304050),
+(312, 'logout', '2024-03-15 21:58:49', 1020304050),
+(313, 'singin', '2024-03-15 21:59:01', 1020304050),
+(314, 'logout', '2024-03-15 22:21:02', 1020304050),
+(315, 'singin', '2024-03-15 22:22:44', 1020304053),
+(316, 'logout', '2024-03-15 22:34:12', 1020304053),
+(317, 'singin', '2024-03-15 22:42:10', 1020304050),
+(318, 'logout', '2024-03-15 22:51:44', 1020304052),
+(319, 'singin', '2024-03-15 22:52:07', 1020304052),
+(320, 'logout', '2024-03-15 23:05:48', 1020304052),
+(321, 'singin', '2024-03-15 23:06:39', 1020304052),
+(322, 'logout', '2024-03-15 23:07:01', 1020304052),
+(323, 'singin', '2024-03-16 13:05:54', 1020304050),
+(324, 'singin', '2024-03-16 13:05:57', 1020304050),
+(325, 'singin', '2024-03-16 13:12:58', 1020304052),
+(326, 'singin', '2024-03-16 13:18:57', 1020304050),
+(327, 'singin', '2024-03-16 13:19:26', 1020304050),
+(328, 'logout', '2024-03-16 13:30:19', 1020304050),
+(329, 'singin', '2024-03-16 13:30:26', 1020304040),
+(330, 'logout', '2024-03-16 13:31:03', 1020304040),
+(331, 'singin', '2024-03-16 13:31:07', 1020304050);
 
 -- --------------------------------------------------------
 
@@ -332,7 +382,7 @@ CREATE TABLE IF NOT EXISTS `batch` (
 --
 
 INSERT INTO `batch` (`id_batch`, `integration_availabity`, `execution_schedule`, `notifications_target`, `user_id`, `date_updated`) VALUES
-(3, 0, '16:50:00', 'a:3:{i:1;s:17:\"correo@correo.com\";i:2;s:20:\"admin_sena@gmail.com\";i:3;s:16:\"corre@correo.com\";}', 1020304050, '2024-03-07 20:28:41');
+(3, 0, '09:40:00', 'a:3:{i:7;s:15:\"pradi@andres.co\";i:8;s:10:\"matt@eo.co\";i:9;s:8:\"lu@is.co\";}', 1020304052, '2024-03-07 20:28:41');
 
 -- --------------------------------------------------------
 
@@ -344,7 +394,7 @@ DROP TABLE IF EXISTS `email_server`;
 CREATE TABLE IF NOT EXISTS `email_server` (
   `id_email_server` int NOT NULL AUTO_INCREMENT,
   `email_server` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `portocol` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `protocol` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `port` int NOT NULL,
   `user` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `password` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
@@ -357,7 +407,7 @@ CREATE TABLE IF NOT EXISTS `email_server` (
 -- Volcado de datos para la tabla `email_server`
 --
 
-INSERT INTO `email_server` (`id_email_server`, `email_server`, `portocol`, `port`, `user`, `password`, `user_id`) VALUES
+INSERT INTO `email_server` (`id_email_server`, `email_server`, `protocol`, `port`, `user`, `password`, `user_id`) VALUES
 (3, 'SSL://outlook.office365.co', 'POP', 995, 'USUARIO', 'contrasen123', 1020304052);
 
 -- --------------------------------------------------------
@@ -391,7 +441,7 @@ CREATE TABLE IF NOT EXISTS `events_without_sync` (
   `user_id` bigint NOT NULL,
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=89 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=95 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `events_without_sync`
@@ -446,8 +496,14 @@ INSERT INTO `events_without_sync` (`id`, `modality`, `training`, `seed_code`, `d
 (84, 'V', '6', '1535', '2024-03-11 17:01:13', 0, 'delete', 1020304052),
 (85, 'V', '2', 'asesoria1121212', '2024-03-11 18:45:57', 0, 'delete', 1020304050),
 (86, 'V', '6', 'Semilla_prueba_33', '2024-03-13 19:06:34', 0, 'delete', 1020304052),
-(87, 'V', '6', 'ADSOs', '2024-03-14 19:58:13', 1, 'create', 1020304050),
-(88, 'V', '6', 'Semilla_prueba_789', '2024-03-14 20:23:25', 1, 'create', 1020304050);
+(87, 'V', '6', 'ADSOs', '2024-03-14 19:58:13', 0, 'delete', 1020304052),
+(88, 'V', '6', 'Semilla_prueba_78', '2024-03-14 20:23:25', 0, 'delete', 1020304052),
+(89, 'A', '2', 'ADSO1232', '2024-03-15 16:08:31', 0, 'delete', 1020304052),
+(90, 'V', '2', 'code', '2024-03-15 16:15:19', 0, 'delete', 1020304050),
+(91, 'A', '6', 'ADSO2560119', '2024-03-15 19:44:10', 0, 'delete', 1020304052),
+(92, 'A', '2', 'Semilla_prueba_788', '2024-03-15 20:30:22', 0, 'delete', 1020304052),
+(93, 'V', '6', 'java33', '2024-03-15 20:40:08', 0, 'delete', 1020304050),
+(94, 'A', '6', 'Semilla_prueba_789', '2024-03-16 13:27:37', 1, 'create', 1020304050);
 
 -- --------------------------------------------------------
 
@@ -465,7 +521,7 @@ CREATE TABLE IF NOT EXISTS `histories` (
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=270 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=400 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `histories`
@@ -722,7 +778,137 @@ INSERT INTO `histories` (`id`, `user_id`, `event`, `previous_state`, `new_state`
 (266, 1020304050, 'Notas - Modificó el url webservice', 'url', 'urlreal', '2024-03-14 23:28:41'),
 (267, 1020304050, 'Notas - Deshabilito  la sincronización de notas la sincronización de notas', '0', 'on', '2024-03-14 23:28:41'),
 (268, 1020304050, 'Notas - Deshabilito  la sincronización de notas la sincronización de notas', '0', 'on', '2024-03-14 23:29:47'),
-(269, 1020304050, 'Notas - Modificó la letra por defecto', 'A', 'D', '2024-03-14 23:29:47');
+(269, 1020304050, 'Notas - Modificó la letra por defecto', 'A', 'D', '2024-03-14 23:29:47'),
+(270, 1020304050, 'Notas - Deshabilito  la sincronización de notas la sincronización de notas', '0', 'on', '2024-03-15 14:06:20'),
+(271, 1020304050, 'Notas - Modificó la contraseña', 'contra', 'contrasena', '2024-03-15 14:09:06'),
+(272, 1020304050, 'Notas - Deshabilito  la sincronización de notas la sincronización de notas', '0', 'on', '2024-03-15 14:09:06'),
+(273, 1020304050, 'Batch - Habilito la disponibilidad de integración', '0', '1', '2024-03-15 14:11:02'),
+(274, 1020304050, 'Batch - Agregó destinatario ', '3 correos', '4 correos', '2024-03-15 14:11:07'),
+(275, 1020304050, 'Batch - Agregó destinatario ', '4 correos', '5 correos', '2024-03-15 14:11:10'),
+(276, 1020304050, 'Batch - Agregó destinatario ', '5 correos', '6 correos', '2024-03-15 14:11:23'),
+(277, 1020304050, 'Batch - Agregó destinatario ', '6 correos', '7 correos', '2024-03-15 14:11:37'),
+(278, 1020304050, 'Josso - Modificó el Url del servicio gateway', 'url', 'url343', '2024-03-15 14:11:45'),
+(279, 1020304052, 'Batch - Borro un destinatario ', '7 correos', '6 correos', '2024-03-15 14:45:58'),
+(280, 1020304052, 'Batch - Borro un destinatario ', '6 correos', '5 correos', '2024-03-15 14:45:59'),
+(281, 1020304052, 'Batch - Borro un destinatario ', '5 correos', '4 correos', '2024-03-15 14:45:59'),
+(282, 1020304050, 'Batch - Agregó destinatario ', '4 correos', '5 correos', '2024-03-15 14:48:37'),
+(283, 1020304050, 'Notas - Modificó el url webservice', 'urlreal', 'url', '2024-03-15 14:54:09'),
+(284, 1020304050, 'Notas - Modificó el usuario', 'usuario', 'usuario1', '2024-03-15 14:54:09'),
+(285, 1020304050, 'Notas - Deshabilito  la sincronización de notas la sincronización de notas', '0', 'on', '2024-03-15 14:54:09'),
+(286, 1020304050, 'Notas - Modificó la letra por defecto', 'D', 'A', '2024-03-15 14:54:09'),
+(287, 1020304052, 'Batch - Borro un destinatario ', '5 correos', '4 correos', '2024-03-15 14:56:57'),
+(288, 1020304052, 'Batch - Borro un destinatario ', '4 correos', '3 correos', '2024-03-15 14:56:58'),
+(289, 1020304052, 'Josso - Modificó el Url del servicio gateway', 'url343', 'url', '2024-03-15 14:57:50'),
+(290, 1020304050, 'Batch - Agregó destinatario ', '3 correos', '4 correos', '2024-03-15 14:58:26'),
+(291, 1020304050, 'Batch - Agregó destinatario ', '4 correos', '5 correos', '2024-03-15 15:17:30'),
+(292, 1020304050, 'Batch - Agregó destinatario ', '5 correos', '6 correos', '2024-03-15 15:17:31'),
+(293, 1020304050, 'Batch - Borro un destinatario ', '6 correos', '5 correos', '2024-03-15 15:17:55'),
+(294, 1020304050, 'Batch - Borro un destinatario ', '5 correos', '4 correos', '2024-03-15 15:17:56'),
+(295, 1020304050, 'Batch - Agregó destinatario ', '4 correos', '5 correos', '2024-03-15 15:18:14'),
+(296, 1020304050, 'ApiConnection - Modificó la contraseña de conexión a la API', '123', 'sena123', '2024-03-15 15:42:13'),
+(297, 1020304052, 'Josso - Modificó el Url del servicio gateway', 'url', 'urlreal', '2024-03-15 15:48:16'),
+(298, 1020304050, 'Batch - Agregó destinatario ', '5 correos', '6 correos', '2024-03-15 15:50:52'),
+(299, 1020304052, 'Batch - Borro un destinatario ', '6 correos', '5 correos', '2024-03-15 15:53:38'),
+(300, 1020304052, 'Batch - Borro un destinatario ', '5 correos', '4 correos', '2024-03-15 15:53:38'),
+(301, 1020304052, 'Batch - Borro un destinatario ', '4 correos', '3 correos', '2024-03-15 15:53:39'),
+(302, 1020304050, 'Batch - Agregó destinatario ', '3 correos', '4 correos', '2024-03-15 15:55:29'),
+(303, 1020304052, 'Batch - Borro un destinatario ', '4 correos', '3 correos', '2024-03-15 15:58:27'),
+(304, 1020304052, 'Notas - Deshabilito  la sincronización de notas la sincronización de notas', '0', 'on', '2024-03-15 16:01:28'),
+(305, 1020304052, 'Notas - Modificó la letra por defecto', 'A', 'D', '2024-03-15 16:01:28'),
+(306, 1020304052, 'Batch - Deshabilito la disponibilidad de integración la disponibilidad de integración', '1', '0', '2024-03-15 16:05:09'),
+(307, 1020304052, 'Batch - Modificó la hora de ejecución', '16:50:00', '18:50', '2024-03-15 16:05:09'),
+(308, 1020304050, 'Batch - Agregó destinatario ', '3 correos', '4 correos', '2024-03-15 16:44:10'),
+(309, 1020304050, 'Batch - Agregó destinatario ', '4 correos', '5 correos', '2024-03-15 16:44:28'),
+(310, 1020304050, 'Batch - Borro un destinatario ', '5 correos', '4 correos', '2024-03-15 18:10:05'),
+(311, 1020304050, 'Batch - Borro un destinatario ', '4 correos', '3 correos', '2024-03-15 18:10:17'),
+(312, 1020304052, 'Notas - Deshabilito  la sincronización de notas la sincronización de notas', '0', 'on', '2024-03-15 18:16:28'),
+(313, 1020304052, 'Notas - Modificó la letra por defecto', 'D', 'A', '2024-03-15 18:16:28'),
+(314, 1020304052, 'Notas - Deshabilito  la sincronización de notas la sincronización de notas', '0', 'on', '2024-03-15 18:16:37'),
+(315, 1020304052, 'Notas - Deshabilito  la sincronización de notas la sincronización de notas', '0', 'on', '2024-03-15 18:17:01'),
+(316, 1020304052, 'Notas - Modificó la letra por defecto', 'A', 'D', '2024-03-15 18:17:01'),
+(317, 1020304052, 'Notas - Deshabilito  la sincronización de notas la sincronización de notas', '0', 'on', '2024-03-15 18:17:16'),
+(318, 1020304052, 'Notas - Modificó la letra por defecto', 'D', 'A', '2024-03-15 18:17:16'),
+(319, 1020304052, 'Notas - Modificó el usuario', 'usuario1', 'usuario', '2024-03-15 18:18:00'),
+(320, 1020304052, 'Notas - Deshabilito  la sincronización de notas la sincronización de notas', '0', 'on', '2024-03-15 18:18:00'),
+(321, 1020304052, 'Notas - Modificó la contraseña', 'contrasena', 'contrasena123', '2024-03-15 18:18:09'),
+(322, 1020304052, 'Notas - Deshabilito  la sincronización de notas la sincronización de notas', '0', 'on', '2024-03-15 18:18:09'),
+(323, 1020304052, 'Notas - Deshabilito  la sincronización de notas la sincronización de notas', '0', 'on', '2024-03-15 18:19:45'),
+(324, 1020304052, 'Notas - Deshabilito  la sincronización de notas la sincronización de notas', '0', 'on', '2024-03-15 18:23:00'),
+(325, 1020304052, 'Notas - Deshabilito  la sincronización de notas la sincronización de notas', '1', 'on', '2024-03-15 18:27:16'),
+(326, 1020304052, 'Notas - Deshabilito  la sincronización de notas la sincronización de notas', '0', 'on', '2024-03-15 18:27:26'),
+(327, 1020304052, 'Notas - Deshabilito  la sincronización de notas la sincronización de notas', '0', 'on', '2024-03-15 18:28:21'),
+(328, 1020304052, 'Batch - Habilito la disponibilidad de integración', '0', '1', '2024-03-15 18:31:50'),
+(329, 1020304052, 'Notas - Deshabilito  la sincronización de notas la sincronización de notas', '0', 'on', '2024-03-15 18:32:18'),
+(330, 1020304052, 'Notas - Deshabilito  la sincronización de notas la sincronización de notas', '1', 'on', '2024-03-15 18:33:35'),
+(331, 1020304052, 'Notas - Deshabilito  la sincronización de notas la sincronización de notas', '0', 'on', '2024-03-15 18:33:38'),
+(332, 1020304052, 'Batch - Deshabilito la disponibilidad de integración la disponibilidad de integración', '1', '0', '2024-03-15 18:36:22'),
+(333, 1020304052, 'Batch - Habilito la disponibilidad de integración', '0', '1', '2024-03-15 18:36:28'),
+(334, 1020304052, 'Batch - Deshabilito la disponibilidad de integración la disponibilidad de integración', '1', '0', '2024-03-15 18:36:35'),
+(335, 1020304052, 'Batch - Modificó la hora de ejecución', '18:50:00', '19:50', '2024-03-15 18:36:44'),
+(336, 1020304052, 'Batch - Habilito la disponibilidad de integración', '0', '1', '2024-03-15 18:37:01'),
+(337, 1020304052, 'Notas - Deshabilito  la sincronización de notas la sincronización de notas', '0', 'on', '2024-03-15 18:38:09'),
+(338, 1020304052, 'Notas - Deshabilito  la sincronización de notas la sincronización de notas', '0', 'on', '2024-03-15 18:38:24'),
+(339, 1020304052, 'Notas - Deshabilito  la sincronización de notas la sincronización de notas', '0', 'on', '2024-03-15 18:38:31'),
+(340, 1020304052, 'Notas - Deshabilito  la sincronización de notas la sincronización de notas', '0', 'on', '2024-03-15 18:38:46'),
+(341, 1020304052, 'Notas - Deshabilito  la sincronización de notas la sincronización de notas', '0', 'on', '2024-03-15 18:39:18'),
+(342, 1020304052, 'Notas - Habilito la sincronización de notas', '0', '1', '2024-03-15 18:43:46'),
+(343, 1020304052, 'Notas - Modificó el url webservice', 'url', 'urlperro', '2024-03-15 18:44:04'),
+(344, 1020304052, 'Notas - Modificó el usuario', 'usuario', 'usuario33', '2024-03-15 18:44:24'),
+(345, 1020304052, 'Notas - Modificó la letra por defecto', 'A', 'D', '2024-03-15 18:44:50'),
+(346, 1020304052, 'Batch - Deshabilito la disponibilidad de integración la disponibilidad de integración', '1', '0', '2024-03-15 18:45:35'),
+(347, 1020304052, 'Batch - Habilito la disponibilidad de integración', '0', '1', '2024-03-15 18:45:55'),
+(348, 1020304052, 'Notas - Deshabilito  la sincronización de notas la sincronización de notas', '1', '0', '2024-03-15 18:47:53'),
+(349, 1020304052, 'Notas - Habilito la sincronización de notas', '0', '1', '2024-03-15 18:48:00'),
+(350, 1020304052, 'Notas - Deshabilito  la sincronización de notas la sincronización de notas', '1', '0', '2024-03-15 19:01:41'),
+(351, 1020304052, 'Notas - Habilito la sincronización de notas', '0', '1', '2024-03-15 19:02:48'),
+(352, 1020304052, 'ApiConnection - Modificó la URL de conexión a la API', 'url-api', 'url-api2', '2024-03-15 19:16:59'),
+(353, 1020304052, 'ApiConnection - Modificó el usuario de conexión a la API', 'user-api', 'user-api2', '2024-03-15 19:16:59'),
+(354, 1020304052, 'Notas - Modificó el url webservice', 'urlperro', 'url', '2024-03-15 19:21:23'),
+(355, 1020304052, 'Notas - Modificó el usuario', 'usuario33', 'usuario', '2024-03-15 19:21:23'),
+(356, 1020304052, 'ApiConnection - Modificó la URL de conexión a la API', 'url-api2', 'url-api', '2024-03-15 19:21:43'),
+(357, 1020304052, 'Notas - Deshabilito  la sincronización de notas la sincronización de notas', '1', '0', '2024-03-15 21:09:56'),
+(358, 1020304052, 'ApiConnection - Modificó el usuario de conexión a la API', 'user-api2', 'user-api', '2024-03-15 21:55:03'),
+(359, 1020304050, 'ApiConnection - Modificó la URL de conexión a la API', 'url-api', 'url-api3', '2024-03-15 21:56:53'),
+(360, 1020304052, 'ApiConnection - Modificó el usuario de conexión a la API', 'user-api', 'user-api3', '2024-03-15 22:03:02'),
+(361, 1020304052, 'Batch - Modificó la hora de ejecución', '19:50:00', '17:25', '2024-03-15 22:25:58'),
+(362, 1020304050, 'Batch - Borro un destinatario ', '3 correos', '2 correos', '2024-03-15 22:42:22'),
+(363, 1020304050, 'Batch - Agregó destinatario ', '2 correos', '3 correos', '2024-03-15 22:42:45'),
+(364, 1020304050, 'Batch - Borro un destinatario ', '3 correos', '2 correos', '2024-03-15 22:43:10'),
+(365, 1020304052, 'Batch - Borro un destinatario ', '2 correos', '1 correos', '2024-03-15 22:43:23'),
+(366, 1020304052, 'Batch - Borro un destinatario ', '1 correos', '0 correos', '2024-03-15 22:43:24'),
+(367, 1020304050, 'Batch - Borro un destinatario ', '2 correos', '1 correos', '2024-03-15 22:45:22'),
+(368, 1020304050, 'Batch - Agregó destinatario ', '1 correos', '2 correos', '2024-03-15 22:45:41'),
+(369, 1020304050, 'Batch - Agregó destinatario ', '2 correos', '3 correos', '2024-03-15 22:45:52'),
+(370, 1020304052, 'ApiConnection - Modificó la URL de conexión a la API', 'url-api3', 'url-api', '2024-03-15 22:51:26'),
+(371, 1020304052, 'ApiConnection - Modificó el usuario de conexión a la API', 'user-api3', 'user-api', '2024-03-15 22:51:26'),
+(372, 1020304052, 'Notas - Modificó el url webservice', 'url', 'url-real', '2024-03-15 22:56:50'),
+(373, 1020304052, 'Notas - Modificó el usuario', 'usuario', 'usuario-real', '2024-03-15 22:56:50'),
+(374, 1020304052, 'Notas - Habilito la sincronización de notas', '0', '1', '2024-03-15 22:56:50'),
+(375, 1020304052, 'Notas - Modificó la letra por defecto', 'D', 'A', '2024-03-15 22:56:50'),
+(376, 1020304052, 'Notas - Deshabilito  la sincronización de notas la sincronización de notas', '1', '0', '2024-03-16 13:15:45'),
+(377, 1020304052, 'Notas - Habilito la sincronización de notas', '0', '1', '2024-03-16 13:15:53'),
+(378, 1020304050, 'Batch - Agregó destinatario ', '3 correos', '4 correos', '2024-03-16 13:26:13'),
+(379, 1020304050, 'Batch - Borro un destinatario ', '4 correos', '3 correos', '2024-03-16 13:26:20'),
+(380, 1020304050, 'Batch - Agregó destinatario ', '3 correos', '4 correos', '2024-03-16 13:28:42'),
+(381, 1020304050, 'Batch - Borro un destinatario ', '4 correos', '3 correos', '2024-03-16 13:29:19'),
+(382, 1020304050, 'Batch - Agregó destinatario ', '3 correos', '4 correos', '2024-03-16 13:29:30'),
+(383, 1020304050, 'Notas - Modificó la contraseña', 'contrasena123', 'contrasena12', '2024-03-16 13:29:41'),
+(384, 1020304050, 'Notas - Deshabilito  la sincronización de notas la sincronización de notas', '1', '0', '2024-03-16 13:29:41'),
+(385, 1020304050, 'Notas - Modificó el url webservice', 'url-real', 'url-real2', '2024-03-16 13:29:45'),
+(386, 1020304050, 'Notas - Modificó el usuario', 'usuario-real', 'usuario-real1', '2024-03-16 13:29:45'),
+(387, 1020304050, 'Notas - Modificó la contraseña', 'contrasena12', '123', '2024-03-16 13:29:45'),
+(388, 1020304050, 'Notas - Habilito la sincronización de notas', '0', '1', '2024-03-16 13:29:45'),
+(389, 1020304050, 'Notas - Modificó la letra por defecto', 'A', 'D', '2024-03-16 13:29:45'),
+(390, 1020304050, 'Notas - Deshabilito  la sincronización de notas la sincronización de notas', '1', '0', '2024-03-16 13:49:31'),
+(391, 1020304050, 'Notas - Modificó el url webservice', 'url-real2', 'url-real', '2024-03-16 13:49:36'),
+(392, 1020304050, 'Notas - Modificó el usuario', 'usuario-real1', 'usuario-real', '2024-03-16 13:49:36'),
+(393, 1020304050, 'Notas - Modificó la contraseña', '123', '12345454', '2024-03-16 13:49:43'),
+(394, 1020304052, 'Batch - Modificó la hora de ejecución', '17:25:00', '09:05', '2024-03-16 14:04:24'),
+(395, 1020304052, 'Batch - Borro un destinatario ', '4 correos', '3 correos', '2024-03-16 14:40:18'),
+(396, 1020304052, 'Batch - Deshabilito la disponibilidad de integración la disponibilidad de integración', '1', '0', '2024-03-16 14:40:29'),
+(397, 1020304052, 'Batch - Modificó la hora de ejecución', '09:05:00', '09:40', '2024-03-16 14:40:29'),
+(398, 1020304052, 'Josso - Modificó tiempo de espera maxi de respuesta sockets', '2', '22', '2024-03-16 14:41:14'),
+(399, 1020304052, 'Josso - Modificó tiempo de espera maxi de respuesta webserver', '1', '13', '2024-03-16 14:41:18');
 
 -- --------------------------------------------------------
 
@@ -747,7 +933,7 @@ CREATE TABLE IF NOT EXISTS `josso` (
 --
 
 INSERT INTO `josso` (`id_josso`, `url_service_gateway`, `maximun_time_response_socket`, `maximun_time_response_webservice`, `name_plataforma`, `user_id`) VALUES
-(6, 'url', 2, 1, 'SENAPRODUCTO', 1020304050);
+(6, 'urlreal', 22, 13, 'SENAPRODUCTO', 1020304052);
 
 -- --------------------------------------------------------
 
@@ -761,7 +947,7 @@ CREATE TABLE IF NOT EXISTS `note` (
   `url_web_service` text NOT NULL,
   `user` text NOT NULL,
   `password` text NOT NULL,
-  `sync_notes` tinyint NOT NULL,
+  `sync_notes` tinyint DEFAULT NULL,
   `default_letter` text NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -771,7 +957,7 @@ CREATE TABLE IF NOT EXISTS `note` (
 --
 
 INSERT INTO `note` (`id`, `url_web_service`, `user`, `password`, `sync_notes`, `default_letter`) VALUES
-(1, 'urlreal', 'usuario', 'contra', 0, 'D');
+(1, 'url-real', 'usuario-real', '12345454', 0, 'D');
 
 -- --------------------------------------------------------
 
@@ -793,7 +979,7 @@ CREATE TABLE IF NOT EXISTS `platform_status` (
 --
 
 INSERT INTO `platform_status` (`id`, `name_platform`, `status`, `date`) VALUES
-(1, 'sofia', 0, '2024-03-13 15:23:26'),
+(1, 'sofia', 1, '2024-03-13 15:23:26'),
 (2, 'lms', 1, '2024-03-13 15:23:35');
 
 -- --------------------------------------------------------
@@ -863,7 +1049,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `date_updated` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `num_id` (`num_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `users`
@@ -873,7 +1059,8 @@ INSERT INTO `users` (`id`, `name`, `email`, `role`, `tipe_id`, `num_id`, `passwo
 (3, 'pradi', 'correo@crreo.com', 'admin', 'cc', 1020304050, '$2y$10$/6KU7pbUnmU4tqIE64IPGePxs1E1J7tOr7cc2VTozBREADAAQkQYK', '2024-03-04 15:57:34', '0000-00-00 00:00:00'),
 (4, 'Andresito', 'andress_garces@soy.sena.edu.co', 'admin', 'cc', 1020304051, '$2y$10$jN0S0u4WTqekij/Ei0kDTOEBglw69t3vZQtrsU9.U97L3sktoWyMy', '2024-03-07 16:56:08', NULL),
 (6, 'Matt', 'magulop06@gmail.com', 'admin', 'cc', 1020304052, '$2y$10$v5ovpXbZARSyMj2ZvM7J7eeL.aqxMbOxANVAL29hEy4PENMw3d9DS', '2024-03-11 15:12:13', NULL),
-(7, 'Pepe', 'correoreal@gmail.com', 'reader', 'cc', 1020304040, '$2y$10$lNjiKBk4RkuEkpHUWOg0gO01KPrKDQUanJDxvl17JU9kBARh5kq2K', '2024-03-13 22:16:03', NULL);
+(7, 'Pepe', 'correoreal@gmail.com', 'reader', 'cc', 1020304040, '$2y$10$lNjiKBk4RkuEkpHUWOg0gO01KPrKDQUanJDxvl17JU9kBARh5kq2K', '2024-03-13 22:16:03', NULL),
+(8, 'Lucas', 'Lucas@sena.edu.co', 'reader', 'cc', 1020304053, '$2y$10$j5MgrOdvPPUfUDz5U.lACuUC6Oz9pf3BoFFwBlYvaYqGPVmqICu1.', '2024-03-15 22:20:45', NULL);
 
 --
 -- Restricciones para tablas volcadas
