@@ -52,7 +52,6 @@ require_once '../app/controllers/batch/show_events.php';
     </div>
 </dialog>
 
-
 <!-- Modal eliminar -->
 <dialog class="modal__window close" id="windows-delete">
 

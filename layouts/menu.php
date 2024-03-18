@@ -1,6 +1,6 @@
 <?php
-    //ruta actual
-    $currentPath = $_SERVER['REQUEST_URI'];
+//ruta actual
+$currentPath = $_SERVER['REQUEST_URI'];
 ?>
 
 <div class="menu__container">
@@ -14,20 +14,20 @@
                 Configuración
             </h3>
             <!-- Dashboard -->
-            <a class="<?php echo (strpos($currentPath,'inicio.php')) ? 'active' : ''; ?>" href="../views/inicio.php">
+            <a class="<?php echo (strpos($currentPath, 'inicio.php')) ? 'active' : ''; ?>" href="../views/inicio.php">
 
 
                 <div class="menu__content-image-container">
-                    <svg class="icon" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24">
-                        <path d="M14 9q-.425 0-.712-.288T13 8V4q0-.425.288-.712T14 3h6q.425 0 .713.288T21 4v4q0 .425-.288.713T20 9zM4 13q-.425 0-.712-.288T3 12V4q0-.425.288-.712T4 3h6q.425 0 .713.288T11 4v8q0 .425-.288.713T10 13zm10 8q-.425 0-.712-.288T13 20v-8q0-.425.288-.712T14 11h6q.425 0 .713.288T21 12v8q0 .425-.288.713T20 21zM4 21q-.425 0-.712-.288T3 20v-4q0-.425.288-.712T4 15h6q.425 0 .713.288T11 16v4q0 .425-.288.713T10 21z"/>
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M14 9q-.425 0-.712-.288T13 8V4q0-.425.288-.712T14 3h6q.425 0 .713.288T21 4v4q0 .425-.288.713T20 9zM4 13q-.425 0-.712-.288T3 12V4q0-.425.288-.712T4 3h6q.425 0 .713.288T11 4v8q0 .425-.288.713T10 13zm10 8q-.425 0-.712-.288T13 20v-8q0-.425.288-.712T14 11h6q.425 0 .713.288T21 12v8q0 .425-.288.713T20 21zM4 21q-.425 0-.712-.288T3 20v-4q0-.425.288-.712T4 15h6q.425 0 .713.288T11 16v4q0 .425-.288.713T10 21z" />
                     </svg>
                 </div>
                 <h2>Dashboard</h2>
 
             </a>
-        
+
             <!-- Batch -->
-            <a class="<?php echo (strpos($currentPath,'/batch.php')) ? 'active' : ''; ?>" href="../views/batch.php">
+            <a class="<?php echo (strpos($currentPath, '/batch.php')) ? 'active' : ''; ?>" href="../views/batch.php">
 
 
                 <div class="menu__content-image-container">
@@ -40,7 +40,7 @@
             </a>
 
             <!-- Josso -->
-            <a class="<?php echo (strpos($currentPath,'/josso.php')) ? 'active' : ''; ?>" href="../views/josso.php">
+            <a class="<?php echo (strpos($currentPath, '/josso.php')) ? 'active' : ''; ?>" href="../views/josso.php">
 
                 <div class="menu__content-image-container">
                     <svg class="icon" viewBox="0 0 35 54" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -51,39 +51,38 @@
 
             </a>
             <!-- Note -->
-            <a class="<?php echo (strpos($currentPath,'/note.php')) ? 'active' : ''; ?>" href="../views/note.php">
+            <a class="<?php echo (strpos($currentPath, '/note.php')) ? 'active' : ''; ?>" href="../views/note.php">
 
                 <div class="menu__content-image-container">
 
-                    <svg  class="icon" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 15 15">
-                        <path  d="M10.5 14.5H10a.5.5 0 0 0 .854.354zm0-4V10a.5.5 0 0 0-.5.5zm4 0l.354.354A.5.5 0 0 0 14.5 10zM1.5 1h12V0h-12zM1 13.5v-12H0v12zm13-12v8.586h1V1.5zM10.086 14H1.5v1h8.586zm3.768-3.56l-3.415 3.414l.707.707l3.415-3.415zM10.086 15a1.5 1.5 0 0 0 1.06-.44l-.707-.706a.5.5 0 0 1-.353.146zM14 10.086a.5.5 0 0 1-.146.353l.707.707a1.5 1.5 0 0 0 .439-1.06zM0 13.5A1.5 1.5 0 0 0 1.5 15v-1a.5.5 0 0 1-.5-.5zM13.5 1a.5.5 0 0 1 .5.5h1A1.5 1.5 0 0 0 13.5 0zm-12-1A1.5 1.5 0 0 0 0 1.5h1a.5.5 0 0 1 .5-.5zM11 14.5v-4h-1v4zm-.5-3.5h4v-1h-4zm3.646-.854l-4 4l.708.708l4-4zM3 4h9V3H3z"/>
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15">
+                        <path d="M10.5 14.5H10a.5.5 0 0 0 .854.354zm0-4V10a.5.5 0 0 0-.5.5zm4 0l.354.354A.5.5 0 0 0 14.5 10zM1.5 1h12V0h-12zM1 13.5v-12H0v12zm13-12v8.586h1V1.5zM10.086 14H1.5v1h8.586zm3.768-3.56l-3.415 3.414l.707.707l3.415-3.415zM10.086 15a1.5 1.5 0 0 0 1.06-.44l-.707-.706a.5.5 0 0 1-.353.146zM14 10.086a.5.5 0 0 1-.146.353l.707.707a1.5 1.5 0 0 0 .439-1.06zM0 13.5A1.5 1.5 0 0 0 1.5 15v-1a.5.5 0 0 1-.5-.5zM13.5 1a.5.5 0 0 1 .5.5h1A1.5 1.5 0 0 0 13.5 0zm-12-1A1.5 1.5 0 0 0 0 1.5h1a.5.5 0 0 1 .5-.5zM11 14.5v-4h-1v4zm-.5-3.5h4v-1h-4zm3.646-.854l-4 4l.708.708l4-4zM3 4h9V3H3z" />
                     </svg>
 
-            
+
                 </div>
                 <h2>Notas</h2>
 
             </a>
 
             <!-- API CONNECTION -->
-            <a class="<?php echo (strpos($currentPath,'/api_connection.php')) ? 'active' : ''; ?>" href="../views/api_connection.php">
+            <a class="<?php echo (strpos($currentPath, '/api_connection.php')) ? 'active' : ''; ?>" href="../views/api_connection.php">
 
                 <div class="menu__content-image-container">
 
-                    <!--svg class="icon" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 48 48"><defs><mask id="IconifyId18e3f3e27103b74862"><g fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="4">
-                        <path fill="#555" d="m37 22l-3 3l-11-11l3-3c1.5-1.5 7-4 11 0s1.5 9.5 0 11"/><path d="m42 6l-5 5"/><path fill="#555" d="m11 26l3-3l11 11l-3 3c-1.5 1.5-7 4-11 0s-1.5-9.5 0-11"/><path d="m23 32l4-4M6 42l5-5m5-12l4-4"/></g></mask></defs><path fill="#ffffff" d="M0 0h48v48H0z" mask="url(#IconifyId18e3f3e27103b74862)"/>
-                    </svg>-->
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 24 24">
+                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5.5 13L7 11.5l5.5 5.5l-1.5 1.5c-.75.75-3.5 2-5.5 0s-.75-4.75 0-5.5M3 21l2.5-2.5m13-7.5L17 12.5L11.5 7L13 5.5c.75-.75 3.5-2 5.5 0s.75 4.75 0 5.5m-6-3l-2 2M21 3l-2.5 2.5m-2.5 6l-2 2" />
+                    </svg>
 
-                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5.5 13L7 11.5l5.5 5.5l-1.5 1.5c-.75.75-3.5 2-5.5 0s-.75-4.75 0-5.5M3 21l2.5-2.5m13-7.5L17 12.5L11.5 7L13 5.5c.75-.75 3.5-2 5.5 0s.75 4.75 0 5.5m-6-3l-2 2M21 3l-2.5 2.5m-2.5 6l-2 2"/></svg>
 
-            
                 </div>
                 <h2>API</h2>
 
             </a>
 
+
             <!-- Usuarios -->
-            <a class="<?php echo (strpos($currentPath,'/users.php')) ? 'active' : ''; ?>"  href="../views/users.php">
+            <a class="<?php echo (strpos($currentPath, '/users.php')) ? 'active' : ''; ?>" href="../views/users.php">
 
                 <div class="menu__content-image-container">
                     <svg class="icon" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -95,8 +94,8 @@
             </a>
 
             <!-- Servidor -->
-            <a class="<?php echo (strpos($currentPath,'server-email')) ? 'active' : ''; ?>" href="../views/server-email.php">
-                
+            <a class="<?php echo (strpos($currentPath, 'server-email')) ? 'active' : ''; ?>" href="../views/server-email.php">
+
 
                 <div class="menu__content-image-container">
 
@@ -108,72 +107,98 @@
                 <h2>Servidor</h2>
 
             </a>
-       
-            <h3 class="title__options">
-                Reportes
-            </h3>
+            <!-- Semillas -->
+            <a class="<?php echo (strpos($currentPath, 'seed.php')) ? 'active' : ''; ?>" href="../views/seed.php">
+
+
+                <div class="menu__content-image-container">
+
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                        <path d="M512 32c0 113.6-84.6 207.5-194.2 222c-7.1-53.4-30.6-101.6-65.3-139.3C290.8 46.3 364 0 448 0h32c17.7 0 32 14.3 32 32M0 96c0-17.7 14.3-32 32-32h32c123.7 0 224 100.3 224 224v192c0 17.7-14.3 32-32 32s-32-14.3-32-32V320C100.3 320 0 219.7 0 96" />
+                    </svg>
+
+                </div>
+                <h2>Semillas</h2>
+
+            </a>
+
             <!-- Reportes -->
-            <a class="<?php echo (strpos($currentPath,'report_audit.php')) ? 'active' : '';?>" href="../views/report_audit.php">
+            <a onclick="toggleReportesMenu()">
+                <h3 class="title__options">
+                    Reportes
+                </h3>
 
                 <div class="menu__content-image-container">
-                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-                        <path d="M15 20h2v4h-2zm5-2h2v6h-2zm-10-4h2v10h-2z"/><path fill="currentColor" d="M25 5h-3V4a2 2 0 0 0-2-2h-8a2 2 0 0 0-2 2v1H7a2 2 0 0 0-2 2v21a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2M12 4h8v4h-8Zm13 24H7V7h3v3h12V7h3Z"/>
-                    </svg>
-                </div>
-                <h2>Reportes Audit</h2>
 
+                    <svg class="icon_dos" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <g fill="none" fill-rule="evenodd">
+                            <path d="M24 0v24H0V0zM12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035c-.01-.004-.019-.001-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022m-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z" />
+                            <path fill="#ffffff" d="M13.06 16.06a1.5 1.5 0 0 1-2.12 0l-5.658-5.656a1.5 1.5 0 1 1 2.122-2.121L12 12.879l4.596-4.596a1.5 1.5 0 0 1 2.122 2.12l-5.657 5.658Z" />
+                        </g>
+                    </svg>
+
+                </div>
             </a>
 
-            <!-- Reporte Josso -->
-            <a class="<?php echo (strpos($currentPath,'/report_josso.php')) ? 'active' : '';?>" href="../views/report_josso.php">
-            
-                <div class="menu__content-image-container">
-                    <svg class="icon" viewBox="0 0 42 46" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M0 46V13.8H9.33333V46H0ZM16.3333 46V0H25.6667V46H16.3333ZM32.6667 46V27.6H42V46H32.6667Z" />
-                    </svg>
-                </div>
-                <h2>Reportes Josso</h2>
+            <div class="menu__reportes" id="reportesMenu">
 
-            </a>
+                <!-- Reportes -->
+                <a class="report_list_element" href="../views/report_audit.php">
+                    <h2>Reportes Audit</h2>
+                </a>
+                <!-- Reporte Josso -->
+                <a class="report_list_element" href="../views/report_josso.php">
+                    <h2>Reportes Josso</h2>
+                </a>
+                <!-- Reporte Batch -->
+                <a class="report_list_element" href="../views/report_batch.php">
+                    <h2>Reportes Batch</h2>
+                </a>
 
-            <!-- Reporte Batch -->
-            <a class="<?php echo (strpos($currentPath,'/report_batch.php')) ? 'active' : '';?>" href="../views/report_batch.php">
-
-                <div class="menu__content-image-container">
-                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-                        <path d="M15 20h2v4h-2zm5-2h2v6h-2zm-10-4h2v10h-2z"/><path fill="currentColor" d="M25 5h-3V4a2 2 0 0 0-2-2h-8a2 2 0 0 0-2 2v1H7a2 2 0 0 0-2 2v21a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2M12 4h8v4h-8Zm13 24H7V7h3v3h12V7h3Z"/>
-                    </svg>
-                </div>
-                <h2>Reportes Batch</h2>
-
-            </a>
-      
-            <!--Reporte notas -->
-            <a class="<?php echo (strpos($currentPath,'/r_notas.php')) ? 'active' : '';?>" href="../views/r_notas.php">
-            
-                <div class="menu__content-image-container">
-                    <svg class="icon" viewBox="0 0 42 46" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M0 46V13.8H9.33333V46H0ZM16.3333 46V0H25.6667V46H16.3333ZM32.6667 46V27.6H42V46H32.6667Z" />
-                    </svg>
-                </div>
-                <h2>Reporte Notas</h2>
-            </a>
-
-         </div>
-        <!-- Cerrar Sesion -->
-        <a href="../app/controllers/login/logout.php">
-            <div class="menu__auth">
-
-                <svg viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M15 4L13.59 5.41L16.17 8H6V10H16.17L13.59 12.58L15 14L20 9M2 2H10V0H2C0.9 0 0 0.9 0 2V16C0 17.1 0.9 18 2 18H10V16H2V2Z" fill="white" />
-                </svg>
-                <h2>Cerrar Sesión</h2>
-
+                <!--Reporte notas -->
+                <a class="report_list_element" href="../views/r_notas.php">
+                    <h2>Reporte Notas</h2>
+                </a>
 
             </div>
 
-        </a>
+        </div>
 
+        <!-- Cerrar Sesion -->
+        <div class="logout">
+            <a href="../app/controllers/login/logout.php">
+                <div class="menu__auth">
+                    <div class="menu__content-image-container">
+        
+                        <svg viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15 4L13.59 5.41L16.17 8H6V10H16.17L13.59 12.58L15 14L20 9M2 2H10V0H2C0.9 0 0 0.9 0 2V16C0 17.1 0.9 18 2 18H10V16H2V2Z" fill="white" />
+                        </svg>
+                    </div>
+                    <h2>Cerrar Sesión</h2>
+        
+                </div>
+        
+            </a>
+        </div>
     </div>
+    
 
 </div>
+
+<script>
+    function toggleReportesMenu() {
+        var reportesMenu = document.getElementById("reportesMenu");
+        var iconDos = document.querySelector(".icon_dos");
+
+        reportesMenu.classList.toggle("active");
+
+        if (reportesMenu.classList.contains("active")) {
+            iconDos.classList.remove('rotate-animation-disabled')
+
+            iconDos.classList.add("rotate-animation");
+        } else {
+            iconDos.classList.remove("rotate-animation");
+            iconDos.classList.add('rotate-animation-disabled')
+        }
+    }
+</script>

@@ -110,7 +110,6 @@ button a{
 button:hover a{
     color: white;
 }
-
 /* Estilos Josso , Servidor de correo */
 
 /* Estilos formulario  */
@@ -266,18 +265,35 @@ table.table__list thead {
     background-color: var(--alternate-background);
 }
 .menu__content{
-    height: 100vh;
-    padding: 1em;
+    height: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
     flex-direction: column;
+}
+
+
+.menu__reportes{
+
+    font-size: 13px;
+    margin-left: 13px;
+    overflow: hidden;
+    max-height: 1px;
+    transition: opacity 1s ease, max-height 0.5s ease; 
+}
+.menu__reportes a{
+    padding: .4rem;
+
+}
+.menu__reportes.active {
+    
+    max-height: 250px;
 }
 .menu__content__admin__title{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 3em;
+    padding: .8em;
+    margin-bottom: 2rem;
 }
 .menu__content__admin__title h1{
     color:white;
@@ -289,10 +305,8 @@ table.table__list thead {
     width: 4em;
 }
 .menu__content__options{
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
     transition: all .3s ease-in;
+    width: 100%;
 }
 .menu__content__options a,
 .menu__auth{
@@ -302,14 +316,61 @@ table.table__list thead {
     color: white;
     font-size: .8em;
     cursor: pointer;
-    height: 3em;
+    height: 1em;
+}
+.menu__auth{
+    margin-bottom: 1.5em;
+}
+.menu__content__options a,
+.title__options
+{
+    padding: 1em;
+}
+
+.menu__content__options a{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 .menu__content__options h2{
     font-weight: 600;
     text-align: left;
 }
+
 .menu__auth{
     font-size: .8em;
+}
+.rotate-animation {
+    transform: rotate(180deg);
+    animation: rotateSVG .4s  linear;
+}
+.rotate-animation-disabled{
+    animation: rotateSVGDisabled .4s linear  ; 
+}
+@keyframes rotateSVG {
+    0% {
+        transform: rotate(90deg);
+    }
+    100% {
+        transform: rotate(180deg);
+    }
+
+}
+@keyframes rotateSVGDisabled {
+
+    0% {
+        transform: rotate(180deg);
+    }
+    
+    100% {
+        transform: rotate(360deg);
+    }
+
+}
+.icon_dos{
+    height: 1.5em;
+    width: 1.5em;
+    fill: rgb(104, 193, 209);
+
 }
 
 .icon, .menu__auth svg{
@@ -330,9 +391,9 @@ table.table__list thead {
 }
 
 .menu__content__options .active h2, .menu__content__options .active .icon{
-    color:var(--primary) ;
     fill: var(--primary);
 }
+
 h3.title__options{
     margin-top: 1em;
     margin-bottom: 1em;
@@ -342,4 +403,9 @@ h3.title__options{
     font-size: .8em;
     text-align: left;
     font-weight: bold;
+}
+
+.logout{
+    position: absolute;
+    bottom:0 ;
 }

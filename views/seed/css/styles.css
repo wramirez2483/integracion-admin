@@ -1,0 +1,86 @@
+.container__box {
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    gap: 2em;
+}
+
+.container__seed{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1em;
+    border-radius: 7px;
+    background-color: white;
+    box-shadow: 0px 0px 4px -45px rgba(0,0,0,0.1);
+    /* width: 100%; */
+    /* margin: 0 auto; */
+}
+
+.content__search__input
+{
+    display: flex;
+    width: 100%;
+    
+}
+.content__search__input svg path{ 
+    fill: white;
+}
+
+.other__pagination__form{
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.content__search__input svg path{ 
+    fill: white;
+}
+.search__input
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: solid 1px #61bb68;
+    border-radius: 10px 0px 0px 10px ;
+    width: 100%;
+}
+
+.search__input input
+{
+    background-color: none !important;
+    border: none !important;
+}
+
+.acctions button{
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    align-items: center;
+    background: none;
+    width: 40px;
+    height: 40px;
+}
+
+.acctions{
+    border-radius: 0px 10px 10px 0px ;
+    background-color: var(--primary);
+    display: flex;
+}
+
+.acctions svg{
+    width: 2.5em;
+    height: 2.5em;
+}
+
+.acctions button:hover
+{
+    background-color: unset !important;
+}
+.seeds{
+    width: 100vh;
+}
+.list__events{
+
+}
