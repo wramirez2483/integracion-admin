@@ -3,9 +3,9 @@
 session_start();
 
 define('APP_NAME', 'APP Integracion');
-define('SERVIDOR', '192.168.1.129');
-define('USUARIO', 'admin');
-define('PASSWORD', '123');
+define('SERVIDOR', 'localhost');
+define('USUARIO', 'root');
+define('PASSWORD', '');
 define('PUERTO', '3306');
 define('BD', 'db_integracion');
 
