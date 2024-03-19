@@ -1,4 +1,5 @@
 <?php
+
     function validarLogin(){
         // si el usuario no esa logueado
         if( !$_SESSION['logueado'] || !isset($_SESSION['logueado'])) {     
@@ -10,10 +11,8 @@
 
     function redigirLoginUser(){
         // si el usuario esta logueado
-        if(isset($_SESSION['logueado'])){
+        if(isset($_SESSION['logueado']) && isset($_SESSION['sessionId'])){
             // Redirige al inicio si esta logueado
             header('Location: ./views/inicio.php');
         }
     }
-
-

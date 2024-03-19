@@ -11,6 +11,7 @@
 <div class="container__dashboard">
 
     <h1>Bienvenid@ - <?php echo $_SESSION['name']; ?></h1>
+    <h1>Token: <?php echo $_SESSION['token']; ?></h1>
     <h2>Conexiones</h2>
     <div class="container__dashboard__info">
 
