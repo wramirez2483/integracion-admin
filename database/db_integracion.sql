@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 16-03-2024 a las 15:06:45
+-- Tiempo de generación: 19-03-2024 a las 23:21:24
 -- Versión del servidor: 8.2.0
 -- Versión de PHP: 8.3.0
 
@@ -57,7 +57,7 @@ CREATE TABLE IF NOT EXISTS `audit` (
   `id_user` bigint NOT NULL,
   PRIMARY KEY (`id`),
   KEY `id_user` (`id_user`)
-) ENGINE=InnoDB AUTO_INCREMENT=332 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=452 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `audit`
@@ -357,7 +357,127 @@ INSERT INTO `audit` (`id`, `events`, `date`, `id_user`) VALUES
 (328, 'logout', '2024-03-16 13:30:19', 1020304050),
 (329, 'singin', '2024-03-16 13:30:26', 1020304040),
 (330, 'logout', '2024-03-16 13:31:03', 1020304040),
-(331, 'singin', '2024-03-16 13:31:07', 1020304050);
+(331, 'singin', '2024-03-16 13:31:07', 1020304050),
+(332, 'singin', '2024-03-16 15:44:09', 1020304050),
+(333, 'logout', '2024-03-16 16:17:35', 1020304050),
+(334, 'singin', '2024-03-16 16:19:10', 1020304050),
+(335, 'logout', '2024-03-16 16:20:43', 1020304052),
+(336, 'singin', '2024-03-16 16:20:48', 1020304051),
+(337, 'logout', '2024-03-16 16:22:05', 1020304050),
+(338, 'singin', '2024-03-16 16:22:22', 1020304051),
+(339, 'logout', '2024-03-16 16:33:26', 1020304051),
+(340, 'singin', '2024-03-18 14:41:54', 1020304052),
+(341, 'logout', '2024-03-18 14:50:42', 1020304052),
+(342, 'singin', '2024-03-18 14:50:50', 1020304052),
+(343, 'logout', '2024-03-18 14:51:59', 1020304052),
+(344, 'singin', '2024-03-18 14:55:13', 1020304052),
+(345, 'singin', '2024-03-18 14:55:57', 1020304050),
+(346, 'logout', '2024-03-18 15:13:34', 1020304050),
+(347, 'singin', '2024-03-18 15:16:56', 1020304050),
+(348, 'singin', '2024-03-18 16:21:51', 1020304050),
+(349, 'logout', '2024-03-18 18:04:15', 1020304052),
+(350, 'singin', '2024-03-18 18:04:21', 1020304052),
+(351, 'logout', '2024-03-18 18:12:59', 1020304052),
+(352, 'singin', '2024-03-18 18:13:04', 1020304052),
+(353, 'logout', '2024-03-18 18:36:31', 1020304052),
+(354, 'singin', '2024-03-18 18:36:38', 1020304052),
+(355, 'logout', '2024-03-18 21:34:37', 1020304052),
+(356, 'singin', '2024-03-18 21:38:05', 1020304055),
+(357, 'logout', '2024-03-18 21:42:51', 1020304055),
+(358, 'singin', '2024-03-18 21:43:00', 1020304053),
+(359, 'logout', '2024-03-18 21:43:03', 1020304053),
+(360, 'singin', '2024-03-18 21:43:12', 1020304040),
+(361, 'logout', '2024-03-18 21:44:56', 1020304040),
+(362, 'singin', '2024-03-18 21:45:04', 1020304055),
+(363, 'logout', '2024-03-18 23:04:03', 1020304055),
+(364, 'singin', '2024-03-19 13:19:43', 1020304052),
+(365, 'logout', '2024-03-19 15:16:07', 1020304052),
+(366, 'singin', '2024-03-19 15:16:38', 1020304052),
+(367, 'logout', '2024-03-19 16:49:20', 1020304052),
+(368, 'singin', '2024-03-19 16:52:35', 1089932508),
+(369, 'logout', '2024-03-19 16:52:54', 1089932508),
+(370, 'singin', '2024-03-19 16:53:27', 1087546958),
+(371, 'singin', '2024-03-19 16:53:53', 1089932508),
+(372, 'logout', '2024-03-19 16:54:49', 1087546958),
+(373, 'logout', '2024-03-19 16:57:56', 1089932508),
+(374, 'singin', '2024-03-19 19:17:45', 1087546958),
+(375, 'singin', '2024-03-19 19:19:42', 1089932508),
+(376, 'logout', '2024-03-19 19:20:09', 1089932508),
+(377, 'singin', '2024-03-19 19:20:27', 1087546958),
+(378, 'logout', '2024-03-19 19:20:53', 1087546958),
+(379, 'singin', '2024-03-19 19:21:07', 1089932508),
+(380, 'logout', '2024-03-19 19:22:18', 1089932508),
+(381, 'singin', '2024-03-19 19:22:26', 1087546958),
+(382, 'logout', '2024-03-19 19:23:18', 1087546958),
+(383, 'singin', '2024-03-19 19:23:29', 1089932508),
+(384, 'logout', '2024-03-19 19:27:15', 1089932508),
+(385, 'logout', '2024-03-19 20:13:38', 1087546958),
+(386, 'singin', '2024-03-19 20:53:02', 1087546958),
+(387, 'singin', '2024-03-19 20:53:05', 1087546958),
+(388, 'logout', '2024-03-19 21:01:44', 1087546958),
+(389, 'singin', '2024-03-19 21:45:20', 1087546958),
+(390, 'singin', '2024-03-19 21:45:37', 1089932508),
+(391, 'logout', '2024-03-19 21:46:09', 1087546958),
+(392, 'singin', '2024-03-19 21:46:26', 1089932508),
+(393, 'singin', '2024-03-19 21:47:44', 1089932508),
+(394, 'logout', '2024-03-19 21:48:47', 1089932508),
+(395, 'singin', '2024-03-19 22:18:11', 1055478159),
+(396, 'logout', '2024-03-19 22:18:17', 1055478159),
+(397, 'singin', '2024-03-19 22:18:23', 1055478159),
+(398, 'logout', '2024-03-19 22:18:31', 1055478159),
+(399, 'singin', '2024-03-19 22:19:07', 1055478159),
+(400, 'logout', '2024-03-19 22:20:57', 1055478159),
+(401, 'singin', '2024-03-19 22:21:08', 1055478159),
+(402, 'logout', '2024-03-19 22:21:35', 1055478159),
+(403, 'singin', '2024-03-19 22:21:48', 1055478159),
+(404, 'logout', '2024-03-19 22:22:04', 1055478159),
+(405, 'singin', '2024-03-19 22:22:16', 1055478159),
+(406, 'logout', '2024-03-19 22:22:57', 1055478159),
+(407, 'singin', '2024-03-19 22:24:53', 1055478159),
+(408, 'logout', '2024-03-19 22:25:38', 1055478159),
+(409, 'logout', '2024-03-19 22:25:38', 1055478159),
+(410, 'singin', '2024-03-19 22:26:01', 1055478159),
+(411, 'logout', '2024-03-19 22:26:44', 1055478159),
+(412, 'singin', '2024-03-19 22:42:38', 1055478159),
+(413, 'logout', '2024-03-19 22:42:44', 1055478159),
+(414, 'singin', '2024-03-19 22:42:51', 1089932508),
+(415, 'logout', '2024-03-19 22:43:00', 1089932508),
+(416, 'singin', '2024-03-19 22:43:38', 1089932508),
+(417, 'logout', '2024-03-19 22:44:09', 1089932508),
+(418, 'singin', '2024-03-19 22:44:19', 1087546958),
+(419, 'logout', '2024-03-19 22:44:28', 1087546958),
+(420, 'singin', '2024-03-19 22:50:11', 1087546958),
+(421, 'logout', '2024-03-19 22:50:15', 1087546958),
+(422, 'singin', '2024-03-19 22:50:21', 1089932508),
+(423, 'logout', '2024-03-19 22:50:25', 1089932508),
+(424, 'singin', '2024-03-19 22:50:30', 1002620270),
+(425, 'logout', '2024-03-19 22:50:33', 1002620270),
+(426, 'singin', '2024-03-19 22:50:51', 1090050125),
+(427, 'logout', '2024-03-19 22:50:58', 1090050125),
+(428, 'singin', '2024-03-19 22:51:04', 1055478159),
+(429, 'logout', '2024-03-19 22:51:08', 1055478159),
+(430, 'singin', '2024-03-19 22:51:14', 1004680104),
+(431, 'logout', '2024-03-19 22:52:25', 1004680104),
+(432, 'singin', '2024-03-19 22:54:09', 1087546958),
+(433, 'logout', '2024-03-19 22:55:14', 1087546958),
+(434, 'singin', '2024-03-19 22:55:21', 1087546958),
+(435, 'singin', '2024-03-19 22:55:40', 1087546958),
+(436, 'singin', '2024-03-19 22:55:46', 1087546958),
+(437, 'singin', '2024-03-19 22:58:01', 1087546958),
+(438, 'singin', '2024-03-19 22:58:21', 1087546958),
+(439, 'singin', '2024-03-19 22:58:29', 1087546958),
+(440, 'singin', '2024-03-19 23:04:03', 1087546958),
+(441, 'singin', '2024-03-19 23:04:26', 1087546958),
+(442, 'singin', '2024-03-19 23:04:49', 1087546958),
+(443, 'singin', '2024-03-19 23:05:15', 1087546958),
+(444, 'singin', '2024-03-19 23:05:46', 1087546958),
+(445, 'singin', '2024-03-19 23:05:47', 1087546958),
+(446, 'singin', '2024-03-19 23:06:04', 1087546958),
+(447, 'singin', '2024-03-19 23:06:27', 1087546958),
+(448, 'singin', '2024-03-19 23:06:36', 1087546958),
+(449, 'singin', '2024-03-19 23:07:20', 1087546958),
+(450, 'singin', '2024-03-19 23:09:29', 1087546958),
+(451, 'singin', '2024-03-19 23:10:14', 1087546958);
 
 -- --------------------------------------------------------
 
@@ -382,7 +502,7 @@ CREATE TABLE IF NOT EXISTS `batch` (
 --
 
 INSERT INTO `batch` (`id_batch`, `integration_availabity`, `execution_schedule`, `notifications_target`, `user_id`, `date_updated`) VALUES
-(3, 0, '09:40:00', 'a:3:{i:7;s:15:\"pradi@andres.co\";i:8;s:10:\"matt@eo.co\";i:9;s:8:\"lu@is.co\";}', 1020304052, '2024-03-07 20:28:41');
+(3, 1, '14:40:00', 'a:3:{i:7;s:15:\"pradi@andres.co\";i:8;s:10:\"matt@eo.co\";i:9;s:8:\"lu@is.co\";}', 1020304052, '2024-03-07 20:28:41');
 
 -- --------------------------------------------------------
 
@@ -497,13 +617,13 @@ INSERT INTO `events_without_sync` (`id`, `modality`, `training`, `seed_code`, `d
 (85, 'V', '2', 'asesoria1121212', '2024-03-11 18:45:57', 0, 'delete', 1020304050),
 (86, 'V', '6', 'Semilla_prueba_33', '2024-03-13 19:06:34', 0, 'delete', 1020304052),
 (87, 'V', '6', 'ADSOs', '2024-03-14 19:58:13', 0, 'delete', 1020304052),
-(88, 'V', '6', 'Semilla_prueba_78', '2024-03-14 20:23:25', 0, 'delete', 1020304052),
+(88, 'A', '6', 'Semilla_prueba_789', '2024-03-14 20:23:25', 0, 'update', 1020304052),
 (89, 'A', '2', 'ADSO1232', '2024-03-15 16:08:31', 0, 'delete', 1020304052),
 (90, 'V', '2', 'code', '2024-03-15 16:15:19', 0, 'delete', 1020304050),
 (91, 'A', '6', 'ADSO2560119', '2024-03-15 19:44:10', 0, 'delete', 1020304052),
 (92, 'A', '2', 'Semilla_prueba_788', '2024-03-15 20:30:22', 0, 'delete', 1020304052),
 (93, 'V', '6', 'java33', '2024-03-15 20:40:08', 0, 'delete', 1020304050),
-(94, 'A', '6', 'Semilla_prueba_789', '2024-03-16 13:27:37', 1, 'create', 1020304050);
+(94, 'A', '6', 'Semilla_prueba_789', '2024-03-16 13:27:37', 1, 'update', 1020304052);
 
 -- --------------------------------------------------------
 
@@ -521,7 +641,7 @@ CREATE TABLE IF NOT EXISTS `histories` (
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=400 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=410 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `histories`
@@ -908,7 +1028,17 @@ INSERT INTO `histories` (`id`, `user_id`, `event`, `previous_state`, `new_state`
 (396, 1020304052, 'Batch - Deshabilito la disponibilidad de integración la disponibilidad de integración', '1', '0', '2024-03-16 14:40:29'),
 (397, 1020304052, 'Batch - Modificó la hora de ejecución', '09:05:00', '09:40', '2024-03-16 14:40:29'),
 (398, 1020304052, 'Josso - Modificó tiempo de espera maxi de respuesta sockets', '2', '22', '2024-03-16 14:41:14'),
-(399, 1020304052, 'Josso - Modificó tiempo de espera maxi de respuesta webserver', '1', '13', '2024-03-16 14:41:18');
+(399, 1020304052, 'Josso - Modificó tiempo de espera maxi de respuesta webserver', '1', '13', '2024-03-16 14:41:18'),
+(400, 1020304050, 'Josso - Modificó tiempo de espera maxi de respuesta webserver', '13', '1320', '2024-03-16 15:18:56'),
+(401, 1020304050, 'Josso - Modificó tiempo de espera maxi de respuesta webserver', '1320', '13', '2024-03-16 15:19:04'),
+(402, 1020304050, 'Batch - Habilito la disponibilidad de integración', '0', '1', '2024-03-18 19:05:39'),
+(403, 1020304050, 'Batch - Modificó la hora de ejecución', '09:40:00', '12:40', '2024-03-18 19:05:39'),
+(404, 1020304052, 'Josso - Modificó el Url del servicio gateway', 'urlreal', 'url', '2024-03-18 19:48:09'),
+(405, 1020304052, 'Josso - Modificó tiempo de espera maxi de respuesta sockets', '22', '15', '2024-03-18 19:48:09'),
+(406, 1020304052, 'Josso - Modificó tiempo de espera maxi de respuesta webserver', '13', '15', '2024-03-18 19:48:09'),
+(407, 1020304055, 'Batch - Deshabilito la disponibilidad de integración la disponibilidad de integración', '1', '0', '2024-03-18 21:38:36'),
+(408, 1020304055, 'Batch - Modificó la hora de ejecución', '12:40:00', '14:40', '2024-03-18 21:38:36'),
+(409, 1020304052, 'Batch - Habilito la disponibilidad de integración', '0', '1', '2024-03-19 16:40:04');
 
 -- --------------------------------------------------------
 
@@ -933,7 +1063,7 @@ CREATE TABLE IF NOT EXISTS `josso` (
 --
 
 INSERT INTO `josso` (`id_josso`, `url_service_gateway`, `maximun_time_response_socket`, `maximun_time_response_webservice`, `name_plataforma`, `user_id`) VALUES
-(6, 'urlreal', 22, 13, 'SENAPRODUCTO', 1020304052);
+(6, 'url', 15, 15, 'SENAPRODUCTO', 1020304052);
 
 -- --------------------------------------------------------
 
@@ -1033,6 +1163,20 @@ CREATE TABLE IF NOT EXISTS `reports` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `seeds`
+--
+
+DROP TABLE IF EXISTS `seeds`;
+CREATE TABLE IF NOT EXISTS `seeds` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `code` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `modality` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `users`
 --
 
@@ -1049,18 +1193,25 @@ CREATE TABLE IF NOT EXISTS `users` (
   `date_updated` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `num_id` (`num_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `users`
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `role`, `tipe_id`, `num_id`, `password`, `date_created`, `date_updated`) VALUES
-(3, 'pradi', 'correo@crreo.com', 'admin', 'cc', 1020304050, '$2y$10$/6KU7pbUnmU4tqIE64IPGePxs1E1J7tOr7cc2VTozBREADAAQkQYK', '2024-03-04 15:57:34', '0000-00-00 00:00:00'),
+(3, 'admn', 'correo@crreo.com', 'admin', 'cc', 1020304050, '$2y$10$/6KU7pbUnmU4tqIE64IPGePxs1E1J7tOr7cc2VTozBREADAAQkQYK', '2024-03-16 16:19:48', '0000-00-00 00:00:00'),
 (4, 'Andresito', 'andress_garces@soy.sena.edu.co', 'admin', 'cc', 1020304051, '$2y$10$jN0S0u4WTqekij/Ei0kDTOEBglw69t3vZQtrsU9.U97L3sktoWyMy', '2024-03-07 16:56:08', NULL),
 (6, 'Matt', 'magulop06@gmail.com', 'admin', 'cc', 1020304052, '$2y$10$v5ovpXbZARSyMj2ZvM7J7eeL.aqxMbOxANVAL29hEy4PENMw3d9DS', '2024-03-11 15:12:13', NULL),
 (7, 'Pepe', 'correoreal@gmail.com', 'reader', 'cc', 1020304040, '$2y$10$lNjiKBk4RkuEkpHUWOg0gO01KPrKDQUanJDxvl17JU9kBARh5kq2K', '2024-03-13 22:16:03', NULL),
-(8, 'Lucas', 'Lucas@sena.edu.co', 'reader', 'cc', 1020304053, '$2y$10$j5MgrOdvPPUfUDz5U.lACuUC6Oz9pf3BoFFwBlYvaYqGPVmqICu1.', '2024-03-15 22:20:45', NULL);
+(8, 'Lucas', 'Lucas@sena.edu.co', 'reader', 'cc', 1020304053, '$2y$10$j5MgrOdvPPUfUDz5U.lACuUC6Oz9pf3BoFFwBlYvaYqGPVmqICu1.', '2024-03-15 22:20:45', NULL),
+(9, 'Sergio Castro Vasquez', 'sergio@gmail.com', 'admin', 'cc', 1020304055, '$2y$10$V4yO4Gk1Vxpo4vaXra9.WuEXYuilzSfzccM7MXrKMVdp3oY3G3oNK', '2024-03-18 21:36:35', NULL),
+(10, 'Matteo Agudelo López', 'matteoagulop06@gmail.com', 'admin', 'cc', 1089932508, '$2y$10$DJNvCbjhslIjCrionHztBuNVxMOIpi2m/x.tL.lWCbsk5k0Pv0DHy', '2024-03-19 16:49:04', NULL),
+(11, 'Santiago Pradilla', 'andress_garces2@soy.sena.edu.co', 'admin', 'cc', 1087546958, '$2y$10$C9/R5iQsnj3zj.Jgdyhf/OIEBYqhDrA7vNUZiCXneUkpn3n/UgJfO', '2024-03-19 16:53:22', NULL),
+(13, 'Karen', 'karen@karen.com', 'admin', 'cc', 1002620270, '$2y$10$RWDM4K5hXsXznbehQ.LzvuOv05QK8w8EdKsdV/3gteRjnl8UYD.N6', '2024-03-19 21:20:50', NULL),
+(14, 'Miguel', 'miguel@miguel.com', 'admin', 'cc', 1004680104, '$2y$10$t8jsiE/IHNyWLEHqrxdo.uO.TAbJYwzYZI6wG6q.1/kj7zZWDFpeu', '2024-03-19 21:49:56', NULL),
+(15, 'Sergio', 'sergio@sergio.com', 'admin', 'cc', 1090050125, '$2y$10$sbOAv3zqCCZO5uRhGXDAi.ntyo4ExeN5rvFOh8zfsdTBkcsfmR63y', '2024-03-19 21:52:47', NULL),
+(16, 'Andres Escoba', 'nose@noes.om', 'admin', 'cc', 1055478159, '$2y$10$e8e9WnzgNQ5ngSe.PymtRuDGboHSER6jeXDQumxBR1SoSZrrXSulG', '2024-03-19 22:12:48', NULL);
 
 --
 -- Restricciones para tablas volcadas
