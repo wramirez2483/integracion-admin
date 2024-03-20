@@ -258,13 +258,14 @@ table.table__list thead {
 }
 
 
-/* ------ | Estilos Menu | ------ */
+/* ------ | Menú | ------ */
 .menu__container{
     height: 100vh;
-    width: 30vh;
+    width: max-content;
     background-color: var(--alternate-background);
 }
 .menu__content{
+    /* margin: 12px; */
     height: 100%;
     display: flex;
     align-items: center;
@@ -284,7 +285,7 @@ table.table__list thead {
     padding: .4rem;
 
 }
-.menu__reportes.active {
+.menu__reportes.active__toggle {
     
     max-height: 250px;
 }
@@ -292,52 +293,49 @@ table.table__list thead {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: .8em;
-    margin-bottom: 2rem;
+    padding: .3em;
+    margin-bottom: 1rem;
 }
 .menu__content__admin__title h1{
     color:white;
-    font-size: 1.2em;
+    font-size: 1em;
     text-align: center;
 }
 .menu__content__admin__title img{
-    height: 4em;
-    width: 4em;
+    height: 3em;
+    width: 3em;
 }
 .menu__content__options{
     transition: all .3s ease-in;
     width: 100%;
 }
-.menu__content__options a,
 .menu__auth{
     display: flex;
     align-items: center;
     gap: 2em;
     color: white;
-    font-size: .8em;
     cursor: pointer;
     height: 1em;
-}
-.menu__auth{
-    margin-bottom: 1.5em;
-}
-.menu__content__options a,
-.title__options
-{
+    margin-bottom: 2rem;
     padding: 1em;
+    font-size: .7rem;
 }
 
-.menu__content__options a{
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+.title__options{
+    padding: 1rem;
 }
+
 .menu__content__options h2{
     font-weight: 600;
     text-align: left;
 }
 
-.menu__auth{
-    font-size: .8em;
+h3.title__options {
+    color: #f3f3f3cc;
+    text-transform: uppercase;
+    font-size: .9rem;
+    text-align: left;
+    font-weight: bold;
 }
 .rotate-animation {
     transform: rotate(180deg);
@@ -369,10 +367,10 @@ table.table__list thead {
 .icon_dos{
     height: 1.5em;
     width: 1.5em;
-    fill: rgb(104, 193, 209);
-
 }
-
+li.active .icon_dos{
+    transform: rotate(180deg);
+}
 .icon, .menu__auth svg{
     height: 2em;
     width: 2em;
@@ -383,28 +381,62 @@ table.table__list thead {
     text-decoration: none;
     cursor: pointer;
     transition: all .3s ease-in;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    color: white;
+    font-size: .8em;
 }
 .menu__content__options a:hover .icon, .menu__content__options a:hover h2{
     transition: all .3s ease-in;
     color:var(--primary);
     fill: var(--primary);
 }
-
 .menu__content__options .active h2, .menu__content__options .active .icon{
     fill: var(--primary);
+    color: var(--primary);
 }
+li.active{
+    background-color: #38a90013;
+}
+li.active svg.icon_dos path.icon_dos_path{
+    fill: var(--primary);
+}
+li.report_list_element.active__menu__report h2{
+    color: var(--primary);
+}
+.menu__content__options li:hover{
+    transition: all .3s ease-in;
+    background-color: #38a90013;
+}
+.menu__reportes li.report_list_element:hover{
+    background-color: unset !important;
+}
+.title__options__toggle{
 
-h3.title__options{
-    margin-top: 1em;
-    margin-bottom: 1em;
-    /* text-align: center; */
-    color: #f3f3f3cc;
-    text-transform: uppercase;
-    font-size: .8em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: .5rem;
+}
+.title__options__toggle h2{
+    font-size: 1rem;
+    color: white;
+}
+.toggle__menu__report{
+    padding: 1rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: left;
+    align-items: center;
+    cursor: pointer;
+
+}
+a.report_list_element{
+    padding:  0rem 0rem .7rem 2rem;
     text-align: left;
-    font-weight: bold;
 }
-
 .logout{
     position: absolute;
     bottom:0 ;
