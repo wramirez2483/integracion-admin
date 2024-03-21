@@ -34,34 +34,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         // redirecionar nuestro login a lms
-        loginLMS($num_id,$password);
+        // loginLMS($num_id,$password);
         
         // var_dump($resultLoginLMS);
 
         // header('Location: 192.168.1.170');
 
-        // // var_dump($assertionId);
-        // $_SESSION['token'] = $assertionId;
-        // echo $_SESSION['token'];
+        // var_dump($assertionId);
+        $_SESSION['token'] = $assertionId;
+        echo $_SESSION['token'];
         
-        // // Iniciar sesión
-        // $_SESSION['document'] = $num_id;
-        // $_SESSION['name'] = $user['name'];
-        // $_SESSION['role'] = $user['role'];
-        // $_SESSION['logueado'] = true;
-        // $event = "singin";
+        // Iniciar sesión
+        $_SESSION['document'] = $num_id;
+        $_SESSION['name'] = $user['name'];
+        $_SESSION['role'] = $user['role'];
+        $_SESSION['logueado'] = true;
+        $event = "singin";
 
-        // // Guardar registro en la tabla de auditoría con evento "signIn"
+        // Guardar registro en la tabla de auditoría con evento "signIn"
         
-        // $audit_sql = "INSERT INTO audit (id_user, events) VALUES (:id_user, :event)";
-        // $audit_stmt = $pdo->prepare($audit_sql);
-        // $audit_stmt->bindParam(':id_user', $num_id);
-        // $audit_stmt->bindParam(':event', $event); // Utilizando una consulta preparada también para $event
-        // $audit_stmt->execute();
+        $audit_sql = "INSERT INTO audit (id_user, events) VALUES (:id_user, :event)";
+        $audit_stmt = $pdo->prepare($audit_sql);
+        $audit_stmt->bindParam(':id_user', $num_id);
+        $audit_stmt->bindParam(':event', $event); // Utilizando una consulta preparada también para $event
+        $audit_stmt->execute();
 
-        // // Redirigir al usuario a la página de inicio
-        // header('Location: ../../../views/inicio.php');
-        // exit();
+        // Redirigir al usuario a la página de inicio
+        header('Location: ../../../views/inicio.php');
+        exit();
 
     } else {
         // Las credenciales son incorrectas, redirigir de vuelta al formulario de inicio de sesión

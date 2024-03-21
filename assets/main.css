@@ -30,7 +30,7 @@
     width: 100%;
     height: 100vh;
     display: flex;
-    overflow-y: hidden;
+    overflow: hidden;
 }
 header {
     background-color: var(--primary);
@@ -39,12 +39,22 @@ header {
     padding: 1em;
     z-index: 1;
 }
+.header__home{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .content__home {
     display: flex;
     flex-direction: column;
     width: 100%;
     background: #f3f3f3;
-
+}
+.header__home-icon{
+    cursor: pointer;
+    height: 1.5rem;
+    width: 1.5rem;
 }
 
 /* ------ | Inputs | ------ */
@@ -75,7 +85,7 @@ input[type="checkbox"] {
 }
 
 select{
-    padding: .7em;
+    padding: .4rem;
     border-radius: 12px;
     border: 1px solid var(--primary);
 }
@@ -259,90 +269,167 @@ table.table__list thead {
 
 
 /* ------ | Menú | ------ */
-.menu__container{
-    height: 100vh;
-    width: max-content;
+.menu{
     background-color: var(--alternate-background);
-}
-.menu__content{
-    /* margin: 12px; */
-    height: 100%;
     display: flex;
-    align-items: center;
     flex-direction: column;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition:max-width  .2s ease-out ;
+
+}
+.menu.disabled_menu{
+    max-width: 0px;
+}
+.menu.active_menu{
+    max-width: 230px;
+}
+
+.menu__options-container{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 48px;
+    color: var(--color-info);
+    margin: .75rem;
+}
+
+.menu__options-container--full{
+    height: 100%;
+    width: 12rem;
+}
+
+.menu__brand-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    color: var(--color-info);
+    margin: .75rem;
+
+}
+
+.menu__brand-title{
+    font-size: 25px;
+}
+
+.menu__brand-logo{
+    width: 60px;
 }
 
 
-.menu__reportes{
+.menu__options-list{
+    display: flex;
+    gap: 18px;
+    flex-direction: column;
+    list-style: none;
+}
 
-    font-size: 13px;
-    margin-left: 13px;
+.menu__option-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: fit-content;
+    color: var(--color-info);
+    fill: var(--color-info);
+    gap: 12px;
+    padding: 6px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+
+.menu__option-container:hover{
+    background-color: #38a90013;
+}
+.menu__option-icon{
+    min-width: 2rem;
+    height: 2rem;
+}
+.menu__option-icon path{
+    fill: var(--color-info);
+}
+
+.menu__option-title{
+    font-size: 18px;
+}
+
+.menu__option-container--toggle-list,
+.menu__option-container--toggle-list:hover{
+    background-color: transparent;
+    padding: 0;
+}
+
+.menu__option-container--dropdown{
+    font-size: 8px;
+}
+
+.menu__option-title--dropdown-title{
+    font-size: 14px;
+}
+
+.menu__options-list--dropdown{
+    gap: 2px;
+    padding-left: 18px;
+}
+.menu__dropdown-container{
+    max-height: 0px;
     overflow: hidden;
-    max-height: 1px;
-    transition: opacity 1s ease, max-height 0.5s ease; 
+    transition: max-height .2s ease-in-out;
 }
-.menu__reportes a{
-    padding: .4rem;
-
-}
-.menu__reportes.active__toggle {
-    
+.menu__dropdown-container.active__toggle{
     max-height: 250px;
 }
-.menu__content__admin__title{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: .3em;
-    margin-bottom: 1rem;
+.menu__option-container--logout{
+    height: 100%;
 }
-.menu__content__admin__title h1{
-    color:white;
-    font-size: 1em;
-    text-align: center;
+li.active .menu__option-container {
+    color: var(--primary);
 }
-.menu__content__admin__title img{
-    height: 3em;
-    width: 3em;
+.active .menu__option-container .menu__option-icon,
+
+.active .menu__option-icon path{
+    fill: var(--primary);
 }
-.menu__content__options{
-    transition: all .3s ease-in;
-    width: 100%;
-}
-.menu__auth{
-    display: flex;
-    align-items: center;
-    gap: 2em;
-    color: white;
-    cursor: pointer;
-    height: 1em;
-    margin-bottom: 2rem;
-    padding: 1em;
-    font-size: .7rem;
+.active .menu__option-container{
+    background-color: #38a90013;
 }
 
-.title__options{
-    padding: 1rem;
+.active .menu__option-container--dropdown,
+.active .menu__option-container--toggle-list
+{
+    background-color: transparent;
+}
+.active .menu__option-title--dropdown-title{
+    
+    color: var(--color-info);
+}
+.active__menu__report .menu__option-title--dropdown-title{
+    color: var(--primary);
+}
+.active .icon_dos_path{
+    fill: var(--primary);
+    
+}
+.icon_dos{
+    height: 2rem;
+    width: 2rem;
 }
 
-.menu__content__options h2{
-    font-weight: 600;
-    text-align: left;
-}
-
-h3.title__options {
-    color: #f3f3f3cc;
-    text-transform: uppercase;
-    font-size: .9rem;
-    text-align: left;
-    font-weight: bold;
-}
 .rotate-animation {
     transform: rotate(180deg);
-    animation: rotateSVG .4s  linear;
+    animation: rotateSVG .2s  linear;
 }
 .rotate-animation-disabled{
-    animation: rotateSVGDisabled .4s linear  ; 
+    animation: rotateSVGDisabled .2s linear  ; 
+}
+li.active .icon_dos{
+    transform: rotate(180deg);
+}
+.icon_dos path{
+    stroke: white;
+
 }
 @keyframes rotateSVG {
     0% {
@@ -363,81 +450,4 @@ h3.title__options {
         transform: rotate(360deg);
     }
 
-}
-.icon_dos{
-    height: 1.5em;
-    width: 1.5em;
-}
-li.active .icon_dos{
-    transform: rotate(180deg);
-}
-.icon, .menu__auth svg{
-    height: 2em;
-    width: 2em;
-    fill: white;
-}
-.menu__content__options a{
-    list-style: none;
-    text-decoration: none;
-    cursor: pointer;
-    transition: all .3s ease-in;
-    padding: 1rem;
-    display: flex;
-    align-items: center;
-    gap: 2em;
-    color: white;
-    font-size: .8em;
-}
-.menu__content__options a:hover .icon, .menu__content__options a:hover h2{
-    transition: all .3s ease-in;
-    color:var(--primary);
-    fill: var(--primary);
-}
-.menu__content__options .active h2, .menu__content__options .active .icon{
-    fill: var(--primary);
-    color: var(--primary);
-}
-li.active{
-    background-color: #38a90013;
-}
-li.active svg.icon_dos path.icon_dos_path{
-    fill: var(--primary);
-}
-li.report_list_element.active__menu__report h2{
-    color: var(--primary);
-}
-.menu__content__options li:hover{
-    transition: all .3s ease-in;
-    background-color: #38a90013;
-}
-.menu__reportes li.report_list_element:hover{
-    background-color: unset !important;
-}
-.title__options__toggle{
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: .5rem;
-}
-.title__options__toggle h2{
-    font-size: 1rem;
-    color: white;
-}
-.toggle__menu__report{
-    padding: 1rem;
-    display: flex;
-    gap: 1rem;
-    justify-content: left;
-    align-items: center;
-    cursor: pointer;
-
-}
-a.report_list_element{
-    padding:  0rem 0rem .7rem 2rem;
-    text-align: left;
-}
-.logout{
-    position: absolute;
-    bottom:0 ;
 }

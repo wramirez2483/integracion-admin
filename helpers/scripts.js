@@ -45,6 +45,7 @@ function handleEditEvent(seed_code, modality, training) {
   handleWindow('#windows-edit')
 
 }
+
 // Borrar evento
 function handleDeleteEvent(seed){
   let option = document.getElementById('delete-option');
@@ -56,4 +57,40 @@ function handleDeleteEvent(seed){
 function deleteLocalNotificationTarget(element) {
   // Eliminar el elemento padre del botón (es decir, el div)
   element.parentNode.remove();
+}
+
+
+// Metodo para asignar los datos a los inputs de la semilla a editar
+function handleEditSeed(id, code, modality) {
+  console.log(id)
+  document.getElementById('id').value = id;
+  document.getElementById('new_modality').value = modality;
+  document.getElementById('new_code').value = code;
+  // abre el modal
+  handleWindow('#windows-edit')
+
+};
+
+// Borrar semilla
+function handleDeleteSeed(seed_id){
+  let option = document.getElementById('delete-option');
+  option.setAttribute('href',`../app/controllers/seed/delete_seed.php?seed_id=${seed_id}`)
+  // abre el modal
+  handleWindow('#windows-delete')
+}
+
+// Abrir o cerrar el menu
+function handleMenu(){
+  let menu = document.getElementById('menu');
+
+  if(menu.classList.contains('active_menu')){
+    menu.classList.remove('active_menu')
+    menu.classList.add('disabled_menu')
+  }
+  else{
+    menu.classList.add('active_menu')
+    menu.classList.remove('disabled_menu')
+  }
+
+
 }

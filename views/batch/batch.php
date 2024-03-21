@@ -193,7 +193,7 @@ require_once '../app/controllers/batch/show_events.php';
             <?php
             if ($_SESSION['role'] == 'admin') {
                 echo "
-                    <input type='submit' name='batch-submit' value='Guardar configuracion'>
+                    <input type='submit' name='batch-submit' value='Guardar configuración'>
                     ";
             }
             ?>

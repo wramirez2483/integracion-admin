@@ -79,7 +79,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($stmt_insert_user->execute()) {
         // Usuario registrado exitosamente, redirige al formulario de inicio de sesión
-        $_SESSION['success_message'] = 'Usuario registrado exitosamente';
         header('Location: ../../../index.php');
         exit();
     } else {
