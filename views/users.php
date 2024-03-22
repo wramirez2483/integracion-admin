@@ -23,13 +23,9 @@
                 include '../layouts/menu.php'
             ?>
         <div class="content__home">
-            
-            <header>
-                <h1>Usuarios</h1>
-            </header>
-
-
-                
+            <?php
+                include '../layouts/header.php'
+            ?>  
             <?php   
                 include './users/show_users.php'
             ?>

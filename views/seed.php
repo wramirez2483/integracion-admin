@@ -25,10 +25,9 @@
 
         
         <div class="content__home">
-            
-            <header>
-                <h1>Semillas</h1>
-            </header>
+            <?php
+                include '../layouts/header.php'
+            ?>
         
             <?php
                 include './seed/seed.php'

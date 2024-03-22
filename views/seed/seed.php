@@ -100,29 +100,29 @@ require_once '../app/controllers/seed/list_seeds.php'
 <div class="container__box">
     <div class="container__seed">
         <!-- Mensajes -->
-        <!-- <?php
-                if (isset($_SESSION['success_message'])) {
-                    echo
-                    '<div class="message message--success">
-                    <div></div>
-        
-                    <p>' . $_SESSION['success_message'] . '</p>
-                    <strong onclick="this.parentNode.style.display = \'none\';">X</strong>
-        
-                </div>';
-                    unset($_SESSION['success_message']);
-                }
-                if (isset($_SESSION['error_message_events'])) {
-                    echo '<div class="message message--error">  
-                
+        <?php
+            if (isset($_SESSION['success_message'])) {
+                echo
+                '<div class="message message--success">
                 <div></div>
-                <p>' . $_SESSION['error_message_events'] . '</p>
-        
-                    <strong onclick="this.parentNode.style.display = \'none\';">X</strong>
-                </div>';
-                    unset($_SESSION['error_message_events']);
-                }
-        ?> -->
+    
+                <p>' . $_SESSION['success_message'] . '</p>
+                <strong onclick="this.parentNode.style.display = \'none\';">X</strong>
+    
+            </div>';
+                unset($_SESSION['success_message']);
+            }
+            if (isset($_SESSION['error_message_events'])) {
+                echo '<div class="message message--error">  
+            
+            <div></div>
+            <p>' . $_SESSION['error_message_events'] . '</p>
+    
+                <strong onclick="this.parentNode.style.display = \'none\';">X</strong>
+            </div>';
+                unset($_SESSION['error_message_events']);
+            }
+        ?>
 
         <!-- Lista  -->
         <div class="seeds">
@@ -148,35 +148,36 @@ require_once '../app/controllers/seed/list_seeds.php'
                         <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
                             <div class="other__pagination__amount__list">
                                 <select name="amount" id="amount" onchange="this.form.submit()">
-                                    <option value="5" <?php if ($records_per_page == 5) echo 'selected'; ?>>5</option>
-                                    <option value="10" <?php if ($records_per_page == 10) echo 'selected'; ?>>10</option>
-                                    <option value="20" <?php if ($records_per_page == 20) echo 'selected'; ?>>20</option>
-                                    <option value="40" <?php if ($records_per_page == 40) echo 'selected'; ?>>40</option> 
+                                    <option value="10" <?php if ($records_per_page_seed == 10) echo 'selected'; ?>>10</option>
+                                    <option value="20" <?php if ($records_per_page_seed == 20) echo 'selected'; ?>>20</option>
+                                    <option value="30" <?php if ($records_per_page_seed == 30) echo 'selected'; ?>>30</option>
+                                    <option value="40" <?php if ($records_per_page_seed == 40) echo 'selected'; ?>>40</option> 
                                 </select>
                             </div>
                         </form>
-                        <!-- 
-                            <?php
-                            // Verificar si se ha enviado el formulario de búsqueda
-                            if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["search_term"])) {
-                                // Inicializar la variable de término de búsqueda y el campo de búsqueda
-                                $search_term = $_POST["search_term"];
-                                $search_by = $_POST["search_by"];
+                        
+                        <?php
+                        // Verificar si se ha enviado el formulario de búsqueda
+                        if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["search_term"])) {
+                            // var_dump($_POST);
+                            // Inicializar la variable de término de búsqueda y el campo de búsqueda
+                            $search_term = $_POST["search_term"];
+                            $search_by = $_POST["search_by"];
 
-                                // Preparar la consulta SQL para buscar eventos
-                                $sql_search_events = "SELECT * FROM seeds WHERE status_seed = 1 AND $search_by  LIKE :search_term";
-                                $stmt_search_events = $pdo->prepare($sql_search_events);
+                            // Preparar la consulta SQL para buscar eventos
+                            $sql_search_seeds = "SELECT * FROM seeds WHERE status_seed = 1 AND $search_by LIKE :search_term";
+                            $stmt_search_seeds = $pdo->prepare($sql_search_seeds);
 
-                                // Bind the parameters
-                                $search_term = "%$search_term%";
-                                $stmt_search_events->bindParam(':search_term', $search_term, PDO::PARAM_STR);
+                            // Bind the parameters
+                            $search_term = "%$search_term%";
+                            $stmt_search_seeds->bindParam(':search_term', $search_term, PDO::PARAM_STR);
 
-                                // Ejecutar la consulta
-                                $stmt_search_events->execute();
-                                $events = $stmt_search_events->fetchAll(PDO::FETCH_ASSOC);
-                            }
-                            ?>   
-                        -->
+                            // Ejecutar la consulta
+                            $stmt_search_seeds->execute();
+                            $seeds = $stmt_search_seeds->fetchAll(PDO::FETCH_ASSOC);
+                        }
+                        ?>   
+                       
 
                     </div>
                     <form method="post" class="other__pagination__form">
@@ -273,11 +274,11 @@ require_once '../app/controllers/seed/list_seeds.php'
         
             <div class="pagination">
                 <?php if ($total_pages > 1) : ?>
-                    <a href="?page=1&amount=<?php echo $records_per_page; ?>">&laquo;</a>
+                    <a href="?page=1&amount=<?php echo $records_per_page_seed; ?>">&laquo;</a>
                     <?php for ($i = 1; $i <= $total_pages; $i++) : ?>
-                        <a href="?page=<?php echo $i; ?>&amount=<?php echo $records_per_page; ?>" <?php if ($i == $current_page) echo 'class="active"'; ?>><?php echo $i; ?></a>
+                        <a href="?page=<?php echo $i; ?>&amount=<?php echo $records_per_page_seed; ?>" <?php if ($i == $current_page) echo 'class="active"'; ?>><?php echo $i; ?></a>
                     <?php endfor; ?>
-                    <a href="?page=<?php echo $total_pages; ?>&amount=<?php echo $records_per_page; ?>">&raquo;</a>
+                    <a href="?page=<?php echo $total_pages; ?>&amount=<?php echo $records_per_page_seed; ?>">&raquo;</a>
                 <?php endif; ?>
             </div> 
        

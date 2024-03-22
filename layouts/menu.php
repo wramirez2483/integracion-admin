@@ -2,8 +2,7 @@
 //ruta actual
 $currentPath = $_SERVER['REQUEST_URI'];
 ?>
-
-<div class="menu active_menu" id="menu">
+<div class="menu <?php echo $_SESSION['menu-toggle'] ? 'active_menu' : 'disabled_menu'; ?>" id="menu">
     <div class="menu__brand-container">
         <img class="menu__brand-logo" src="../img/logo-sena-verde.png" alt="" srcset="">
         <h1 class="menu__brand-title">ADI</h1>
@@ -20,7 +19,6 @@ $currentPath = $_SERVER['REQUEST_URI'];
                     <h2 class="menu__option-title">Dashboard</h2>
                 </a>
             </li>
-
             <!-- Batch -->
             <li class="<?php echo (strpos($currentPath, '/batch.php')) ? 'active' : ''; ?>">
                 <a class="menu__option-container" href="../views/batch.php">
@@ -43,7 +41,6 @@ $currentPath = $_SERVER['REQUEST_URI'];
                     <h2 class="menu__option-title">Josso</h2>
                 </a>
             </li>
-
             <!-- Note -->
             <li class="<?php echo (strpos($currentPath, '/note.php')) ? 'active' : ''; ?>">
                 <a class="menu__option-container" href="../views/note.php">
@@ -54,7 +51,6 @@ $currentPath = $_SERVER['REQUEST_URI'];
 
                 </a>
             </li>
-
             <!-- API CONNECTION -->
             <li class="<?php echo (strpos($currentPath, 'api_connection.php')) ? 'active' : ''; ?>">
                 <a class="menu__option-container" href="../views/api_connection.php">
@@ -87,7 +83,8 @@ $currentPath = $_SERVER['REQUEST_URI'];
             <!-- Servidor -->
             <li class="<?php echo (strpos($currentPath, 'server-email')) ? 'active' : ''; ?>">
                 <a class="menu__option-container" href="../views/server-email.php">
-                    <svg   class="menu__option-icon"xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 42 42"><path fill="#000000" d="M40.5 31.5v-18S22.3 26.2 20.53 26.859C18.79 26.23.5 13.5.5 13.5v18c0 2.5.53 3 3 3h34c2.529 0 3-.439 3-3m-.029-21.529c0-1.821-.531-2.471-2.971-2.471h-34c-2.51 0-3 .78-3 2.6l.03.28s18.069 12.44 20 13.12c2.04-.79 19.97-13.4 19.97-13.4z"/>
+                    <svg class="menu__option-icon" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 42 42">
+                        <path fill="#000000" d="M40.5 31.5v-18S22.3 26.2 20.53 26.859C18.79 26.23.5 13.5.5 13.5v18c0 2.5.53 3 3 3h34c2.529 0 3-.439 3-3m-.029-21.529c0-1.821-.531-2.471-2.971-2.471h-34c-2.51 0-3 .78-3 2.6l.03.28s18.069 12.44 20 13.12c2.04-.79 19.97-13.4 19.97-13.4z" />
                     </svg>
                     <h2 class="menu__option-title">Servidor</h2>
                 </a>
@@ -104,7 +101,7 @@ $currentPath = $_SERVER['REQUEST_URI'];
             </li>
             <!-- Reportes -->
             <li class="<?php echo (strpos($currentPath, 'report')) ? 'active' : ''; ?>">
-            
+
                 <div onclick="toggleReportesMenu()" class="menu__option-container">
 
                     <div class="menu__option-container menu__option-container--toggle-list">
@@ -117,18 +114,18 @@ $currentPath = $_SERVER['REQUEST_URI'];
                         <h2 class="menu__option-title">Reportes</h2>
                     </div>
                     <!-- Icono flecha dropdown -->
-                    <svg class="icon_dos" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 48 48">
-                        <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M36 18L24 30L12 18"/>
+                    <svg class="icon_dos" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+                        <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M36 18L24 30L12 18" />
                     </svg>
                 </div>
 
                 <div class="menu__dropdown-container <?php echo (strpos($currentPath, 'report')) ? 'active__toggle' : ''; ?>" id="reportesMenu">
-                    
+
                     <ul class="menu__options-list menu__options-list--dropdown">
 
                         <!-- Reportes -->
                         <li class="report_list_element <?php echo (strpos($currentPath, 'report_audit')) ? 'active__menu__report' : ''; ?>">
-                            
+
                             <a class="menu__option-container menu__option-container--dropdown" href="../views/report_audit.php">
                                 <h2 class="menu__option-title menu__option-title--dropdown-title">Reportes Audit</h2>
                             </a>
@@ -137,7 +134,7 @@ $currentPath = $_SERVER['REQUEST_URI'];
 
                         <!-- Reporte Josso -->
                         <li class="report_list_element <?php echo (strpos($currentPath, 'report_josso')) ? 'active__menu__report' : ''; ?>">
-                            
+
                             <a class="menu__option-container menu__option-container--dropdown" href="../views/report_josso.php">
                                 <h2 class="menu__option-title menu__option-title--dropdown-title">Reportes Josso</h2>
                             </a>
@@ -146,7 +143,7 @@ $currentPath = $_SERVER['REQUEST_URI'];
 
                         <!-- Reporte Batch -->
                         <li class="report_list_element  <?php echo (strpos($currentPath, 'report_batch')) ? 'active__menu__report' : ''; ?>">
-                            
+
                             <a class="menu__option-container menu__option-container--dropdown " href="../views/report_batch.php">
                                 <h2 class="menu__option-title menu__option-title--dropdown-title">Reportes Batch</h2>
                             </a>
@@ -159,6 +156,7 @@ $currentPath = $_SERVER['REQUEST_URI'];
 
         </ul>
     </div>
+
     <!-- Cerrar Sesion -->
     <div>
         <a class="menu__option-container menu__option-container--logout" href="../app/controllers/login/logout.php">
@@ -190,5 +188,31 @@ $currentPath = $_SERVER['REQUEST_URI'];
             iconDos.classList.remove("rotate-animation");
             iconDos.classList.add('rotate-animation-disabled')
         }
+    }
+
+    function handleMenu() {
+    var menu = document.getElementById('menu');
+
+    if (menu.classList.contains('active_menu')) {
+        menu.classList.remove('active_menu');
+        menu.classList.add('disabled_menu');
+        updateSessionMenuToggle(false);
+    } else {
+        menu.classList.add('active_menu');
+        menu.classList.remove('disabled_menu');
+        updateSessionMenuToggle(true);
+    }
+}
+
+
+    function updateSessionMenuToggle(value) {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                console.log(this.responseText);
+            }
+        };
+        xhttp.open("GET", "../helpers/update_session_menu_toggle.php?value=" + value, true);
+        xhttp.send();
     }
 </script>

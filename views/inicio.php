@@ -25,11 +25,9 @@
 
         
         <div class="content__home">
-            
-            <header>
-                <h1>Dashboard</h1>
-            </header>
-        
+            <?php
+                include '../layouts/header.php'
+            ?>
             <?php
                 include './dashboard/dashboard.php'
             ?>

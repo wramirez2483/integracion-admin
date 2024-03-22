@@ -117,7 +117,6 @@ require_once '../app/controllers/batch/show_events.php';
     <!-- Mensajes batch-->
     <?php
     if (isset($_SESSION['message-created'])) {
-
         echo '<div class="message message--success">
                     <div></div>
 
@@ -335,38 +334,38 @@ require_once '../app/controllers/batch/show_events.php';
                 <div class="other__pagination__search">
 
                 <div class="other__pagination__search__amount">
-                        <!-- Formulario para seleccionar la cantidad de eventos por página -->
-                        <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-                            <div class="other__pagination__amount__list">
-                                <select name="amount" id="amount" onchange="this.form.submit()">
-                                    <option value="5" <?php if ($records_per_page == 5) echo 'selected'; ?>>5</option>
-                                    <option value="10" <?php if ($records_per_page == 10) echo 'selected'; ?>>10</option>
-                                    <option value="20" <?php if ($records_per_page == 20) echo 'selected'; ?>>20</option>
-                                    <option value="40" <?php if ($records_per_page == 40) echo 'selected'; ?>>40</option>
-                                </select>
-                            </div>
-                        </form>
+                    <!-- Formulario para seleccionar la cantidad de eventos por página -->
+                    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+                        <div class="other__pagination__amount__list">
+                            <select name="amount" id="amount" onchange="this.form.submit()">
+                                <option value="5" <?php if ($records_per_page == 5) echo 'selected'; ?>>5</option>
+                                <option value="10" <?php if ($records_per_page == 10) echo 'selected'; ?>>10</option>
+                                <option value="20" <?php if ($records_per_page == 20) echo 'selected'; ?>>20</option>
+                                <option value="40" <?php if ($records_per_page == 40) echo 'selected'; ?>>40</option>
+                            </select>
+                        </div>
+                    </form>
 
-                        <?php
-                        // Verificar si se ha enviado el formulario de búsqueda
-                        if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["search_term"])) {
-                            // Inicializar la variable de término de búsqueda y el campo de búsqueda
-                            $search_term = $_POST["search_term"];
-                            $search_by = $_POST["search_by"];
+                    <?php
+                    // Verificar si se ha enviado el formulario de búsqueda
+                    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["search_term"])) {
+                        // Inicializar la variable de término de búsqueda y el campo de búsqueda
+                        $search_term = $_POST["search_term"];
+                        $search_by = $_POST["search_by"];
 
-                            // Preparar la consulta SQL para buscar eventos
-                            $sql_search_events = "SELECT * FROM events_without_sync WHERE status_event = 1 AND $search_by   LIKE :search_term";
-                            $stmt_search_events = $pdo->prepare($sql_search_events);
+                        // Preparar la consulta SQL para buscar eventos
+                        $sql_search_events = "SELECT * FROM events_without_sync WHERE status_event = 1 AND $search_by   LIKE :search_term";
+                        $stmt_search_events = $pdo->prepare($sql_search_events);
 
-                            // Bind the parameters
-                            $search_term = "%$search_term%";
-                            $stmt_search_events->bindParam(':search_term', $search_term, PDO::PARAM_STR);
+                        // Bind the parameters
+                        $search_term = "%$search_term%";
+                        $stmt_search_events->bindParam(':search_term', $search_term, PDO::PARAM_STR);
 
-                            // Ejecutar la consulta
-                            $stmt_search_events->execute();
-                            $events = $stmt_search_events->fetchAll(PDO::FETCH_ASSOC);
-                        }
-                        ?>
+                        // Ejecutar la consulta
+                        $stmt_search_events->execute();
+                        $events = $stmt_search_events->fetchAll(PDO::FETCH_ASSOC);
+                    }
+                    ?>
 
                     </div>
                     <form method="post" class="other__pagination__form">

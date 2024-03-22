@@ -26,13 +26,9 @@
                 include '../layouts/menu.php'
             ?>
         <div class="content__home">
-            
-            <header>
-                <h1>Reportes Josso</h1>
-            </header>
-
-
-                
+            <?php
+                include '../layouts/header.php'
+            ?>     
             <?php   
                 include './report_josso/report_josso.php'
             ?>

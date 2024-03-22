@@ -79,18 +79,3 @@ function handleDeleteSeed(seed_id){
   handleWindow('#windows-delete')
 }
 
-// Abrir o cerrar el menu
-function handleMenu(){
-  let menu = document.getElementById('menu');
-
-  if(menu.classList.contains('active_menu')){
-    menu.classList.remove('active_menu')
-    menu.classList.add('disabled_menu')
-  }
-  else{
-    menu.classList.add('active_menu')
-    menu.classList.remove('disabled_menu')
-  }
-
-
-}

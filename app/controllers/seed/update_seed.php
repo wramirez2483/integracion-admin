@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['update_seed'])) {
     $seed_id = $_POST['id'];
     $modality = $_POST['new_modality'];
     $code = $_POST['new_code'];
-    $event = "update";
+    $event = "updated_seed";
 
     // Consulta para actualizar los datos de la semilla en la base de datos
     $sql_update_seed = "UPDATE seeds SET modality = :modality, code = :code, event = :event WHERE id = :seed_id";

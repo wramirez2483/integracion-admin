@@ -24,9 +24,9 @@
                 include '../layouts/menu.php'
             ?>
         <div class="content__home">
-            <header>
-                <h1>Reportes Auditorias</h1>
-            </header>
+            <?php
+                include '../layouts/header.php'
+            ?>
 
               <?php   
                 include './report_audit/report_audit.php'

@@ -49,6 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['name'] = $user['name'];
         $_SESSION['role'] = $user['role'];
         $_SESSION['logueado'] = true;
+        $_SESSION['menu-toggle'] = true;
         $event = "singin";
 
         // Guardar registro en la tabla de auditoría con evento "signIn"
