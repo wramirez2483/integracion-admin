@@ -36,4 +36,3 @@ $stmt_select_events->bindParam(':offset', $offset, PDO::PARAM_INT);
 $stmt_select_events->bindParam(':records_per_page', $records_per_page_audit, PDO::PARAM_INT); // Utilizar $records_per_page_audit
 $stmt_select_events->execute();
 $events = $stmt_select_events->fetchAll(PDO::FETCH_ASSOC);
-

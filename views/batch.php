@@ -18,18 +18,14 @@
 
     
     <div class="container__home">
-        
             <?php
                 include '../layouts/menu.php'
             ?>
 
-        
-        <div class="content__home">
-            
-            <header>
-                <h1>Batch</h1>
-            </header>
-        
+        <div class="content__home"> 
+            <?php
+                include '../layouts/header.php'
+            ?>
             <?php
                 include './batch/batch.php'
             ?>

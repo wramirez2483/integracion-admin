@@ -68,7 +68,7 @@ require_once '../app/controllers/note/create_note.php';
                     <div class="content__forms__inputs">
 
                         <div class="form__inputs__notes">
-                            <label for=""> Sincronizar nota sin actividad con letra defecto </label>
+                            <label for=""> Sincronizar nota sin actividad con letra por defecto </label>
                             <div class="checkboxes">
     
                                 <div class="check">

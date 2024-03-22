@@ -1,3 +1,24 @@
+.container__logs-lis-logs h1{
+    text-align: center;
+    margin-bottom: 2vh;  
+}
+.container__form--logs{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container__logs-lis-logs{
+    overflow-y: auto;
+    margin-top: 15px;
+    width: 100%;
+    text-align: center;
+}
+.list__logs{
+    overflow-y: auto;
+    height: 30vh;
+}
 .password-input{
     display: flex;
     justify-content: center;
@@ -28,9 +49,17 @@ img.icon_handle{
 }
 
 
-/* Batch */
+.content__search__input
+{
+    display: flex;
+    width: 100%;
+    
+}
+.content__search__input svg path{ 
+    fill: white;
+}
 
-h3{
+.container__form--logs h3{
     font-size: 1em;
     color: gray;
     text-align: center;
@@ -44,178 +73,30 @@ h3{
     gap: 2em;
 }
 
-
-.content__batch{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    background-color: white;
-    padding: 1em;
-    border-radius: 7px;
-    box-shadow: 0px 0px 4px -45px rgba(0,0,0,0.1);
-    
-}
-
-.content__batch__form__target{
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-    gap: .6em;
-    background-color: white;
-    padding: 1em;
-    border-radius: 7px;
-    box-shadow: 0px 0px 4px -45px rgba(0,0,0,0.1);
-}
-
-.form__batch {
-    display: flex;
-    flex-direction: column;
-    gap: 2.2em;
-}
-
-.content-form-modal{
-    display: flex;
-
-    flex-direction: column;
-    gap: 3em;
-}
-
-label {
-    font-weight: 700;
-}
-
-.input {
-    display: flex;
-    align-items: center;
-    gap: 2em;
-}
-
-.event__sync {
+.list__logs {
     width: 100%;
     overflow-y: auto;
-    margin-top: 15px;
-
 }
 
-.event__sync h1 {
+.list__logs h1 {
     text-align: center;
     margin-bottom: 2vh;
 }
 
-.notifications_target_edit_icon {
-    cursor: pointer;
-}
-
-.container__events{
+.container__logs{
     box-shadow: 0px 0px 4px -45px rgba(0,0,0,0.1);
     background-color: white;
     padding: 1em;
     border-radius: 7px;
 }
-.container__events__register__events{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
 
-form.content__form-modal{
-    justify-content: space-around !important;
-    align-items: unset !important;
-}
-.input{
-    justify-content: space-between;
-}
-.boton_cancelar{
-    padding: .3rem 2rem;
-    cursor: pointer;
-    border-radius: 30px;
-    transition: all .4s ease-in;
-    font-weight: 800;
-    box-sizing: border-box;
-    font-size: .8em;
-    color: #f87171;
-    background-color: #fee2e2;
-    border: 1px solid #f87171;
-}
-.boton_cancelar:hover
-{
-    background-color: #f87171;
-    color: white;
-}
 .content__form__botons{
     display: flex;
     gap: 1em;
     justify-content: center;
 }
-/* Modal */
-dialog::backdrop{
-    filter: blur(20%);
-    background-color: rgb(0, 0, 0,.60);
-    backdrop-filter: blur(2px);
-}
 
-dialog::backdrop:focus{
-    outline: none;
-}
-
-dialog{
-    margin: auto !important;
-    border: none;
-    background: transparent;
-}
-
-dialog:focus{
-    outline: none;
-}
-.modal__cerrar{
-    position: absolute;
-    right: 0;
-    padding: 2px;
-    margin:4px;
-
-    cursor: pointer;
-}
-.modal__cerrar svg{
-    height: 1.5em;
-    width: 1.5em;
-}
-.content__modal,
-.content__modal-delete
-{
-    padding: 1em;
-    display: flex;
-    flex-direction: column;
-    gap: 2em;
-    background-color: var(--primary-background);
-    box-shadow: var(--primary-shadow);
-    border-radius: 20px;
-    height: 50vh;
-    /* width: 30vh; */
-    margin: 0 auto;
-}
-
-.content__modal-delete{
-    height: max-content;
-}
-.content__modal h1{
-    text-align: center;
-}
-
-/* Form destinatario */
-.new__noti__target{
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-}
-
-.input-new-target{
-    /* display: flex; */
-    width: 100%;
-}
-
-.new-target,
-.search__input,
-.targets
+.search__input
 {
     display: flex;
     justify-content: space-between;
@@ -236,21 +117,14 @@ dialog:focus{
     height: 2.5em;
 }
 
-div.new-target input[type="email"]#notifications_target{
-    background-color: none !important;
-    width: 100%;
-}
 
-.new-target input,
-.search__input input,
-.list__targets input
+.search__input input
 {
     background-color: none !important;
     border: none !important;
 }
 
-.acctions button,
-.list__targets button{
+.acctions button{
     display: flex;
     justify-content: center;
     padding: 0;
@@ -265,63 +139,13 @@ div.new-target input[type="email"]#notifications_target{
     background-color: unset !important;
 }
 
-.list__targets {
-    height: 10em;
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-    overflow-y:  auto;
-    margin-top: 1em;
-}
-
-.targets{
-    border-radius: 10px;
-}
-
-.list__targets button{
-    /* background-color: #4caf4f31; */
-    border: none;
-    font-size: 1.5em;
-    color: rgba(255, 0, 0, 0.969);
-    border-radius: 0px 10px 10px 0px ;
-    transition: all .2s ease-in  ;
-    border-left: 1px solid #61bb68 ;
-}
-
-.list__targets p{
-    /* cursor: pointer; */
-    text-align: center;
-}
-
-.list__targets button:hover{
-    background-color:unset;
-}
-
-
-.content-new-target,
-.content__search__input
-{
-    display: flex;
-    width: 100%;
-    
-}
-.content__search__input svg path{ 
-    fill: white;
-}
-.container__form-modal{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100vh;
-}
-
 td.edit__icon{
     justify-content: space-evenly;
     display: flex;
     align-items: center;
 }
 
-.list__events{
+.list__logs{
     overflow-y: auto;
     height: 30vh;
 }

@@ -23,13 +23,10 @@
                 include '../layouts/menu.php'
             ?>
         <div class="content__home">
-            
-            <header>
-                <h1>Reportes Batch</h1>
-            </header>
-
-
-                
+            <?php
+                include '../layouts/header.php'
+            ?>
+ 
             <?php   
                 include './report_batch/report_batch.php'
             ?>

@@ -22,11 +22,9 @@
                 include '../layouts/menu.php'
             ?>
         <div class="content__home">
-            <header>
-                <h1>Notas</h1>
-            </header>
-
-                
+            <?php
+                include '../layouts/header.php'
+            ?>
             <?php   
                 include './note/note.php'
             ?>

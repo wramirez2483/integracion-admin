@@ -30,7 +30,7 @@
     width: 100%;
     height: 100vh;
     display: flex;
-    overflow-y: hidden;
+    overflow: hidden;
 }
 header {
     background-color: var(--primary);
@@ -39,12 +39,22 @@ header {
     padding: 1em;
     z-index: 1;
 }
+.header__home{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .content__home {
     display: flex;
     flex-direction: column;
     width: 100%;
     background: #f3f3f3;
-
+}
+.header__home-icon{
+    cursor: pointer;
+    height: 1.5rem;
+    width: 1.5rem;
 }
 
 /* ------ | Inputs | ------ */
@@ -75,7 +85,7 @@ input[type="checkbox"] {
 }
 
 select{
-    padding: .7em;
+    padding: .4rem;
     border-radius: 12px;
     border: 1px solid var(--primary);
 }
@@ -258,93 +268,168 @@ table.table__list thead {
 }
 
 
-/* ------ | Estilos Menu | ------ */
-.menu__container{
-    height: 100vh;
-    width: 30vh;
+/* ------ | Menú | ------ */
+.menu{
     background-color: var(--alternate-background);
-}
-.menu__content{
-    height: 100%;
     display: flex;
-    align-items: center;
     flex-direction: column;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition:max-width  .2s ease-out ;
+
+}
+.menu.disabled_menu{
+    max-width: 0px;
+}
+.menu.active_menu{
+    max-width: 230px;
+}
+
+.menu__options-container{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 48px;
+    color: var(--color-info);
+    margin: .75rem;
+}
+
+.menu__options-container--full{
+    height: 100%;
+    width: 12rem;
+}
+
+.menu__brand-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    color: var(--color-info);
+    margin: .75rem;
+
+}
+
+.menu__brand-title{
+    font-size: 25px;
+}
+
+.menu__brand-logo{
+    width: 60px;
 }
 
 
-.menu__reportes{
+.menu__options-list{
+    display: flex;
+    gap: 18px;
+    flex-direction: column;
+    list-style: none;
+}
 
-    font-size: 13px;
-    margin-left: 13px;
+.menu__option-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: fit-content;
+    color: var(--color-info);
+    fill: var(--color-info);
+    gap: 12px;
+    padding: 6px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+
+.menu__option-container:hover{
+    background-color: #38a90013;
+}
+.menu__option-icon{
+    min-width: 2rem;
+    height: 2rem;
+}
+.menu__option-icon path{
+    fill: var(--color-info);
+}
+
+.menu__option-title{
+    font-size: 18px;
+}
+
+.menu__option-container--toggle-list,
+.menu__option-container--toggle-list:hover{
+    background-color: transparent;
+    padding: 0;
+}
+
+.menu__option-container--dropdown{
+    font-size: 8px;
+}
+
+.menu__option-title--dropdown-title{
+    font-size: 14px;
+}
+
+.menu__options-list--dropdown{
+    gap: 2px;
+    padding-left: 18px;
+}
+.menu__dropdown-container{
+    max-height: 0px;
     overflow: hidden;
-    max-height: 1px;
-    transition: opacity 1s ease, max-height 0.5s ease; 
+    transition: max-height .2s ease-in-out;
 }
-.menu__reportes a{
-    padding: .4rem;
-
-}
-.menu__reportes.active {
-    
+.menu__dropdown-container.active__toggle{
     max-height: 250px;
 }
-.menu__content__admin__title{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: .8em;
-    margin-bottom: 2rem;
+.menu__option-container--logout{
+    height: 100%;
 }
-.menu__content__admin__title h1{
-    color:white;
-    font-size: 1.2em;
-    text-align: center;
+li.active .menu__option-container {
+    color: var(--primary);
 }
-.menu__content__admin__title img{
-    height: 4em;
-    width: 4em;
+.active .menu__option-container .menu__option-icon,
+
+.active .menu__option-icon path{
+    fill: var(--primary);
 }
-.menu__content__options{
-    transition: all .3s ease-in;
-    width: 100%;
+.active .menu__option-container{
+    background-color: #38a90013;
 }
-.menu__content__options a,
-.menu__auth{
-    display: flex;
-    align-items: center;
-    gap: 2em;
-    color: white;
-    font-size: .8em;
-    cursor: pointer;
-    height: 1em;
-}
-.menu__auth{
-    margin-bottom: 1.5em;
-}
-.menu__content__options a,
-.title__options
+
+.active .menu__option-container--dropdown,
+.active .menu__option-container--toggle-list
 {
-    padding: 1em;
+    background-color: transparent;
+}
+.active .menu__option-title--dropdown-title{
+    
+    color: var(--color-info);
+}
+.active__menu__report .menu__option-title--dropdown-title{
+    color: var(--primary);
+}
+.active .icon_dos_path{
+    fill: var(--primary);
+    
+}
+.icon_dos{
+    height: 2rem;
+    width: 2rem;
 }
 
-.menu__content__options a{
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-}
-.menu__content__options h2{
-    font-weight: 600;
-    text-align: left;
-}
-
-.menu__auth{
-    font-size: .8em;
-}
 .rotate-animation {
     transform: rotate(180deg);
-    animation: rotateSVG .4s  linear;
+    animation: rotateSVG .2s  linear;
 }
 .rotate-animation-disabled{
-    animation: rotateSVGDisabled .4s linear  ; 
+    animation: rotateSVGDisabled .2s linear  ; 
+}
+li.active .icon_dos{
+    transform: rotate(180deg);
+}
+.icon_dos path{
+    stroke: white;
+
 }
 @keyframes rotateSVG {
     0% {
@@ -365,47 +450,4 @@ table.table__list thead {
         transform: rotate(360deg);
     }
 
-}
-.icon_dos{
-    height: 1.5em;
-    width: 1.5em;
-    fill: rgb(104, 193, 209);
-
-}
-
-.icon, .menu__auth svg{
-    height: 2em;
-    width: 2em;
-    fill: white;
-}
-.menu__content__options a{
-    list-style: none;
-    text-decoration: none;
-    cursor: pointer;
-    transition: all .3s ease-in;
-}
-.menu__content__options a:hover .icon, .menu__content__options a:hover h2{
-    transition: all .3s ease-in;
-    color:var(--primary);
-    fill: var(--primary);
-}
-
-.menu__content__options .active h2, .menu__content__options .active .icon{
-    fill: var(--primary);
-}
-
-h3.title__options{
-    margin-top: 1em;
-    margin-bottom: 1em;
-    /* text-align: center; */
-    color: #f3f3f3cc;
-    text-transform: uppercase;
-    font-size: .8em;
-    text-align: left;
-    font-weight: bold;
-}
-
-.logout{
-    position: absolute;
-    bottom:0 ;
 }
