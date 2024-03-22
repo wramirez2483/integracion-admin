@@ -1,12 +1,19 @@
-<?php 
+<?php
 
 require_once "../../config.php";
-
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $modality = $_POST['modality'];
     $code = $_POST['code'];
     $event = "created_seed";
+
+    // Verificar si el código sigue el formato esperado
+    if (!preg_match('/^\d+_\d+_\w+_\d+$/', $code)) {
+        // Si el código no sigue el formato esperado, muestra un mensaje de error
+        $_SESSION['error_message_events'] = 'El código debe ser como el siguiente ejemplo "2560119_1_presencial_1"';
+        header('Location: ../../../views/seed.php');
+        exit();
+    }
 
     // Consulta para verificar si ya existe un evento con el mismo código de semilla
     $sql_check_seed = "SELECT COUNT(*) FROM seeds WHERE code = :code";

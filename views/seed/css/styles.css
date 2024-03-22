@@ -112,6 +112,11 @@ dialog:focus{
 
     cursor: pointer;
 }
+
+.options-modal{
+    display: flex;
+    justify-content: space-around
+}
 .modal__cerrar svg{
     height: 1.5em;
     width: 1.5em;
