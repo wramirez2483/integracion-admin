@@ -1,30 +1,25 @@
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body{
-    font-family: 'Roboto', sans-serif;
-    background-color: #edffe5;
-    opacity: 0.8;
-    background-image: radial-gradient(#dcf3d1 0.5px, transparent 0.5px), radial-gradient(#dcf3d1 0.5px, transparent 0.5px);
-    background-size: 20px, 20px;
-    background-position: 0 0, 10px 10px;
+.login{
+    /* background-color: ; */
     display: flex;
     min-height: 100vh;
 }
 /* Estilos formulario */
 .form{
-    background: #fff;
+    background-color: rgba(255, 255, 255, 0.397);
+    /* border: 2px solid var(--primary); */
     margin: auto;
     width: 90%;
     max-width: 400px;
     padding: 4.5em 3em;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px -5px rgb(0 0 0 / 100%);
+    border-radius: 12px;
+    box-shadow: 0px 0px 30px -3px rgba(0, 0, 0, 0.164);
     text-align: center;
+    z-index: 1;
+}
+.form::after{
+    content: '';
+    background-color: rgba(0, 0, 0, 0.144);
+    filter: blur(450px);
 }
 
 .form__title{
@@ -50,13 +45,16 @@ body{
 
 .form__input{
     width: 100%;
-    background: none;
+    background: none ;
     color: #706c6c;
     font-size: 1rem;
     padding: .6em .3em;
-    border: none;
+    border: none !important;
     outline: none;
-    border-bottom: 1px solid var(--color);
+    border-bottom: 1px solid var(--color) !important;
+    border-radius: 0 !important;
+
+
 }
 
 .form__input:focus,
@@ -83,9 +81,8 @@ body{
 }
 
 .form__submit{
-    background:#39a900;
-    color: #fff;
-    font-family: 'Roboto', sans-serif;
+    background:#39a900 !important;
+    color: #fff !important;
     font-weight: 300;
     font-size: 1rem;
     padding: .8em .0;
@@ -165,3 +162,24 @@ div.message--error{
 
 }
 
+.blur{
+    height: 20rem;
+    width: 20rem;
+    background-color: var(--primary);
+    filter: blur(160px);
+    position: absolute;
+    border-radius: 100%;
+}
+.blur-one{
+    left: 50%;
+    bottom: 10%;
+
+}
+.blur-two{
+    top: 10%;
+    right: 50%;
+    height: 14rem;
+    width: 14rem;
+    filter: blur(160px);
+
+}

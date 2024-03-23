@@ -12,7 +12,7 @@ require_once '../app/controllers/report_audit/list_audit.php'
                 <select name="amount" id="amount" onchange="this.form.submit()">
                     <option value="30" <?php if ($records_per_page_audit == 30) echo 'selected'; ?>>30</option>
                     <option value="40" <?php if ($records_per_page_audit == 40) echo 'selected'; ?>>40</option>
-                    <option value="50" <?php if ($records_per_page_audit == 50) echo 'selected'; ?>>50</option>
+                    <option value="80" <?php if ($records_per_page_audit == 80) echo 'selected'; ?>>80</option>
                 </select>
             </div>
         </form>

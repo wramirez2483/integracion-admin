@@ -1,4 +1,5 @@
-<!-- 192.168.1.170/zajuna/login/index.php -->
+<div class="login">
+    <!-- 192.168.1.170/zajuna/login/index.php -->
     <form action="/app-integracion/app/controllers/login/singin.php" class="form" method="POST">
         <?php
             if (isset($_SESSION['error_message'])  ) {
@@ -15,16 +16,15 @@
         <h2 class="form__title">Iniciar Sesión</h2>
         <p class="form__paragraph">Administración de integración</p>   
         <div class="form__container">
-            
 
             <div class="form__group">
                 <label for="tipe_id" class="form__label"></label>
                 <select id="tipe_id" name="tipe_id" class="form__input">
-                    <option value="cc">Cédula de Ciudadanía</option>
-                    <option value="ti">Tarjeta de Identidad</option>
-                    <option value="ce">Cedula de Extranjería</option>
-                    <option value="pep">PEP</option>
-                    <option value="ppt">Permiso por Protección Temporal</option>
+                    <option value="CC">Cédula de Ciudadanía</option>
+                    <option value="TI">Tarjeta de Identidad</option>
+                    <option value="CE">Cedula de Extranjería</option>
+                    <option value="PEP">PEP</option>
+                    <option value="PPT">Permiso por Protección Temporal</option>
                 </select>
                 <span class="form__line"></span>
             </div>
@@ -56,4 +56,8 @@
             <input type="submit" class="form__submit" value="Entrar">
         </div>
     </form>
+
+    <div class="blur blur-one"></div>
+    <div class="blur blur-two"></div>
+</div>
     <script src="./helpers/scripts.js"></script>

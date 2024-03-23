@@ -44,7 +44,6 @@ function genAssertId($document, $typeDocument, $password)
     
     return $assertionId;
 }
-
 // General session Id
 function genSession($josso_assertion_id)
 {
@@ -73,7 +72,6 @@ function genSession($josso_assertion_id)
     echo $response;
     return $sessionId;
 }
- 
 // Cerrar Sesion
 function logout($sessionId){
     ini_set("display_errors", 0);
