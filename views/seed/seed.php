@@ -4,33 +4,74 @@ require_once '../app/controllers/seed/list_seeds.php'
 
 ?>
 
-
 <!-- Modal de añadir -->
 <dialog class="modal_window close" id="window__create">
     <!-- Contenido del modal -->
     <div class="content__modal">
         <!-- Crear-->
-        <h1>Crear Evento</h1>
+        <h1>Crear Semilla</h1>
         <div class="container__form-modal">
 
 
             <form action='../app/controllers/seed/create_seed.php' method='POST' class='content__form-modal'>
-                
-                <div class='input'>
-                    <label for='code'>Código</label>
-                    <input type='text' name='code' id='code' placeholder='Código' required>
+
+                <div class="input">
+                    <label for="program_type">Tipo de programa</label>
+                    <select name="program_type" id="program_type" required>
+                        <option value="">Seleccione</option>
+                        <option value="Titulada">Titulada</option>
+                        <option value="Complementaria">Complementaria</option>
+                    </select>
                 </div>
 
                 <div class="input">
                     <label for="modality">Modalidad</label>
                     <select name="modality" id="modality" required>
                         <option value="">Seleccione</option>
-                        <option value="Titulada - Presencial">Titulada - Presencial</option>
-                        <option value="Titulada - Virtual">Titulada - Virtual</option>
-                        <option value="Complementaria - Presencial">Complementaria - Presencial</option>
-                        <option value="Complementaria - Virtual">Complementaria - Virtual</option>
+                        <option value="PRESENCIAL">Presencial</option>
+                        <option value="VIRTUAL">Virtual</option>
+                        <option value="DISTANCIA">A distacia</option>
                     </select>
                 </div>
+
+                <div class="input">
+                    <label for="education_level">Nivel de formación</label>
+                    <select name="education_level" id="education_level" required>
+                        <option value="">Seleccione</option>
+                        <option value="Tecnico">Técnico</option>
+                        <option value="Tecnologo">Tecnólogo</option>
+                    </select>
+                </div>
+
+                <div class='input'>
+                    <label for='code'>Código</label>
+                    <input type='text' name='code' id='code' placeholder='Código' required>
+                </div>
+
+                <div class='input'>
+                    <label for='prog_name'>Denominación</label>
+                    <input type='text' name='prog_name' id='prog_name' placeholder='Denominación' required>
+                </div>
+
+                <div class='input'>
+                    <label for='design_version'>Versión diseño</label>
+                    <input type='number' name='design_version' id='design_version' placeholder='Versión diseño' required>
+                </div>
+
+                <div class='input'>
+                    <label for='seed_version'>Versión semilla</label>
+                    <input type='number' name='seed_version' id='seed_version' placeholder='Versión semilla' required>
+                </div>
+
+                <div class="input">
+                    <label for="status">Estado</label>
+                    <select name="status" id="status" required>
+                        <option value="">Seleccione</option>
+                        <option value="A">A - Aprobado</option>
+                        <option value="B">B - Bloqueado</option>
+                    </select>
+                </div>
+                
 
                 <div class="content__form__botons">
                     <input type='submit' name='events' value='Añadir'>
@@ -70,20 +111,44 @@ require_once '../app/controllers/seed/list_seeds.php'
         <div class="container__form-modal">
             <form action="../app/controllers/seed/update_seed.php" method="POST" class="content__form-modal">
                 <input type="hidden" name="id" id="id" value="">
+                <input type="hidden" name="old_seed" id="old_seed" value="">
+                <div class="input">
+                    <label for='new_program_type'>Tipo de programa</label>
+                    <input type="text" name="new_program_type" id="new_program_type" value="" readonly>
+                </div>
+                <div class="input">
+                    <label for='new_education_level'>Nivel de formación</label>
+                    <input type="text" name="new_education_level" id="new_education_level" value="" readonly>
+                </div>
+                <div class="input">
+                    <label for='new_modality'>Modalidad</label>
+                    <input type="text" name="new_modality" id="new_modality" value="" readonly>
+                </div>
+                <div class="input">
+                    <label for='new_code'>Código</label>
+                    <input type="text" name="new_code" id="new_code" value="" readonly>
+                </div>
+                <div class='input'>
+                    <label for='prog_name'>Denominación</label>
+                    <input type='text' name='new_prog_name' id='new_prog_name' placeholder='Denominación' required>
+                </div>
 
                 <div class='input'>
-                    <label for='code'>Código</label>
-                    <input type='text' name='new_code' id='new_code' placeholder='Código' required>
+                    <label for='design_version'>Versión diseño</label>
+                    <input type='number' name='new_design_version' id='new_design_version' placeholder='Versión diseño' required>
                 </div>
-                
+
+                <div class='input'>
+                    <label for='seed_version'>Versión semilla</label>
+                    <input type='number' name='new_seed_version' id='new_seed_version' placeholder='Versión semilla' required>
+                </div>
+
                 <div class="input">
-                    <label for="modality">Modalidad</label>
-                    <select name="new_modality" id="new_modality" required>
+                    <label for="status">Estado</label>
+                    <select name="new_status" id="new_status" required>
                         <option value="">Seleccione</option>
-                        <option value="Titulada - Presencial">Titulada - Presencial</option>
-                        <option value="Titulada - Virtual">Titulada - Virtual</option>
-                        <option value="Complementaria - Presencial">Complementaria - Presencial</option>
-                        <option value="Complementaria - Virtual">Complementaria - Virtual</option>
+                        <option value="A">A - Aprobado</option>
+                        <option value="B">B - Bloqueado</option>
                     </select>
                 </div>
 
@@ -177,14 +242,22 @@ require_once '../app/controllers/seed/list_seeds.php'
                             $seeds = $stmt_search_seeds->fetchAll(PDO::FETCH_ASSOC);
                         }
                         ?>   
-                       
-
+                    
                     </div>
                     <form method="post" class="other__pagination__form">
                         <select name="search_by" id="search_by">
                             <option value="seeds.id">id</option>
+                            <option value="program_type">Tipo de Programa</option>
+                            <option value="education_level">Nivel de Formación</option>
                             <option value="code">Código</option>
+                            <option value="id_seed">Id de la semilla</option>
+                            <option value="prog_name">Denominación</option>
+                            <option value="design_version">Versión Diseño</option>
+                            <option value="seed_version">Versión Semilla</option>
+                            <option value="current_version">Versión Actual</option>
+                            <option value="status">Estado de creación de semilla en LMS</option>
                             <option value="modality">Modalidad</option>
+
                         </select>
                         <!-- Icono de busqueda -->
                         <div class="content__search__input">
@@ -214,7 +287,15 @@ require_once '../app/controllers/seed/list_seeds.php'
                     <thead>
                         <tr>
                             <th>Id</th>
+                            <th>Tipo de programa</th>
+                            <th>Nivel de formación</th>
                             <th>Código</th>
+                            <th>Id de la semilla</th>
+                            <th>Denominación</th>
+                            <th>Versión diseño</th>
+                            <th>Versión semilla</th>
+                            <th>Versión actual</th>
+                            <th>Estado de creación de semilla en LMS</th>
                             <th>Modalidad</th>
                             <?php
                             if ($_SESSION['role'] == 'admin') {
@@ -227,43 +308,50 @@ require_once '../app/controllers/seed/list_seeds.php'
                         </tr>
                     </thead>
                     <tbody>
-                            <?php foreach ($seeds as $seed) : ?>
-                                <tr>
-                                    <td><?php echo $seed['id']; ?></td>
-                                    <td><?php echo $seed['code']; ?></td>
-                                    <td><?php echo $seed['modality']; ?></td>
-    
-                                    <?php
-                                    if ($_SESSION['role'] == 'admin') {
-                                        echo "
-                                               
-                                            <!-- Agrega los enlaces de editar y borrar según sea necesario -->
-                                            <td class='edit__icon'>  
-    
-                                                <a onclick=\"handleEditSeed('" . $seed['id'] . "','" . $seed['code'] . "','" . $seed['modality'] . "')\">
-                                                
-                                                    <svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'>
-                                                        <path fill='#39a900' d='M3 21v-4.25L16.2 3.575q.3-.275.663-.425t.762-.15q.4 0 .775.15t.65.45L20.425 5q.3.275.438.65T21 6.4q0 .4-.137.763t-.438.662L7.25 21zM17.6 7.8L19 6.4L17.6 5l-1.4 1.4z' />
-                                                    </svg>
-                                                </a>
-                                                <a onclick=\"handleDeleteSeed('" . $seed['id'] . "')\">
-                                                    <svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'>
-                                                        <g fill='none'>
-                                                            <path fill='#e11d48' fill-opacity='.25' d='m17.004 17.98l1.711-9.415c.117-.642.176-.963.013-1.049c-.162-.085-.394.145-.857.604l-.886.88L12 10L6.996 9l-.863-.865c-.465-.465-.697-.698-.86-.612c-.162.085-.104.408.014 1.054l1.71 9.402a.068.068 0 0 0 .018.036a7.05 7.05 0 0 0 9.97 0a.068.068 0 0 0 .019-.036' />
-                                                            <ellipse cx='12' cy='7' stroke='#e11d48' stroke-linecap='round' stroke-width='1.2' rx='7' ry='3' />
-                                                            <path stroke='#e11d48' stroke-linecap='round' stroke-width='1.2' d='m5 7l1.996 10.98a.068.068 0 0 0 .019.035v0a7.05 7.05 0 0 0 9.97 0v0a.068.068 0 0 0 .019-.036L19 7' />
-                                                        </g>
-                                                    </svg>
-                                                </a>
-                                            </td>
+                        <?php foreach ($seeds as $seed) : ?>
+                            <tr>
+                                <td><?php echo $seed['id']; ?></td>
+                                <td><?php echo $seed['program_type']; ?></td>
+                                <td><?php echo $seed['education_level']; ?></td>
+                                <td><?php echo $seed['code']; ?></td>
+                                <td><?php echo $seed['id_seed']; ?></td>
+                                <td><?php echo $seed['prog_name']; ?></td>
+                                <td><?php echo $seed['design_version']; ?></td>
+                                <td><?php echo $seed['seed_version']; ?></td>
+                                <td><?php echo $seed['current_version'] == 1 ? "Verdadero" : "Falso"; ?></td>
+                                <td><?php echo $seed['status']; ?></td>
+                                <td><?php echo $seed['modality']; ?></td>
+                                <?php
+                                if ($_SESSION['role'] == 'admin') {
+                                    echo "
                                             
-                                            ";
-                                    }
-                                    ?>
+                                        <!-- Agrega los enlaces de editar y borrar según sea necesario -->
+                                        <td class='edit__icon'>  
 
-                                </tr>
-                            <?php endforeach; ?>
-                        </tbody>
+                                            <a onclick=\"handleEditSeed('" . $seed['id'] . "','" . $seed['program_type'] . "','" . $seed['education_level'] . "','" . $seed['code'] . "','" . $seed['id_seed'] . "','" . $seed['prog_name'] . "','" . $seed['design_version'] . "','" . $seed['seed_version'] . "','" . $seed['current_version'] . "','" . $seed['status'] . "','" . $seed['modality'] . "')\">
+                                            
+                                                <svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'>
+                                                    <path fill='#39a900' d='M3 21v-4.25L16.2 3.575q.3-.275.663-.425t.762-.15q.4 0 .775.15t.65.45L20.425 5q.3.275.438.65T21 6.4q0 .4-.137.763t-.438.662L7.25 21zM17.6 7.8L19 6.4L17.6 5l-1.4 1.4z' />
+                                                </svg>
+                                            </a>
+                                            <a onclick=\"handleDeleteSeed('" . $seed['id'] . "')\">
+                                                <svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'>
+                                                    <g fill='none'>
+                                                        <path fill='#e11d48' fill-opacity='.25' d='m17.004 17.98l1.711-9.415c.117-.642.176-.963.013-1.049c-.162-.085-.394.145-.857.604l-.886.88L12 10L6.996 9l-.863-.865c-.465-.465-.697-.698-.86-.612c-.162.085-.104.408.014 1.054l1.71 9.402a.068.068 0 0 0 .018.036a7.05 7.05 0 0 0 9.97 0a.068.068 0 0 0 .019-.036' />
+                                                        <ellipse cx='12' cy='7' stroke='#e11d48' stroke-linecap='round' stroke-width='1.2' rx='7' ry='3' />
+                                                        <path stroke='#e11d48' stroke-linecap='round' stroke-width='1.2' d='m5 7l1.996 10.98a.068.068 0 0 0 .019.035v0a7.05 7.05 0 0 0 9.97 0v0a.068.068 0 0 0 .019-.036L19 7' />
+                                                    </g>
+                                                </svg>
+                                            </a>
+                                        </td>
+                                        
+                                        ";
+                                }
+                                ?>
+
+                            </tr>
+                        <?php endforeach; ?>
+                    </tbody>
                 </table>
 
             </div>

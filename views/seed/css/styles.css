@@ -80,9 +80,7 @@
 {
     background-color: unset !important;
 }
-.seeds{
-    width: 100vh;
-}
+
 
 /* Modal */
 dialog::backdrop{
@@ -99,6 +97,8 @@ dialog{
     margin: auto !important;
     border: none;
     background: transparent;
+    overflow-y: hidden;
+
 }
 
 dialog:focus{
@@ -124,14 +124,14 @@ dialog:focus{
 .content__modal,
 .content__modal-delete
 {
-    padding: 1em;
+    padding: 2rem;
     display: flex;
     flex-direction: column;
     gap: 2em;
     background-color: var(--primary-background);
     box-shadow: var(--primary-shadow);
     border-radius: 20px;
-    height: 50vh;
+    /* height: 50vh; */
     /* width: 30vh; */
     margin: 0 auto;
 }
@@ -173,6 +173,7 @@ dialog:focus{
     flex-direction: column;
     justify-content: space-around !important;
     align-items: unset !important;
+    gap: 3rem;
 }
 .content__form-modal .input{
     display: flex;
@@ -183,10 +184,19 @@ dialog:focus{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 100vh;
 }
 
 
 select {
     width: 10rem ;
+}
+.input{
+    gap: 4rem;
+}
+.input input, .input select{
+    width: 8rem !important;
+}
+
+.message{
+    width: 100%;
 }

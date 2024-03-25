@@ -61,11 +61,18 @@ function deleteLocalNotificationTarget(element) {
 
 
 // Metodo para asignar los datos a los inputs de la semilla a editar
-function handleEditSeed(id, code, modality) {
-  console.log(id)
+function handleEditSeed(id, program_type, education_level, code, id_seed, prog_name, design_version, seed_version, current_version, status, modality) {
   document.getElementById('id').value = id;
-  document.getElementById('new_modality').value = modality;
+  document.getElementById('old_seed').value = id_seed;
+  document.getElementById('new_program_type').value = program_type;
+  document.getElementById('new_education_level').value = education_level;
   document.getElementById('new_code').value = code;
+  document.getElementById('new_prog_name').value = prog_name;
+  document.getElementById('new_design_version').value = design_version;
+  document.getElementById('new_seed_version').value = seed_version;
+  //document.getElementById('current_version').value = current_version;
+  document.getElementById('new_status').value = status;
+  document.getElementById('new_modality').value = modality;
   // abre el modal
   handleWindow('#windows-edit')
 
@@ -78,4 +85,3 @@ function handleDeleteSeed(seed_id){
   // abre el modal
   handleWindow('#windows-delete')
 }
-

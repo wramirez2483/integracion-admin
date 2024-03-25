@@ -16,7 +16,6 @@
 </head>
 <body>
 
-    
     <div class="container__home">
         
             <?php
@@ -34,7 +33,6 @@
             ?>
             
         </div>
-     
 
     </div>
 </body>

@@ -15,7 +15,7 @@ if (isset($_SESSION['records_per_page_seed'])) { // Cambiado el nombre de la var
 }
 
 // Obtener el número total de eventos registrados
-$sql_total_seeds = "SELECT COUNT(*) AS total FROM seeds WHERE status_seed = 1";
+$sql_total_seeds = "SELECT COUNT(*) AS total FROM seeds WHERE deletion_date IS NULL AND current_version = 1";
 $stmt_total_seeds = $pdo->query($sql_total_seeds);
 $total_seeds = $stmt_total_seeds->fetchColumn();
 
@@ -29,9 +29,10 @@ $current_page = isset($_GET['page']) && is_numeric($_GET['page']) ? $_GET['page'
 $offset = ($current_page - 1) * $records_per_page_seed;
 
 // Consulta SQL para obtener los eventos registrados con limit y offset
-$sql_select_seeds = "SELECT id, code, modality 
+$sql_select_seeds = "SELECT *
                     FROM seeds 
-                    WHERE status_seed = 1 
+                    WHERE deletion_date IS NULL
+                    AND current_version = 1
                     ORDER BY id DESC 
                     LIMIT :offset, :records_per_page_seed ";
 $stmt_select_seeds = $pdo->prepare($sql_select_seeds);
